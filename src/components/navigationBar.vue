@@ -1,10 +1,10 @@
 <template>
   <ul>
     <li>
-      <a>home</a>
+      <a>about</a>
     </li>
     <li>
-      <a>projects</a>
+      <a href="https://github.com/linushh">Github</a>
     </li>
     <li>
       <a>something</a>
