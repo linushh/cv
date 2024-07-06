@@ -20,11 +20,15 @@
 li {
   display: inline;
   float: left;
+  margin: 2px;
+
+  border: solid 2px #3a4042;
+  border-radius: 4px;
 }
 
 a {
   display: block;
   padding: 8px;
-  background-color: hsla(156, 3%, 32%, 0.2);
+  background-color: #212121;
 }
 </style>

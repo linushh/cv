@@ -26,7 +26,7 @@ export default {
 .container {
   display: flex;
   justify-content: center;
-  background-color: hsla(159, 88%, 6%, 0.2);
+  background-color: #3a4042;
 }
 
 .img {
