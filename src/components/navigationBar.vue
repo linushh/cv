@@ -1,13 +1,27 @@
 <template>
   <ul>
     <li>
-      <a>about</a>
+      <a>
+        <p>About</p>
+      </a>
     </li>
+
     <li>
-      <a href="https://github.com/linushh">Github</a>
+      <a href="https://github.com/linushh">
+        <p>Github</p>
+      </a>
     </li>
+
     <li>
-      <a>something</a>
+      <a href="https://www.facebook.com/linus.hakansson.98478">
+        <p>Facebook</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="linkedin.com/in/linus-håkansson-4584ab251">
+        <p>Linkedin</p>
+      </a>
     </li>
   </ul>
 </template>
@@ -30,5 +44,9 @@ a {
   display: block;
   padding: 8px;
   background-color: #212121;
+}
+
+p {
+  color: #8ecccc;
 }
 </style>
