@@ -10,12 +10,13 @@
       </h4>
 
       <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-        Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
-        Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+        Mina tidigare arbetserfarenheter samt
+        livserfarenheter har lärt mig att vara en god
+        tillgång för gruppens bästa och en person
+        som höjer stämningen som gärna gotta ner
+        sig i problem som jag får lösa. Jag strävar
+        emot att ständigt utvecklas och bli en bättre
+        version av mig själv varje dag!
       </p>
     </div>
     </img>
