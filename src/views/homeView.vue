@@ -1,13 +1,22 @@
 <template>
   <navigationBar class="navigation" />
-  <div class="container">
-    <img :src="selfie" class="img" />
+  <!-- <div class="container"> -->
+  <!-- <img :src="selfie" class="img" /> -->
+  <!-- </div> -->
+
+  <card />
+  <div>
+    <aboutMe />
   </div>
+
+
 </template>
 
 <script>
 import selfie from '../assets/selfie.jpg'
 import navigationBar from '../components/navigationBar.vue'
+import aboutMe from '../components/aboutMe.vue'
+import card from '../components/card.vue'
 
 export default {
   data() {
@@ -17,7 +26,9 @@ export default {
   },
 
   components: {
-    navigationBar
+    navigationBar,
+    aboutMe,
+    card
   }
 }
 </script>
