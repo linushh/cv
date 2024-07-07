@@ -19,7 +19,7 @@
     </li>
 
     <li>
-      <a href="linkedin.com/in/linus-håkansson-4584ab251">
+      <a href="https://www.linkedin.com/in/linus-håkansson-4584ab251">
         <p>Linkedin</p>
       </a>
     </li>
