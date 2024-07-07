@@ -1,7 +1,9 @@
 <template>
   <navigationBar class="navigation" />
 
-  <card class="container" />
+  <div class="container margin">
+    <card />
+  </div>
 </template>
 
 <script>
@@ -26,11 +28,14 @@ export default {
 <style>
 .container {
   align-items: center;
-  margin: 5px;
 }
 
 .navigation {
   display: flex;
   justify-content: right;
+}
+
+.margin {
+  margin: 5px;
 }
 </style>
