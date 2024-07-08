@@ -8,7 +8,7 @@
 
 <script>
 import navigationBar from '../components/navigationBar.vue'
-import aboutMe from '../components/aboutMe.vue'
+import aboutMe from './aboutMe.vue'
 import card from '../components/card.vue'
 
 export default {
