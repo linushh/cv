@@ -4,7 +4,9 @@
       @click="toggleDrawer"
       @blur.stop.prevent="toggleDrawer" 
       class="drawer-color">
-      ☰
+        <div class="burger-menu"></div>
+        <div class="burger-menu"></div>
+        <div class="burger-menu"></div>
     </button>
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
@@ -17,9 +19,9 @@
       </ul>
     </div>
 
-    <div class="content" :class="{ open: isDrawerOpen }">
+    <!-- <div class="content" :class="{ open: isDrawerOpen }">
       <p>This is the page content. Click the button to toggle the drawer.</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -39,11 +41,21 @@ export default {
 </script>
 
 <style>
+.burger-menu {
+  width: 35px;
+  height: 5px;
+  background-color: rgb(28, 28, 28);
+  margin: 6px 0;
+  border-radius: 5px;
+}
+
 .drawer-color {
+  flex-direction: column;
   background-color: #444444;
   margin: 10px;
   border-radius: 5px;
 }
+
 .drawer {
   width: 250px;
   position: fixed;
