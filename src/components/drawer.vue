@@ -29,15 +29,16 @@
 export default {
   data() {
     return {
-      isDrawerOpen: false,
-    };
+      isDrawerOpen: false
+    }
   },
+
   methods: {
     toggleDrawer() {
-      this.isDrawerOpen = !this.isDrawerOpen;
-    },
-  },
-};
+      this.isDrawerOpen = !this.isDrawerOpen
+    }
+  }
+}
 </script>
 
 <style>
