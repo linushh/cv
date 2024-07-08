@@ -1,15 +1,18 @@
 <template>
-  <navigationBar class="navigation margin" />
+<navigationBar class="navigation margin" />
 
-  <div class="container margin">
-    <card class="pre-formatted" :name="getCardText()" />
-  </div>
+<Drawer />
+
+<div class="container margin">
+  <card class="pre-formatted" :name="getCardText()" />
+</div>
 </template>
 
 <script>
 import navigationBar from '../components/navigationBar.vue'
 import aboutMe from './aboutMe.vue'
 import card from '../components/card.vue'
+import Drawer from '../components/drawer.vue';
 
 export default {
   data() {
@@ -20,7 +23,8 @@ export default {
   components: {
     navigationBar,
     aboutMe,
-    card
+    card,
+    Drawer
   },
 
   methods: {
