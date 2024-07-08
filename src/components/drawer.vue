@@ -2,15 +2,18 @@
   <div id="app">
     <button
       @click="toggleDrawer"
-      style="background-color: #717171">
-      Toggle Drawer
+      @blur.stop.prevent="toggleDrawer" 
+      class="drawer-color">
+      ☰
     </button>
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
       <ul>
         <li><a @click="$router.push('/')">Home</a></li>
         <li><a @click="$router.push('/about')">About me</a></li>
-        <li><a href="#">Link 3</a></li>
+        <li><a href="https://github.com/linushh">Github</a></li>
+        <li><a href="https://www.facebook.com/linus.hakansson.98478">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/linus-hakansson-8b2b0b1a6/">LinkedIn</a></li>
       </ul>
     </div>
 
@@ -36,6 +39,11 @@ export default {
 </script>
 
 <style>
+.drawer-color {
+  background-color: #444444;
+  margin: 10px;
+  border-radius: 5px;
+}
 .drawer {
   width: 250px;
   position: fixed;
@@ -63,6 +71,8 @@ export default {
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
 }

@@ -1,5 +1,5 @@
 <template>
-<navigationBar class="navigation margin" />
+<!-- <navigationBar class="navigation margin" /> -->
 
 <Drawer />
 

@@ -1,5 +1,6 @@
 <template>
-  <navigation class="centering margin" />
+  <!-- <navigation class="centering margin" /> -->
+   <drawer />
   
   <div class="centering margin">
     <card :name="getCardText()" />
@@ -7,13 +8,15 @@
 </template>
 
 <script>
+import drawer from '../components/drawer.vue'
 import card from '../components/card.vue'
 import navigation from '../components/navigationBar.vue'
 
 export default {
   components: {
     card,
-    navigation
+    navigation,
+    drawer
   },
 
   data() {
