@@ -2,13 +2,13 @@
   <ul>
     <li>
       <a>
-        <p>Home</p>
+        <p @click="$router.push('/')">Home</p>
       </a>
     </li>
-
+    
     <li>
       <a>
-        <p>About me</p>
+        <p @click="$router.push('/about')" >About me</p>
       </a>
     </li>
 
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
