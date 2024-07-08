@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="selfie" class="img">
+    <img :src="selfie" class="img margin">
 
     <div class="container">
       <h4>
@@ -8,18 +8,7 @@
           Linus Håkansson
         </b>
       </h4>
-
-      <p>
-        <!-- Mina tidigare arbetserfarenheter samt
-        livserfarenheter har lärt mig att vara en god
-        tillgång för gruppens bästa och en person
-        som höjer stämningen som gärna gotta ner
-        sig i problem som jag får lösa. Jag strävar
-        emot att ständigt utvecklas och bli en bättre
-        version av mig själv varje dag! -->
-
-        {{ name }}
-      </p>
+      <p>{{ name }}</p>
     </div>
     </img>
   </div>
@@ -46,14 +35,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
-  
+  flex-direction: column;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   background-color: #282828;
   max-width: 720px;
-  
 }
 
 .card:hover {
@@ -64,6 +52,7 @@ export default {
   padding: 2px 16px;
   display: flex;
   flex-direction: column;
+  width: auto;
 }
 
 .img {
