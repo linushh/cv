@@ -2,7 +2,37 @@
   <ul>
     <li>
       <a>
-        <p>About</p>
+        <p>Home</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>About me</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>CV</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Projects</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Skills</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Contact</p>
       </a>
     </li>
 

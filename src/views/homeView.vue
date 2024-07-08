@@ -1,5 +1,5 @@
 <template>
-  <navigationBar class="navigation" />
+  <navigationBar class="navigation margin" />
 
   <div class="container margin">
     <card />
@@ -32,10 +32,10 @@ export default {
 
 .navigation {
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 .margin {
-  margin: 5px;
+  margin: 15px;
 }
 </style>
