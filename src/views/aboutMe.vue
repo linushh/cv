@@ -2,7 +2,7 @@
   <navigation class="centering margin" />
   
   <div class="centering margin">
-    <card />
+    <card :name="getCardText()" />
   </div>
 </template>
 
@@ -11,15 +11,23 @@ import card from '../components/card.vue'
 import navigation from '../components/navigationBar.vue'
 
 export default {
+  components: {
+    card,
+    navigation
+  },
+
   data() {
     return {
 
     }
   },
 
-  components: {
-    card,
-    navigation
+  methods: {
+    getCardText() {
+      return `
+        kuk
+        `
+    }
   }
 }
 </script>

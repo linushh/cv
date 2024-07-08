@@ -10,13 +10,15 @@
       </h4>
 
       <p>
-        Mina tidigare arbetserfarenheter samt
+        <!-- Mina tidigare arbetserfarenheter samt
         livserfarenheter har lärt mig att vara en god
         tillgång för gruppens bästa och en person
         som höjer stämningen som gärna gotta ner
         sig i problem som jag får lösa. Jag strävar
         emot att ständigt utvecklas och bli en bättre
-        version av mig själv varje dag!
+        version av mig själv varje dag! -->
+
+        {{ name }}
       </p>
     </div>
     </img>
@@ -27,6 +29,10 @@
 import selfie from '@/assets/selfie.jpg'
 
 export default {
+  props: {
+    name: String
+  },
+
   data() {
     return {
       selfie
