@@ -2,7 +2,37 @@
   <ul>
     <li>
       <a>
-        <p>About</p>
+        <p @click="$router.push('/')">Home</p>
+      </a>
+    </li>
+    
+    <li>
+      <a>
+        <p @click="$router.push('/about')" >About me</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>CV</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Projects</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Skills</p>
+      </a>
+    </li>
+
+    <li>
+      <a>
+        <p>Contact</p>
       </a>
     </li>
 
@@ -27,6 +57,8 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
