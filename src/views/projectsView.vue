@@ -1,7 +1,7 @@
 <template>
   <drawer />
 
-  <gallery :images="images" />
+  <gallery :title="'Todo Application: Java, Vue, MySql'" :images="images" />
 </template>
 
 <script>
