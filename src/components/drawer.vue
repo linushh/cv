@@ -13,9 +13,10 @@
       <ul>
         <li><a @click="$router.push('/')">Home</a></li>
         <li><a @click="$router.push('/about')">About me</a></li>
-        <li><a href="https://github.com/linushh">Github</a></li>
-        <li><a href="https://www.facebook.com/linus.hakansson.98478">Facebook</a></li>
-        <li><a href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D">LinkedIn</a></li>
+        <li><a @click="$router.push('/projects')">Projects</a></li>
+        <li><a href="https://github.com/linushh" target="_blank">Github</a></li>
+        <li><a href="https://www.facebook.com/linus.hakansson.98478" target="_blank">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
 
