@@ -28,7 +28,7 @@ export default {
   methods: {
     getCardText() {
       return `
-        kuk
+        Hello World!
         `
     }
   }
