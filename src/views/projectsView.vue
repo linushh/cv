@@ -21,7 +21,7 @@ import drawer from '../components/drawer.vue'
 export default {
   data() {
     return {
-      pictures: [picture, picture, picture],
+      pictures: [picture, picture, picture, picture],
       previewImage: ''
     }
   },
