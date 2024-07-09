@@ -12,11 +12,8 @@
     </div>
     
     <footer class="title-center">
-      <a 
-        href="https://github.com/linushh/cv"
-        target="_blank">
-          Repository
-      </a>
+      <a href="https://github.com/linushh/todo-standalone" target="_blank"> Frontend - </a>
+      <a href="https://github.com/linushh/todo-standalone-admin"target="_blank"> Backend </a>
     </footer>
 </template>
 
@@ -26,7 +23,6 @@ export default {
     images: Array,
     title: String
   },
-
 
   data() {
     return {
