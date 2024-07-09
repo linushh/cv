@@ -1,22 +1,28 @@
 <template>
+  <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
     <img v-for="(picture, index) in images" :key="index" 
       :src="picture.src" alt="Image" 
       @click="showPreview(picture.src)">
-  </div>
-  
-  <div class="modal" v-if="previewImage">
-    <span class="close" @click="closePreview"> &times; </span>
-    <img :src="previewImage" alt="Preview">
-  </div>
+    </div>
+    
+    <div class="modal" v-if="previewImage">
+      <span class="close" @click="closePreview"> &times; </span>
+      <img :src="previewImage" alt="Preview">
+    </div>
+    
+    <footer class="title-center">
+      <a href="https://github.com/linushh/todo-standalone" target="_blank"> Frontend - </a>
+      <a href="https://github.com/linushh/todo-standalone-admin"target="_blank"> Backend </a>
+    </footer>
 </template>
 
 <script>
 export default {
   props: {
-    images: Array
+    images: Array,
+    title: String
   },
-
 
   data() {
     return {
@@ -37,6 +43,10 @@ export default {
 </script>
 
 <style>
+.title-center{
+  text-align: center;
+}
+
 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -44,9 +54,9 @@ export default {
 }
 
 .image-container img {
-  width: 200px;
-  height: 200px;
-  margin: 10px;
+  height: 20%;
+  width: 20%;
+  margin: 1rem;
   cursor: pointer;
   border-radius: 5px;
 }
