@@ -1,0 +1,1 @@
+import{a as t}from"./aboutMe-CvMdKGTQ.js";import{_ as e,d as r,o as a,r as n}from"./index-iH-qDQyE.js";import"./selfie-CsXYgRee.js";const s={data(){return{}},components:{aboutMe:t}};function c(p,_,m,u,f,i){const o=n("aboutMe");return a(),r(o)}const $=e(s,[["render",c]]);export{$ as default};
