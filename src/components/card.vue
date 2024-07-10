@@ -5,7 +5,7 @@
     <div class="container">
       <h4>
         <b>
-          Linus Håkansson
+          {{ title }}
         </b>
       </h4>
       <p>{{ name }}</p>
@@ -19,7 +19,8 @@ import selfie from '@/assets/selfie.jpg'
 
 export default {
   props: {
-    name: String
+    name: String,
+    title: String
   },
 
   data() {

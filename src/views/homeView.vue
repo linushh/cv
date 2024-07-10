@@ -4,7 +4,7 @@
 <Drawer />
 
 <div class="container margin">
-  <card class="pre-formatted" :name="getCardText()" />
+  <card class="pre-formatted" :name="getCardText()" :title="'Linus Håkansson'" />
 </div>
 </template>
 
