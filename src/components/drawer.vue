@@ -28,7 +28,7 @@
           </a>
         </li>
         
-        <li @click="$router.push('/about')">
+        <li @click="$router.push('/contact')">
           <a>
             Contact
           </a>

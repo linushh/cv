@@ -1,16 +1,16 @@
 <template>
-<!-- <navigationBar class="navigation margin" /> -->
+  <!-- <navigationBar class="navigation margin" /> -->
 
-<Drawer />
+  <Drawer />
 
-<div class="container margin">
-  <card class="pre-formatted" :name="getCardText()" :title="'Linus Håkansson'" />
-</div>
+  <div class="container margin">
+    <card class="pre-formatted" :name="getCardText()" :title="'Linus Håkansson'" />
+  </div>
 </template>
 
 <script>
 import navigationBar from '../components/navigationBar.vue'
-import aboutMe from './aboutMe.vue'
+import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue';
 
@@ -41,7 +41,7 @@ Utöver datorer, teknik och idrott är jag en också en stor naturälskare. Jag 
 
 Denna hemsida har jag skapat för att dela med mig av mina projekt, mina tankar och för att du ska få en bättre bild av vem jag är som person.
 Jag hoppas att du finner något intressant här och tveka inte att kontakta mig om du vill veta mer eller bara säga hej!`
-      return text 
+      return text
     }
   }
 }
