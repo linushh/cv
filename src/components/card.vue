@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="selfie" class="img margin">
+    <img v-lazy="{ src: selfie, loading: load}"  class="img margin">
 
     <div class="container">
       <h4>
@@ -16,6 +16,7 @@
 
 <script>
 import selfie from '@/assets/selfie.jpg'
+import load from '@/assets/progress.jpg'
 
 export default {
   props: {
@@ -25,7 +26,8 @@ export default {
 
   data() {
     return {
-      selfie
+      selfie,
+      load
     }
   }
 }
