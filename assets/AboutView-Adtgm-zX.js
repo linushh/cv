@@ -1,1 +1,0 @@
-import{a as t}from"./aboutMe-DF8aBOGZ.js";import{_ as e,d as r,o as a,r as n}from"./index-DvW6-vu5.js";import"./drawer-B_xbsBfw.js";const s={data(){return{}},components:{aboutMe:t}};function c(p,_,m,u,f,i){const o=n("aboutMe");return a(),r(o)}const $=e(s,[["render",c]]);export{$ as default};
