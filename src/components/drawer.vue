@@ -13,7 +13,7 @@
     <button
       v-if="!isDrawerOpen"
       @click="toggleDrawer"
-      class="drawer-color box-shadow pointer">
+      class="drawer-color box-shadow pointer move-burger-menu" >
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
@@ -156,5 +156,24 @@ li a {
 li a:hover {
   background-color: #555;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .content.open {
+    margin-left: 210px; /* Content moves to the right when drawer opens */
+  }
+
+  .move-burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1px;
+  }
+
+  .burger-menu {
+    width: 20px; /* Reduce the width of the bars */
+    height: 3px; /* Reduce the height of the bars */
+    margin: 3px 0;
+  }
 }
 </style>

@@ -1,14 +1,6 @@
 @import './base.css';
 
-/* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
+a, .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
@@ -19,9 +11,36 @@ a,
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for mobile here */
+  #app {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    font-weight: normal;
+  }
+
+  body {
+    display: block; /* Switch from flex to block layout for simplicity */
+  }
+
+  /* Adjust font sizes, padding, or other dimensions as needed */
+  a, .green {
+    padding: 2px; /* Slightly reduce padding */
+    font-size: smaller; /* Adjust font size for smaller screens */
+  }
+}
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
 } */
 
-/* @media (min-width: 1024px) {
+/* @media (min-width: 1042px) {
   body {
     display: flex;
     place-items: center;
@@ -31,5 +50,9 @@ a,
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+  }
+
+  button {
+    background-color: white;
   }
 } */

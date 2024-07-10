@@ -1,7 +1,9 @@
 <template>
-  <drawer />
-
-  <gallery :title="'Todo Application: Java, Vue, MySql'" :images="images" />
+  <div class="background-color">
+    <drawer />
+    
+    <gallery :title="'Todo Application: Java, Vue, MySql'" :images="images" />
+  </div>
 </template>
 
 <script>
@@ -26,4 +28,7 @@ export default {
 </script>
 
 <style>
+.background-color {
+  background-color: var(--color-background);
+}
 </style>
