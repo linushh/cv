@@ -1,4 +1,5 @@
 <template>
+  <div class="background-color">
    <drawer />
   
   <div class="centering margin">
@@ -8,6 +9,7 @@
       :title="'Contact information:'" >
     </card>
   </div>
+</div>
 </template>
 
 <script>
@@ -38,6 +40,10 @@ Phone: +46733800407`
 </script>
 
 <style>
+.background-color {
+  background-color: var(--color-background);
+}
+
 .preformatted {
   white-space: pre-wrap;
 }

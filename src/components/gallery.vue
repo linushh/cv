@@ -72,7 +72,6 @@ export default {
 .modal {
   display: block;
   position: fixed;
-  /* z-index: 1000; */
   left: 0;
   top: 0;
   width: 100%;
@@ -102,5 +101,12 @@ export default {
   color: #ccc;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .close {
+    top: 15px;
+    right: 17px;
+  }
 }
 </style>

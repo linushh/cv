@@ -1,11 +1,11 @@
 <template>
-  <!-- <navigationBar class="navigation margin" /> -->
-
+<div class="background-color">
   <Drawer />
 
   <div class="container margin">
     <card class="pre-formatted" :name="getCardText()" :title="'Linus Håkansson'" />
   </div>
+</div>
 </template>
 
 <script>
@@ -48,6 +48,10 @@ Jag hoppas att du finner något intressant här och tveka inte att kontakta mig 
 </script>
 
 <style>
+.background-color {
+  background-color: var(--color-background);
+}
+
 .container {
   align-items: center;
 }
