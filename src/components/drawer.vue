@@ -1,9 +1,19 @@
 <template>
-  <div id="app">
+  <div id="app" class="position-absolute">
+
+    <div class="content" :class="{ open: isDrawerOpen }">
+      <button 
+        v-if="isDrawerOpen" 
+        @click="toggleDrawer" 
+        class="drawer-color box-shadow">
+          X
+      </button>
+    </div>
+
     <button
+      v-if="!isDrawerOpen"
       @click="toggleDrawer"
-      @blur.stop.prevent="toggleDrawer" 
-      class="drawer-color">
+      class="drawer-color box-shadow">
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
@@ -11,18 +21,50 @@
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
       <ul>
-        <li><a @click="$router.push('/')">Home</a></li>
-        <li><a @click="$router.push('/about')">About me</a></li>
-        <li><a @click="$router.push('/projects')">Projects</a></li>
-        <li><a href="https://github.com/linushh" target="_blank">Github</a></li>
-        <li><a href="https://www.facebook.com/linus.hakansson.98478" target="_blank">Facebook</a></li>
-        <li><a href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D" target="_blank">LinkedIn</a></li>
+        
+        <li @click="$router.push('/')">
+          <a>
+            Home
+          </a>
+        </li>
+        
+        <li @click="$router.push('/about')">
+          <a>
+            About me
+          </a>
+        </li>
+        
+        <li @click="$router.push('/projects')">
+          <a>
+            Projects
+          </a>
+        </li>
+        
+        <li>
+          <a 
+            href="https://github.com/linushh" 
+            target="_blank">
+              Github
+          </a>
+        </li>
+        
+        <li>
+          <a 
+            href="https://www.facebook.com/linus.hakansson.98478" 
+            target="_blank">
+              Facebook
+          </a>
+        </li>
+        
+        <li>
+          <a 
+            href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D" 
+            target="_blank">
+              LinkedIn
+          </a>
+        </li>
       </ul>
     </div>
-
-    <!-- <div class="content" :class="{ open: isDrawerOpen }">
-      <p>This is the page content. Click the button to toggle the drawer.</p>
-    </div> -->
   </div>
 </template>
 
@@ -43,6 +85,14 @@ export default {
 </script>
 
 <style>
+.position-absolute {
+  position: absolute;
+}
+
+.box-shadow:hover {
+  box-shadow: 0 8px 16px 0 #3a4042;
+}
+
 .burger-menu {
   width: 35px;
   height: 5px;
@@ -77,7 +127,6 @@ export default {
 
 .content {
   transition: margin-left 0.3s ease;
-  padding: 1rem;
 }
 
 .content.open {
