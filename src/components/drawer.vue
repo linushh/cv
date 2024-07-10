@@ -2,10 +2,10 @@
   <div id="app" class="position-absolute">
 
     <div class="content" :class="{ open: isDrawerOpen }">
-      <button 
+      <button
         v-if="isDrawerOpen" 
         @click="toggleDrawer" 
-        class="drawer-color box-shadow">
+        class="drawer-color box-shadow pointer">
           X
       </button>
     </div>
@@ -13,7 +13,7 @@
     <button
       v-if="!isDrawerOpen"
       @click="toggleDrawer"
-      class="drawer-color box-shadow">
+      class="drawer-color box-shadow pointer">
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
@@ -85,6 +85,9 @@ export default {
 </script>
 
 <style>
+.pointer {
+  cursor: pointer;
+}
 .position-absolute {
   position: absolute;
 }
@@ -152,5 +155,6 @@ li a {
 
 li a:hover {
   background-color: #555;
+  cursor: pointer;
 }
 </style>
