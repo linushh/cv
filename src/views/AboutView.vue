@@ -1,9 +1,10 @@
-<template>
+<!-- <template>
   <aboutMe />
+
 </template>
 
 <script>
-import aboutMe from './aboutMe.vue'
+import aboutMe from './contactView.vue'
 
 export default {
   data() {
@@ -17,5 +18,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style> -->
