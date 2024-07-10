@@ -1,9 +1,9 @@
 <template>
   <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
-    <img v-for="(picture, index) in images" :key="index" 
-      :src="picture.src" alt="Image" 
-      @click="showPreview(picture.src)">
+    <img v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" v-for="(picture, index) in images" :key="index"
+      @click="showPreview(picture.src)"
+      >
     </div>
     
     <div class="modal" v-if="previewImage">
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import load from '@/assets/progress.jpg'
 export default {
   props: {
     images: Array,
@@ -26,7 +27,8 @@ export default {
 
   data() {
     return {
-      previewImage: ''
+      previewImage: '',
+      load
     }
   },
 
