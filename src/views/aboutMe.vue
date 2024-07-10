@@ -1,9 +1,12 @@
 <template>
-  <!-- <navigation class="centering margin" /> -->
    <drawer />
   
   <div class="centering margin">
-    <card :name="getCardText()" />
+    <card 
+      class="preformatted" 
+      :name="getCardText()" 
+      :title="'Contact information:'" >
+    </card>
   </div>
 </template>
 
@@ -27,15 +30,17 @@ export default {
 
   methods: {
     getCardText() {
-      return `
-        Hello World!
-        `
+      return `Email: Linus_hakansson@outlook.com
+Phone: +46733800407`
     }
   }
 }
 </script>
 
 <style>
+.preformatted {
+  white-space: pre-wrap;
+}
 .centering {
   display:flex;
   justify-content: center;
