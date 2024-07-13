@@ -39,6 +39,12 @@
             Projects
           </a>
         </li>
+
+        <li @click="$router.push('/experience')">
+          <a>
+            Experience
+          </a>
+        </li>
         
         <li>
           <a 
