@@ -4,16 +4,25 @@
   <div class="container">
     <card
     :image="image" 
-    :title="'Bredåkra'" 
+    :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
     :name="getCardText()"
     class="pre-formatted">
   </card>
 </div>
 
-  <div class="container">
+  <div class="container spacing-around">
     <card
     :image="image" 
-    :title="'Bredåkra'" 
+    :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
+    :name="getCardText()"
+    class="pre-formatted">
+  </card>
+</div>
+
+  <div class="container spacing-around">
+    <card
+    :image="image" 
+    :title="'Bredåkra - Säsongsanställning, grönytor'" 
     :name="getCardText()"
     class="pre-formatted">
   </card>
@@ -63,10 +72,13 @@ Jag hoppas att du finner något i`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
 }
 
 .pre-formatted {
   white-space: pre-wrap;
+}
+
+.spacing-around {
+  margin: 3rem;
 }
 </style>
