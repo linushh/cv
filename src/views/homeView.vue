@@ -3,20 +3,28 @@
   <Drawer />
 
   <div class="container margin">
-    <card class="pre-formatted" :name="getCardText()" :title="'Linus Håkansson'" />
+    <card 
+      :image="image"
+      :name="getCardText()"
+      :title="'Linus Håkansson'"
+      class="pre-formatted" >
+    </card>
   </div>
 </div>
 </template>
 
 <script>
+import selfie from '@/assets/selfie.jpg'
+
 import navigationBar from '../components/navigationBar.vue'
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
-import Drawer from '../components/drawer.vue';
+import Drawer from '../components/drawer.vue'
 
 export default {
   data() {
     return {
+      image: selfie,
     }
   },
 

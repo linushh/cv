@@ -1,4 +1,4 @@
-import{n as s,a as i,c as m}from"./contactView-CTsHAooV.js";import{d}from"./progress-DPjAyvBE.js";import{_ as c,c as l,a,b as g,r as e,o as p}from"./index-DbMJArBL.js";const h={data(){return{}},components:{navigationBar:s,aboutMe:i,card:m,Drawer:d},methods:{getCardText(){return`Hej!
+import{n as s,a as i,c as m}from"./contactView-CqjE4UFZ.js";import{d}from"./progress-fLZIBXH5.js";import{_ as c,c as l,a,b as g,r as e,o as p}from"./index-BXNloAL2.js";const h={data(){return{}},components:{navigationBar:s,aboutMe:i,card:m,Drawer:d},methods:{getCardText(){return`Hej!
 Jag heter Linus Håkansson och jag är en passionerad webbutvecklare med en kärlek för att skapa och utforska.
 När jag inte arbetar med att bygga webbsidor, finner du mig ofta på gymmet eller i någon idrottslokal.
 

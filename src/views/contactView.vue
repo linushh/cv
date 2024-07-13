@@ -4,6 +4,7 @@
   
   <div class="centering margin">
     <card 
+      :image="image" 
       class="preformatted" 
       :name="getCardText()" 
       :title="'Contact information:'" >
@@ -13,21 +14,24 @@
 </template>
 
 <script>
+import selfie from '@/assets/selfie.jpg'
+
 import drawer from '../components/drawer.vue'
 import card from '../components/card.vue'
 import navigation from '../components/navigationBar.vue'
 
+
 export default {
+  data() {
+    return {
+      image: selfie
+    }
+  },
+
   components: {
     card,
     navigation,
     drawer
-  },
-
-  data() {
-    return {
-
-    }
   },
 
   methods: {
