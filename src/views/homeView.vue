@@ -4,9 +4,9 @@
 
   <div class="container margin">
     <card 
-      :image="image" 
-      :name="getCardText()"  
-      :title="'Linus Håkansson'" 
+      :image="image"
+      :name="getCardText()"
+      :title="'Linus Håkansson'"
       class="pre-formatted" >
     </card>
   </div>
@@ -24,7 +24,7 @@ import Drawer from '../components/drawer.vue'
 export default {
   data() {
     return {
-      image: selfie
+      image: selfie,
     }
   },
 
