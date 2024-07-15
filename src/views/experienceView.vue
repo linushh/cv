@@ -21,9 +21,9 @@
 
   <div class="container spacing-around">
     <card
-    :image="image" 
+    :image="bredakra" 
     :title="'Bredåkra - Säsongsanställning, grönytor'" 
-    :name="getCardText()"
+    :name="bredakraText()"
     class="pre-formatted">
   </card>
 </div>
@@ -31,6 +31,7 @@
 
 <script>
 import selfie from '@/assets/selfie.jpg'
+import bredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
 
 import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
@@ -43,7 +44,8 @@ export default {
 
   data() {
     return{
-      image: selfie
+      image: selfie,
+      bredakra: bredakra
     }
   },
 
@@ -61,6 +63,14 @@ Utöver datorer, teknik och idrott är jag en också en stor naturälskare. Jag 
 
 Denna hemsida har jag skapat för att dela med mig av mina projekt, mina tankar och för att du ska få en bättre bild av vem jag är som person.
 Jag hoppas att du finner något i`
+    },
+
+    bredakraText() {
+      return `Jag arbetade inom parkförvaltningen och tog hand om
+både parkarbete (grönytor) och begravningsverksamhet
+som t.ex. att hölja gravar. Både jordgravar och
+urnsättningar. Användning av olika maskiner förekom ofta
+som t.ex. Walker gräsklippar och Avant.`
     }
   }
 }
