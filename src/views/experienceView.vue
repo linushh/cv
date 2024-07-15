@@ -5,7 +5,7 @@
     <card
     :image="image" 
     :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
-    :name="getCardText()"
+    :name="skolonText()"
     class="pre-formatted">
   </card>
 </div>
@@ -52,19 +52,23 @@ export default {
   },
 
   methods: {
-    getCardText() {
-      return `Hej!
-Jag heter Linus Håkansson och jag är en passionerad webbutvecklare med en kärlek för att skapa och utforska.
-När jag inte arbetar med att bygga webbsidor, finner du mig ofta på gymmet eller i någon idrottslokal.
+    skolonText() {
+      return `Under en av mina praktikperioder arbetade jag som fullstack webbutvecklare hos Skolon AB.
+      
+Tekinker som jag utvecklade lite mer under min tid hos Skolon var:
+    *   Java 17 och Spring Boot
+    *   JavaScript och Vue.js (Options API)
+    *   HTML och CSS
+    *   MySql
+    *   Postman
+    *   Table Plus
+    *   Git
+    *   Bitbucket
+    *   Wrike
+      
+En vanlig dag kunde vara standup möte, gå igenom vad som behövdes göras för dagen för varje specifik person. Ta emot tickets via Wrike och sedan utföra sina arbetsuppgifter inför dagen eller dagarna. Det kunde vara allt från att leta buggar till att implementera helt nya funktioner.
 
-Min resa inom IT började när jag var 14-15 år gammal och byggde min första dator hemma tillsammans med min bror. Sedan dess har jag varit fast och älskar att dyka ner i nya teknologier och lösa problem.
-
-Jag har arbetat med flera projekt som har hjälpt mig att växa både professionellt och personligt.
-
-Utöver datorer, teknik och idrott är jag en också en stor naturälskare. Jag tycker om att tillbringa tid utomhus. Dessa upplevelser hjälper mig att hålla mig inspirerad och kreativ.
-
-Denna hemsida har jag skapat för att dela med mig av mina projekt, mina tankar och för att du ska få en bättre bild av vem jag är som person.
-Jag hoppas att du finner något i`
+När uppgiftens var klar och hade skickat in sina commits till Bitbucket så blev det alltid en code review där jag fick lära mig mycket genom konstruktiv kritik.`
     },
 
     saabText() {
