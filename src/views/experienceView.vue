@@ -1,9 +1,9 @@
 <template>
   <Drawer />
 
-  <div class="container">
+  <div class="container margin-top">
     <card
-    :image="image" 
+    :image="imgSkolon" 
     :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
     :name="skolonText()"
     class="pre-formatted">
@@ -12,7 +12,7 @@
 
   <div class="container spacing-around">
     <card
-    :image="saab" 
+    :image="imgSaab" 
     :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
     :name="saabText()"
     class="pre-formatted">
@@ -21,7 +21,7 @@
 
   <div class="container spacing-around">
     <card
-    :image="bredakra" 
+    :image="imgBredakra" 
     :title="'Bredåkra - Säsongsanställning, grönytor'" 
     :name="bredakraText()"
     class="pre-formatted">
@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import selfie from '@/assets/selfie.jpg'
-import bredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
-import saab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
+import imgSkolon from '@/assets/imgPastWork/imgSkolon/skolon.jpg'
+import imgSaab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
+import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
 
 import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
@@ -45,9 +45,9 @@ export default {
 
   data() {
     return{
-      image: selfie,
-      bredakra: bredakra,
-      saab: saab
+      imgSkolon: imgSkolon,
+      imgBredakra: imgBredakra,
+      imgSaab: imgSaab
     }
   },
 
@@ -82,11 +82,8 @@ På grund av säkerhetsklassningen kan jag inte gå in på så mycket detaljer.`
     },
 
     bredakraText() {
-      return `Jag arbetade inom parkförvaltningen och tog hand om
-både parkarbete (grönytor) och begravningsverksamhet
-som t.ex. att hölja gravar. Både jordgravar och
-urnsättningar. Användning av olika maskiner förekom ofta
-som t.ex. Walker gräsklippar och Avant.`
+      return `Jag arbetade inom parkförvaltningen och tog hand om både parkarbete (grönytor) och begravningsverksamhet som t.ex. att hölja både jordgravar med kistor och urnsättningar. 
+Användning av olika maskiner förekom ofta som t.ex. Walker gräsklippar och Avant.`
     }
   }
 }
@@ -102,6 +99,10 @@ som t.ex. Walker gräsklippar och Avant.`
 
 .pre-formatted {
   white-space: pre-wrap;
+}
+
+.margin-top {
+  margin-top: 10px;
 }
 
 .spacing-around {
