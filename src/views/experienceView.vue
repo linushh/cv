@@ -12,9 +12,9 @@
 
   <div class="container spacing-around">
     <card
-    :image="image" 
+    :image="saab" 
     :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
-    :name="getCardText()"
+    :name="saabText()"
     class="pre-formatted">
   </card>
 </div>
@@ -32,6 +32,7 @@
 <script>
 import selfie from '@/assets/selfie.jpg'
 import bredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
+import saab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
 
 import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
@@ -45,7 +46,8 @@ export default {
   data() {
     return{
       image: selfie,
-      bredakra: bredakra
+      bredakra: bredakra,
+      saab: saab
     }
   },
 
@@ -63,6 +65,16 @@ Utöver datorer, teknik och idrott är jag en också en stor naturälskare. Jag 
 
 Denna hemsida har jag skapat för att dela med mig av mina projekt, mina tankar och för att du ska få en bättre bild av vem jag är som person.
 Jag hoppas att du finner något i`
+    },
+
+    saabText() {
+      return `Under min utbildning som Javautvecklare lyckades jag få in en fot på Saab Kockums i Karlskrona. Där arbetade jag med IT-Säkerhet under en IT-Säkerhetsarkitekt.
+      
+Jag arbetade med verktyg som Jira och andra interna verktyg som Saab AB kunde erbjuda.
+
+Vi hade dagliga standups och fick jag fick lära mig om diverse olika informationssäkerhets principer och taktiker.
+
+På grund av säkerhetsklassningen kan jag inte gå in på så mycket detaljer.`
     },
 
     bredakraText() {
