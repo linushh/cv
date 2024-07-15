@@ -8,7 +8,7 @@
           {{ title }}
         </b>
       </h4>
-      <p>{{ name }}</p>
+      <p class="margin-ten">{{ name }}</p>
     </div>
     </img>
   </div>
@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style>
+.margin-ten {
+  margin: 10px;
+}
+
 .card {
   display: flex;
   align-items: center;
