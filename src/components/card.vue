@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .card {
   display: flex;
   align-items: center;
