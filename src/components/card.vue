@@ -67,4 +67,12 @@ export default {
   max-height: 350px;
   max-width: auto;
 }
+
+@media (max-width: 768px) {
+  .img {
+    max-height: 250px;
+    max-width: auto;
+    margin: 2px;
+  }
+}
 </style>
