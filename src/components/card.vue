@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import selfie from '@/assets/selfie.jpg'
 import load from '@/assets/progress.jpg'
 
 export default {
@@ -48,7 +47,7 @@ export default {
   transition: 0.3s;
   border-radius: 5px;
   background-color: #282828;
-  max-width: 720px;
+  max-width: 960px;
 }
 
 .card:hover {
@@ -66,5 +65,13 @@ export default {
   border-radius: 5px 5px 5px 5px;
   max-height: 350px;
   max-width: auto;
+}
+
+@media (max-width: 768px) {
+  .img {
+    max-height: 200px;
+    max-width: auto;
+    margin: 2px;
+  }
 }
 </style>

@@ -1,31 +1,33 @@
 <template>
   <Drawer />
 
-  <div class="container margin-top">
+  <div class="spacing-around">
+    <div class="container">
+      <card
+      :image="imgSkolon" 
+      :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
+      :name="skolonText()"
+      class="pre-formatted">
+    </card>
+  </div>
+  
+  <div class="container spacing-around">
     <card
-    :image="imgSkolon" 
-    :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
-    :name="skolonText()"
-    class="pre-formatted">
-  </card>
-</div>
+      :image="imgSaab" 
+      :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
+      :name="saabText()"
+      class="pre-formatted">
+    </card>
+  </div>
 
   <div class="container spacing-around">
     <card
-    :image="imgSaab" 
-    :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
-    :name="saabText()"
-    class="pre-formatted">
-  </card>
-</div>
-
-  <div class="container spacing-around">
-    <card
-    :image="imgBredakra" 
-    :title="'Bredåkra - Säsongsanställning, grönytor'" 
-    :name="bredakraText()"
-    class="pre-formatted">
-  </card>
+      :image="imgBredakra" 
+      :title="'Bredåkra - Säsongsanställning, grönytor'" 
+      :name="bredakraText()"
+      class="pre-formatted">
+    </card>
+  </div>
 </div>
 </template>
 
@@ -99,10 +101,6 @@ Användning av olika maskiner förekom ofta som t.ex. Walker gräsklippar och Av
 
 .pre-formatted {
   white-space: pre-wrap;
-}
-
-.margin-top {
-  margin-top: 10px;
 }
 
 .spacing-around {
