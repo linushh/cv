@@ -48,7 +48,8 @@ export default {
   transition: 0.3s;
   border-radius: 5px;
   background-color: #282828;
-  max-width: 720px;
+  max-width: 960px;
+
 }
 
 .card:hover {
@@ -70,7 +71,7 @@ export default {
 
 @media (max-width: 768px) {
   .img {
-    max-height: 250px;
+    max-height: 200px;
     max-width: auto;
     margin: 2px;
   }
