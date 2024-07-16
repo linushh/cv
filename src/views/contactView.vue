@@ -18,7 +18,6 @@ import selfie from '@/assets/selfie.jpg'
 
 import drawer from '../components/drawer.vue'
 import card from '../components/card.vue'
-import navigation from '../components/navigationBar.vue'
 
 
 export default {
@@ -30,7 +29,6 @@ export default {
 
   components: {
     card,
-    navigation,
     drawer
   },
 
