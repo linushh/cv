@@ -96,6 +96,7 @@ export default {
 }
 .position-absolute {
   position: absolute;
+  top: 0;
 }
 
 .box-shadow:hover {

@@ -16,7 +16,6 @@
 <script>
 import selfie from '@/assets/selfie.jpg'
 
-import navigationBar from '../components/navigationBar.vue'
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue'
@@ -29,7 +28,6 @@ export default {
   },
 
   components: {
-    navigationBar,
     aboutMe,
     card,
     Drawer
