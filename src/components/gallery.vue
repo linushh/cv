@@ -2,13 +2,19 @@
   <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
     <img v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" v-for="(picture, index) in images" :key="index"
-      @click="showPreview(picture.src)"
-      >
+      @click="showPreview(picture.src, images, index)">
     </div>
     
     <div class="modal" v-if="previewImage">
-      <span class="close" @click="closePreview"> &times; </span>
-      <img :src="previewImage" alt="Preview">
+      <button @click="previousImage">Previous</button>
+      <span 
+        class="close" 
+        @click="closePreview"> 
+          &times;
+        </span>
+        
+        <img :src="previewImage" alt="Preview">
+        <button @click="nextImage">Next</button>
     </div>
     
     <footer class="title-center">
@@ -28,13 +34,40 @@ export default {
   data() {
     return {
       previewImage: '',
-      load
+      load,
+      currentIndex: null,
+      allImages: null
+    }
+  },
+
+  computed: {
+    nextImage() {
+      if (this.currentIndex <= this.allImages.length -1) {
+        this.previewImage = this.allImages[this.currentIndex ++].src
+      } 
+      
+      if (this.currentIndex >= this.allImages.length -1) {
+        this.currentIndex = this.allImages.length -1
+      }
+    },
+
+    previousImage() {
+      if (this.currentIndex >= 0) {
+        this.previewImage = this.allImages[this.currentIndex --].src
+      } 
+      
+      if (this.currentIndex < 0) {
+        this.currentIndex = 0
+      }
     }
   },
 
   methods: {
-    showPreview(picture) {
+    showPreview(picture, images, index) {
       this.previewImage = picture
+
+      this.currentIndex = index
+      this.allImages = images
     },
 
     closePreview() {
