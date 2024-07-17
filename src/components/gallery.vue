@@ -49,23 +49,23 @@ export default {
 
   computed: {
     nextImage() {
-      if (this.currentIndex <= this.allImages.length -1) {
-        this.currentIndex ++
-        this.previewImage = this.allImages[this.currentIndex ++].src
+      if (this.currentIndex < this.allImages.length -1) {
+        this.currentIndex ++  
+        this.previewImage = this.allImages[this.currentIndex].src
       } 
       
-      if (this.currentIndex >= this.allImages.length -1) {
+      if (this.currentIndex > this.allImages.length -1) {
         this.currentIndex = this.allImages.length -1
       }
     },
 
     previousImage() {
-      if (this.currentIndex >= 0) {
+      if (this.currentIndex > 0) {
         this.currentIndex --
-        this.previewImage = this.allImages[this.currentIndex --].src
+        this.previewImage = this.allImages[this.currentIndex].src
       } 
       
-      if (this.currentIndex < 0) {
+      if (this.currentIndex <= 0) {
         this.currentIndex = 0
       }
     }
