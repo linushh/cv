@@ -1,16 +1,28 @@
 <template>
   <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
-    <img v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" v-for="(picture, index) in images" :key="index"
-      @click="showPreview(picture.src)"
+
+    <img
+      v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" 
+      v-for="(picture, index) in images" :key="index"
+      @click="showPreview(picture.src, images, index)"
       >
     </div>
     
     <div class="modal" v-if="previewImage">
-      <span class="close" @click="closePreview"> &times; </span>
+
+      <span 
+        class="close" 
+        @click="closePreview"> 
+        &times; 
+      </span>
+        
       <img :src="previewImage" alt="Preview">
+
+      <button @click="previousImage" class="float-left space-around left-arrow" />
+      <button @click="nextImage" class="float-right space-around right-arrow" />
     </div>
-    
+
     <footer class="title-center">
       <a href="https://github.com/linushh/todo-standalone" target="_blank"> Frontend </a>
       <a href="https://github.com/linushh/todo-standalone-admin"target="_blank"> Backend </a>
@@ -19,6 +31,7 @@
 
 <script>
 import load from '@/assets/progress.jpg'
+
 export default {
   props: {
     images: Array,
@@ -28,13 +41,42 @@ export default {
   data() {
     return {
       previewImage: '',
-      load
+      load,
+      currentIndex: null,
+      allImages: null
+    }
+  },
+
+  computed: {
+    nextImage() {
+      if (this.currentIndex < this.allImages.length -1) {
+        this.currentIndex ++  
+        this.previewImage = this.allImages[this.currentIndex].src
+      } 
+      
+      if (this.currentIndex > this.allImages.length -1) {
+        this.currentIndex = this.allImages.length -1
+      }
+    },
+
+    previousImage() {
+      if (this.currentIndex > 0) {
+        this.currentIndex --
+        this.previewImage = this.allImages[this.currentIndex].src
+      } 
+      
+      if (this.currentIndex <= 0) {
+        this.currentIndex = 0
+      }
     }
   },
 
   methods: {
-    showPreview(picture) {
+    showPreview(picture, images, index) {
       this.previewImage = picture
+
+      this.currentIndex = index
+      this.allImages = images
     },
 
     closePreview() {
@@ -45,6 +87,47 @@ export default {
 </script>
 
 <style>
+.left-arrow {
+  padding: 10px;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(-225deg);
+  -webkit-transform: rotate(-225deg);
+  background-color: black;
+  cursor: pointer;
+  position: absolute; 
+  top: 33%; 
+  left: 5%;
+}
+
+.right-arrow {
+  padding: 10px;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  background-color: black;
+  cursor: pointer;
+  position: absolute; 
+  top: 33%; 
+  right: 5%;
+}
+
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.space-around {
+  margin: 5px;
+}
+
 .title-center{
   text-align: center;
 }
