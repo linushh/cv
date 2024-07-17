@@ -1,20 +1,22 @@
 <template>
   <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
-    <img v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" v-for="(picture, index) in images" :key="index"
-      @click="showPreview(picture.src, images, index)">
+
+    <img
+      v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" 
+      v-for="(picture, index) in images" :key="index"
+      @click="showPreview(picture.src, images, index)"
+      >
     </div>
     
     <div class="modal" v-if="previewImage">
-      <button @click="previousImage">Previous</button>
-      <span 
-        class="close" 
-        @click="closePreview"> 
-          &times;
-        </span>
+
+      <span class="close" @click="closePreview"> &times; </span>
         
         <img :src="previewImage" alt="Preview">
-        <button @click="nextImage">Next</button>
+
+        <button @click="previousImage" class="float-left space-around"> Previous </button>
+        <button @click="nextImage" class="float-right space-around"> Next </button>
     </div>
     
     <footer class="title-center">
@@ -25,6 +27,7 @@
 
 <script>
 import load from '@/assets/progress.jpg'
+
 export default {
   props: {
     images: Array,
@@ -78,6 +81,18 @@ export default {
 </script>
 
 <style>
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.space-around {
+  margin: 5px;
+}
+
 .title-center{
   text-align: center;
 }
