@@ -11,14 +11,18 @@
     
     <div class="modal" v-if="previewImage">
 
-      <span class="close" @click="closePreview"> &times; </span>
+      <span 
+        class="close" 
+        @click="closePreview"> 
+        &times; 
+      </span>
         
-        <img :src="previewImage" alt="Preview">
+      <img :src="previewImage" alt="Preview">
 
-        <button @click="previousImage" class="float-left space-around"> Previous </button>
-        <button @click="nextImage" class="float-right space-around"> Next </button>
+      <button @click="previousImage" class="float-left space-around left-arrow" />
+      <button @click="nextImage" class="float-right space-around right-arrow" />
     </div>
-    
+
     <footer class="title-center">
       <a href="https://github.com/linushh/todo-standalone" target="_blank"> Frontend </a>
       <a href="https://github.com/linushh/todo-standalone-admin"target="_blank"> Backend </a>
@@ -81,6 +85,35 @@ export default {
 </script>
 
 <style>
+.left-arrow {
+  padding: 10px;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(-225deg);
+  -webkit-transform: rotate(-225deg);
+  background-color: black;
+  cursor: pointer;
+  position: absolute; 
+  top: 33%; 
+  left: 5%;
+}
+
+.right-arrow {
+  padding: 10px;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  background-color: black;
+  cursor: pointer;
+  position: absolute; 
+  top: 33%; 
+  right: 5%;
+}
+
+
 .float-left {
   float: left;
 }
