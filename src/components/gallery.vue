@@ -94,7 +94,7 @@ export default {
   display: inline-block;
   transform: rotate(-225deg);
   -webkit-transform: rotate(-225deg);
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
   position: absolute; 
   top: 33%; 
@@ -108,9 +108,9 @@ export default {
   display: inline-block;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
-  position: absolute; 
+  position: absolute;
   top: 33%; 
   right: 5%;
 }
