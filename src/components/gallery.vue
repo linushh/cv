@@ -50,6 +50,7 @@ export default {
   computed: {
     nextImage() {
       if (this.currentIndex <= this.allImages.length -1) {
+        this.currentIndex ++
         this.previewImage = this.allImages[this.currentIndex ++].src
       } 
       
@@ -60,6 +61,7 @@ export default {
 
     previousImage() {
       if (this.currentIndex >= 0) {
+        this.currentIndex --
         this.previewImage = this.allImages[this.currentIndex --].src
       } 
       
