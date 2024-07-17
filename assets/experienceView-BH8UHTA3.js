@@ -1,4 +1,4 @@
-import{D as i}from"./progress-dy6v_tK4.js";import{c}from"./card-StDF8gTS.js";import{_ as k,c as l,a as e,b as a,F as d,r as s,o as m}from"./index-mcHMS00Z.js";const g="/cv/assets/skolon-Beqc4s9S.jpg",p="/cv/assets/saabVisbyCorvett-CNFAdMar.jpg",u="/cv/assets/bredakraHalloween-B2gHLRzi.jpg",v={components:{card:c,Drawer:i},data(){return{imgSkolon:g,imgBredakra:u,imgSaab:p}},methods:{skolonText(){return`Under en av mina praktikperioder arbetade jag som fullstack webbutvecklare hos Skolon AB.
+import{D as i}from"./progress-cMOO8TMa.js";import{c}from"./card-CFnKj6y6.js";import{_ as k,c as l,a as e,b as a,F as d,r as s,o as m}from"./index-D3yRDfeE.js";const g="/cv/assets/skolon-Beqc4s9S.jpg",p="/cv/assets/saabVisbyCorvett-CNFAdMar.jpg",u="/cv/assets/bredakraHalloween-B2gHLRzi.jpg",v={components:{card:c,Drawer:i},data(){return{imgSkolon:g,imgBredakra:u,imgSaab:p}},methods:{skolonText(){return`Under en av mina praktikperioder arbetade jag som fullstack webbutvecklare hos Skolon AB.
       
 Tekinker som jag utvecklade lite mer under min tid hos Skolon var:
     *   Java 17 och Spring Boot
