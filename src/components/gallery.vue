@@ -115,6 +115,12 @@ export default {
   right: 5%;
 }
 
+.right-arrow:hover, .left-arrow:hover {
+  border-color: #ccc;
+  -webkit-animation-timing-function: linear;
+  -webkit-transition: ease-in-out 0.1s;
+}
+
 
 .float-left {
   float: left;
@@ -172,12 +178,14 @@ export default {
 }
 
 .close {
-  color: #fff;
+  color: grey;
   position: absolute;
-  top: 15px;
-  right: 35px;
-  font-size: 30px;
+  top: 0;
+  right: 5%;
+  font-size: 40px;
   cursor: pointer;
+  -webkit-animation-timing-function: linear;
+  -webkit-transition: ease-in-out 0.1s;
 }
 
 .close:hover, .close:focus {
@@ -188,8 +196,21 @@ export default {
 
 @media (max-width: 768px) {
   .close {
-    top: 15px;
-    right: 17px;
+    top: 0;
+    right: 3%;
+    font-size: 30px;
+  }
+
+  .right-arrow {
+    top: 10%;
+    right: 3%;
+    padding: 7px;
+  }
+
+  .left-arrow {
+    top: 10%;
+    left: 3%;
+    padding: 7px;
   }
 }
 </style>
