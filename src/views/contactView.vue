@@ -11,6 +11,10 @@
     </card>
   </div>
 </div>
+
+<Footer style="background-color: #444;"> 
+  
+</Footer>
 </template>
 
 <script>
@@ -18,6 +22,7 @@ import selfie from '@/assets/selfie.jpg'
 
 import drawer from '../components/drawer.vue'
 import card from '../components/card.vue'
+import Footer from '../components/footer.vue'
 
 
 export default {
@@ -29,7 +34,8 @@ export default {
 
   components: {
     card,
-    drawer
+    drawer,
+    Footer
   },
 
   methods: {
