@@ -1,14 +1,14 @@
 <template>
   <Drawer />
 
-  <div class="spacing-around">
+  <div class="spacing-around bottom-margin">
     <div class="container">
       <card
-      :image="imgSkolon" 
-      :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
-      :name="skolonText()"
-      class="pre-formatted">
-    </card>
+        :image="imgSkolon" 
+        :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
+        :name="skolonText()"
+        class="pre-formatted">
+      </card>
   </div>
   
   <div class="container spacing-around">
@@ -29,6 +29,11 @@
     </card>
   </div>
 </div>
+
+<Footer
+    :author="'Linus Håkansson'" 
+    :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
+</Footer>
 </template>
 
 <script>
@@ -38,11 +43,13 @@ import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
 
 import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
+import Footer from '@/components/footer.vue'
 
 export default {
   components: {
     card,
-    Drawer
+    Drawer,
+    Footer
   },
 
   data() {
@@ -104,6 +111,10 @@ Användning av olika maskiner förekom ofta som t.ex. Walker gräsklippar och Av
 }
 
 .spacing-around {
-  margin: 3rem;
+  margin: 2rem;
+}
+
+.bottom-margin {
+  margin-bottom: 10rem;
 }
 </style>
