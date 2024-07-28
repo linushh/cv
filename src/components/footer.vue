@@ -1,21 +1,18 @@
 <template>
 <footer>
   <div class="box">
-
     <div>
       <p class="title-size">Author</p>
-      <p class="text-size">Linus Håkansson</p>
+      <p class="text-size">{{ author }}</p>
     </div>
     
     <div class="link-box">
       <p class="title-size">Links</p>
 
       <div class="links">
-        <a href="https://github.com/linushh"target="_blank" class="text-size">Github</a>
-
-        <a href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D" target="_blank" class="text-size">LinkedIn</a>
-
-        <a href="https://www.facebook.com/linus.hakansson.98478" target="_blank" class="text-size">Facebook</a>
+        <a :href=links[0] target="_blank" class="text-size">Github</a>
+        <a :href=links[1] target="_blank" class="text-size">LinkedIn</a>
+        <a :href=links[2] target="_blank" class="text-size">Facebook</a>
       </div>
     </div>
 
@@ -28,7 +25,18 @@
 </template>
 
 <script>
+  export default {
+    props: {
+      author: String,
+      links: Array
+    },
 
+    data() {
+      return {
+
+      }
+    }
+  }
 </script>
 
 <style>
