@@ -1,5 +1,5 @@
 <template>
-<footer>
+<footer class="bottom-position">
   <div class="box">
     <div>
       <p class="title-size">Author</p>
@@ -77,5 +77,13 @@
 
 .links {
   display: flex;
+}
+
+.bottom-position {
+  position: absolute;
+  bottom: 0; 
+  height: auto; 
+  width: 100%;
+  background-color: #444;
 }
 </style>
