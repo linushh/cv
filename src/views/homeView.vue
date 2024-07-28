@@ -1,18 +1,18 @@
 <template>
-<div class="background-color">
-  <Drawer />
+  <div class="background-color">
+    <Drawer />
 
-  <div class="container margin">
-    <card 
-      :image="image"
-      :name="getCardText()"
-      :title="'Linus Håkansson'"
-      class="pre-formatted" >
-    </card>
+    <div class="container margin">
+      <card 
+        :image="image"
+        :name="getCardText()"
+        :title="'Linus Håkansson'"
+        class="pre-formatted" >
+      </card>
+    </div>
   </div>
-</div>
 
-<Footer
+  <Footer
     :author="'Linus Håkansson'" 
     :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
   </Footer>
