@@ -11,6 +11,11 @@
     </card>
   </div>
 </div>
+
+<Footer
+    :author="'Linus Håkansson'" 
+    :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
+  </Footer>
 </template>
 
 <script>
@@ -19,6 +24,7 @@ import selfie from '@/assets/selfie.jpg'
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue'
+import Footer from '../components/footer.vue'
 
 export default {
   data() {
@@ -30,7 +36,8 @@ export default {
   components: {
     aboutMe,
     card,
-    Drawer
+    Drawer,
+    Footer
   },
 
   methods: {

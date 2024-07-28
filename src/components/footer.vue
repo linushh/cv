@@ -80,7 +80,7 @@
 }
 
 .bottom-position {
-  position: absolute;
+  position: fixed;
   bottom: 0; 
   height: auto; 
   width: 100%;
