@@ -32,11 +32,14 @@
 
 <Footer
     :author="'Linus Håkansson'" 
-    :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
+    :links="[ socials.github, socials.linkedIn, socials.facebook]">
 </Footer>
 </template>
 
 <script>
+const socialData = socials.getSocials()
+
+import socials from '@/service/socials'
 import imgSkolon from '@/assets/imgPastWork/imgSkolon/skolon.jpg'
 import imgSaab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
 import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
@@ -56,7 +59,8 @@ export default {
     return{
       imgSkolon: imgSkolon,
       imgBredakra: imgBredakra,
-      imgSaab: imgSaab
+      imgSaab: imgSaab,
+      socials: socialData
     }
   },
 

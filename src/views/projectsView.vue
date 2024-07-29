@@ -6,30 +6,33 @@
   </div>
 
   <Footer
-    :author="'Linus Håkansson'" 
-    :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
+    :author="socials.name" 
+    :links="[ socials.github, socials.linkedIn, socials.facebook]">
   </Footer>
 </template>
 
 <script>
+const socialData = socials.getSocials()
+
 import drawer from '../components/drawer.vue'
 import gallery from '../components/gallery.vue'
 import Footer from '../components/footer.vue'
 
 import images from '@/service/photoService/todoGallery.js'
+import socials from '@/service/socials'
 
 export default {
-
-  data() {
-    return {
-      images
-    }
-  },
-
   components: {
     drawer,
     gallery,
     Footer
+  },
+
+  data() {
+    return {
+      images,
+      socials: socialData
+    }
   }
 }
 </script>
