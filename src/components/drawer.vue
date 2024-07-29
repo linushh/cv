@@ -48,7 +48,7 @@
         
         <li>
           <a 
-            href="https://github.com/linushh" 
+            :href=links[0]
             target="_blank">
               Github
           </a>
@@ -56,17 +56,17 @@
         
         <li>
           <a 
-            href="https://www.facebook.com/linus.hakansson.98478" 
+            :href=links[1]
             target="_blank">
-              Facebook
+              LinkedIn
           </a>
         </li>
         
         <li>
           <a 
-            href="https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGPilcz5JRvGutro67CmQ0A%3D%3D" 
+            :href=links[2]
             target="_blank">
-              LinkedIn
+              Facebook
           </a>
         </li>
       </ul>
@@ -76,6 +76,10 @@
 
 <script>
 export default {
+  props: {
+    links: Array
+  },
+
   data() {
     return {
       isDrawerOpen: false
