@@ -1,36 +1,47 @@
 <template>
-<div class="background-color">
-  <Drawer />
+  <div class="background-color">
+    <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
 
-  <div class="container margin">
-    <card 
-      :image="image"
-      :name="getCardText()"
-      :title="'Linus Håkansson'"
-      class="pre-formatted" >
-    </card>
+    <div class="container margin">
+      <card 
+        :image="image"
+        :name="getCardText()"
+        :title="socials.name"
+        class="pre-formatted" >
+      </card>
+    </div>
   </div>
-</div>
+
+  <Footer
+    :author="socials.name" 
+    :links="[ socials.github, socials.linkedIn, socials.facebook]">
+  </Footer>
 </template>
 
 <script>
+const social = socials.getSocials()
+
 import selfie from '@/assets/selfie.jpg'
+import socials from '@/service/socials.js'
 
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue'
+import Footer from '../components/footer.vue'
 
 export default {
-  data() {
-    return {
-      image: selfie,
-    }
-  },
-
   components: {
     aboutMe,
     card,
-    Drawer
+    Drawer,
+    Footer
+  },
+
+  data() {
+    return {
+      image: selfie,
+      socials: social
+    }
   },
 
   methods: {

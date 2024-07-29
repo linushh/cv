@@ -1,14 +1,14 @@
 <template>
-  <Drawer />
+  <Drawer :links="[ socials.github, socials.linkedIn, socials.facebook]" />
 
-  <div class="spacing-around">
+  <div class="spacing-around bottom-margin">
     <div class="container">
       <card
-      :image="imgSkolon" 
-      :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
-      :name="skolonText()"
-      class="pre-formatted">
-    </card>
+        :image="imgSkolon" 
+        :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
+        :name="skolonText()"
+        class="pre-formatted">
+      </card>
   </div>
   
   <div class="container spacing-around">
@@ -29,27 +29,38 @@
     </card>
   </div>
 </div>
+
+<Footer
+    :author="socials.name"
+    :links="[ socials.github, socials.linkedIn, socials.facebook]">
+</Footer>
 </template>
 
 <script>
+const socialData = socials.getSocials()
+
+import socials from '@/service/socials'
 import imgSkolon from '@/assets/imgPastWork/imgSkolon/skolon.jpg'
 import imgSaab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
 import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
 
 import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
+import Footer from '@/components/footer.vue'
 
 export default {
   components: {
     card,
-    Drawer
+    Drawer,
+    Footer
   },
 
   data() {
     return{
       imgSkolon: imgSkolon,
       imgBredakra: imgBredakra,
-      imgSaab: imgSaab
+      imgSaab: imgSaab,
+      socials: socialData
     }
   },
 
@@ -104,6 +115,10 @@ Användning av olika maskiner förekom ofta som t.ex. Walker gräsklippar och Av
 }
 
 .spacing-around {
-  margin: 3rem;
+  margin: 2rem;
+}
+
+.bottom-margin {
+  margin-bottom: 10rem;
 }
 </style>
