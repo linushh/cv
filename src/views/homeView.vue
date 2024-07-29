@@ -6,30 +6,34 @@
       <card 
         :image="image"
         :name="getCardText()"
-        :title="'Linus Håkansson'"
+        :title="socials.name"
         class="pre-formatted" >
       </card>
     </div>
   </div>
 
   <Footer
-    :author="'Linus Håkansson'" 
+    :author="socials.name" 
     :links="[ 'https://github.com/LinusHakansson', 'https://www.linkedin.com/in/linus-h%C3%A5kansson-4584ab251', 'https://www.facebook.com/linus.hakansson.98478']">
   </Footer>
 </template>
 
 <script>
 import selfie from '@/assets/selfie.jpg'
+import socials from '@/service/socials.js'
 
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue'
 import Footer from '../components/footer.vue'
 
+const social = socials.getSocials()
+
 export default {
   data() {
     return {
       image: selfie,
+      socials: social
     }
   },
 
