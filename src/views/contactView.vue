@@ -1,6 +1,6 @@
 <template>
   <div class="background-color">
-   <drawer />
+   <drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
   
   <div class="centering margin">
     <card 
