@@ -1,5 +1,5 @@
 <template>
-  <Drawer />
+  <Drawer :links="[ socials.github, socials.linkedIn, socials.facebook]" />
 
   <div class="spacing-around bottom-margin">
     <div class="container">
@@ -31,7 +31,7 @@
 </div>
 
 <Footer
-    :author="'Linus Håkansson'" 
+    :author="socials.name"
     :links="[ socials.github, socials.linkedIn, socials.facebook]">
 </Footer>
 </template>

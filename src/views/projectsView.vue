@@ -1,6 +1,6 @@
 <template>
   <div class="background-color">
-    <drawer />
+    <drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
     
     <gallery :title="'Todo Application: Java, Vue, MySql'" :images="images" />
   </div>
