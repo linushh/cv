@@ -19,6 +19,8 @@
 </template>
 
 <script>
+const social = socials.getSocials()
+
 import selfie from '@/assets/selfie.jpg'
 import socials from '@/service/socials.js'
 
@@ -27,21 +29,19 @@ import card from '../components/card.vue'
 import Drawer from '../components/drawer.vue'
 import Footer from '../components/footer.vue'
 
-const social = socials.getSocials()
-
 export default {
-  data() {
-    return {
-      image: selfie,
-      socials: social
-    }
-  },
-
   components: {
     aboutMe,
     card,
     Drawer,
     Footer
+  },
+
+  data() {
+    return {
+      image: selfie,
+      socials: social
+    }
   },
 
   methods: {

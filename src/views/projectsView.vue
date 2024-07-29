@@ -2,7 +2,12 @@
   <div class="background-color">
     <drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
     
-    <gallery :title="'Todo Application: Java, Vue, MySql'" :images="images" />
+    <gallery 
+      :frontend="getFrontend()"
+      :backend="getBackend()"
+      :title="'Todo Application: Java, Vue, MySql'"
+      :images="images">
+    </gallery>
   </div>
 
   <Footer
@@ -20,6 +25,7 @@ import Footer from '../components/footer.vue'
 
 import images from '@/service/photoService/todoGallery.js'
 import socials from '@/service/socials'
+import projects from '@/service/photoService/github'
 
 export default {
   components: {
@@ -32,6 +38,16 @@ export default {
     return {
       images,
       socials: socialData
+    }
+  },
+
+  methods: {
+    getFrontend() {
+      return projects.getProjects() !== null ? projects.getProjects().todoFrontend: ''
+    },
+
+    getBackend() {
+      return projects.getProjects() !== null ? projects.getProjects().todoBackend: ''
     }
   }
 }

@@ -24,8 +24,8 @@
     </div>
 
     <footer class="title-center">
-      <a href="https://github.com/linushh/todo-standalone" target="_blank"> Frontend </a>
-      <a href="https://github.com/linushh/todo-standalone-admin"target="_blank"> Backend </a>
+      <a :href="getFrontend()" target="_blank"> Frontend </a>
+      <a :href="getBackend()" target="_blank"> Backend </a>
     </footer>
 </template>
 
@@ -35,7 +35,9 @@ import load from '@/assets/progress.jpg'
 export default {
   props: {
     images: Array,
-    title: String
+    title: String,
+    frontend: String,
+    backend: String
   },
 
   data() {
@@ -81,6 +83,14 @@ export default {
 
     closePreview() {
       this.previewImage = ''
+    },
+
+    getFrontend() {
+      return this.frontend !== null ? this.frontend : ''
+    },
+
+    getBackend() {
+      return this.backend !== null ? this.backend : ''
     }
   }
 }
