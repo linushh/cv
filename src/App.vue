@@ -6,7 +6,9 @@
   </div>
 
   <Footer
-    :author="socials.name" 
+    :author="socials.name"
+    :email="socials.email"
+    :phone-number="socials.phoneNumber"
     :links="[socials.github, socials.linkedIn, socials.facebook]">
   </Footer>
 </template>
@@ -35,6 +37,6 @@ export default {
 
 <style>
 .body-size {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 93px);
 }
 </style>

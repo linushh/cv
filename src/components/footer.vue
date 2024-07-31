@@ -5,7 +5,13 @@
       <p class="title-size">Author</p>
       <p class="text-size">{{ author }}</p>
     </div>
-    
+
+    <div>
+      <p class="title-size">Contact</p>
+      <p class="text-size">{{ email }}</p>
+      <p class="text-size">{{ phoneNumber }}</p>
+    </div>
+
     <div class="link-box">
       <p class="title-size">Links</p>
 
@@ -18,7 +24,7 @@
 
     <div>
       <p class="title-size">Made with</p>
-      <p>Vue, CSS and HTML</p>
+      <p class="text-size">Vue, CSS and HTML</p>
     </div>
   </div>
 </footer>
@@ -28,7 +34,9 @@
   export default {
     props: {
       author: String,
-      links: Array
+      links: Array,
+      email: String,
+      phoneNumber: String
     }
   }
 </script>
