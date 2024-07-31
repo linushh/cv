@@ -1,6 +1,4 @@
 <template>
-  <Drawer :links="[ socials.github, socials.linkedIn, socials.facebook]" />
-
   <div class="spacing-around bottom-margin">
     <div class="container">
       <card
@@ -29,11 +27,6 @@
     </card>
   </div>
 </div>
-
-<Footer
-    :author="socials.name"
-    :links="[ socials.github, socials.linkedIn, socials.facebook]">
-</Footer>
 </template>
 
 <script>
@@ -44,15 +37,11 @@ import imgSkolon from '@/assets/imgPastWork/imgSkolon/skolon.jpg'
 import imgSaab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
 import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
 
-import Drawer from '@/components/drawer.vue'
 import card from '@/components/card.vue'
-import Footer from '@/components/footer.vue'
 
 export default {
   components: {
-    card,
-    Drawer,
-    Footer
+    card
   },
 
   data() {

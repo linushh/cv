@@ -99,7 +99,7 @@ export default {
   cursor: pointer;
 }
 .position-absolute {
-  position: absolute;
+  position: fixed;
   top: 0;
 }
 
