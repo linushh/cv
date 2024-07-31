@@ -1,9 +1,9 @@
 <template>
   <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
-
+    
   <RouterView />
-
-  <Footer 
+    
+  <Footer
     :author="socials.name" 
     :links="[socials.github, socials.linkedIn, socials.facebook]">
   </Footer>

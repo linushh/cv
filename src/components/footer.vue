@@ -1,5 +1,5 @@
 <template>
-<footer class="bottom-position">
+<footer>
   <div class="box">
     <div>
       <p class="title-size">Author</p>
@@ -29,12 +29,6 @@
     props: {
       author: String,
       links: Array
-    },
-
-    data() {
-      return {
-
-      }
     }
   }
 </script>
@@ -55,7 +49,7 @@
 }
 
 .links a {
-  background-color: #444;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -77,13 +71,5 @@
 
 .links {
   display: flex;
-}
-
-.bottom-position {
-  position: fixed;
-  bottom: 0; 
-  height: auto; 
-  width: 100%;
-  background-color: #444;
 }
 </style>

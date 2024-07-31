@@ -23,10 +23,10 @@
       <button @click="nextImage" class="float-right space-around right-arrow" />
     </div>
 
-    <footer class="title-center">
+    <!-- <footer class="title-center">
       <a :href="getFrontend()" target="_blank"> Frontend </a>
       <a :href="getBackend()" target="_blank"> Backend </a>
-    </footer>
+    </footer> -->
 </template>
 
 <script>
