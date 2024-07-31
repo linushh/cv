@@ -1,7 +1,5 @@
 <template>
   <div class="background-color">
-    <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
-
     <div class="container margin">
       <card 
         :image="image"
@@ -11,11 +9,6 @@
       </card>
     </div>
   </div>
-
-  <Footer
-    :author="socials.name" 
-    :links="[ socials.github, socials.linkedIn, socials.facebook]">
-  </Footer>
 </template>
 
 <script>
@@ -26,15 +19,11 @@ import socials from '@/service/socials.js'
 
 import aboutMe from './contactView.vue'
 import card from '../components/card.vue'
-import Drawer from '../components/drawer.vue'
-import Footer from '../components/footer.vue'
 
 export default {
   components: {
     aboutMe,
-    card,
-    Drawer,
-    Footer
+    card
   },
 
   data() {
