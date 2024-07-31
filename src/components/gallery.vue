@@ -131,7 +131,6 @@ export default {
   -webkit-transition: ease-in-out 0.1s;
 }
 
-
 .float-left {
   float: left;
 }
@@ -160,6 +159,13 @@ export default {
   margin: 1rem;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media(max-width: 768px) {
+  .image-container img {
+    height: 40%;
+    width: 40%;
+  }
 }
 
 .image-container img:hover {
