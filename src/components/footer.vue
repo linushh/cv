@@ -1,28 +1,29 @@
 <template>
 <footer>
   <div class="box">
-    <div>
+
+    <div class="space-between">
       <p class="title-size">Author</p>
       <p class="text-size">{{ author }}</p>
     </div>
 
-    <div>
+    <div class="space-between">
       <p class="title-size">Contact</p>
       <p class="text-size">{{ email }}</p>
       <p class="text-size">{{ phoneNumber }}</p>
     </div>
 
-    <div class="link-box">
+      
+    <div class="space-between">
       <p class="title-size">Links</p>
-
-      <div class="links">
+      <div class="link-box">
         <a :href=links[0] target="_blank" class="text-size">Github</a>
         <a :href=links[1] target="_blank" class="text-size">LinkedIn</a>
         <a :href=links[2] target="_blank" class="text-size">Facebook</a>
       </div>
     </div>
 
-    <div>
+    <div class="space-between">
       <p class="title-size">Made with</p>
       <p class="text-size">Vue, CSS and HTML</p>
     </div>
@@ -67,8 +68,6 @@
 
 .link-box {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .link-box p, .link-box a {
@@ -77,7 +76,21 @@
   padding: 0;
 }
 
-.links {
-  display: flex;
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+  }
+
+  .space-between {
+    margin: 3px;
+  }
+
+  .text-size {
+    font-size: 1rem;
+  }
+
+  .title-size {
+    font-size: 1.5rem;
+  }
 }
 </style>
