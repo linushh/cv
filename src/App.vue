@@ -1,8 +1,10 @@
 <template>
-  <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
+  <div class="body-size">
+    <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
     
-  <RouterView />
-    
+    <RouterView />
+  </div>
+
   <Footer
     :author="socials.name" 
     :links="[socials.github, socials.linkedIn, socials.facebook]">
@@ -30,3 +32,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.body-size {
+  min-height: calc(100vh - 80px);
+}
+</style>
