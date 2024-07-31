@@ -38,9 +38,9 @@ a, .green {
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-} */
+}
 
-/* @media (min-width: 1042px) {
+@media (min-width: 1042px) {
   body {
     display: flex;
     place-items: center;
