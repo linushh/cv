@@ -30,7 +30,7 @@
         
         <li @click="$router.push('/contact')">
           <a>
-            Contact
+            My Skills
           </a>
         </li>
         
