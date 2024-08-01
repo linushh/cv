@@ -95,29 +95,27 @@ export default {
   methods: {
     iconTexts(name) {
       const text = {
-        java: `Under min utbildning var vårt huvudspråk Java. Vi använde oss mesta dels utav nyare version som Java 17.
-På mitt tidigare arbete så utvecklades backenden huvudsakligen med Java`,
-        springBoot: `Under min utbildning använde vi Spring Boot för att utveckla bland annat rest API. 
-sedan under mitt senaste arbete så använde vi Spring Boot för backenden.`,
+        java: `During my education, our main language was Java. We mostly used the newer versions, Java 17.
+At my previous job, the backend was mainly developed with Java.`,
+        springBoot: `During my education, we used Spring Boot to develop, build, and deploy REST APIs.
+Then, at my most recent job, we used Spring Boot for the backend.`,
 
-        vue: `I mitt senaste arbete använd jag mig utan vue.js.
-Uppdragen kunde vara allt möjligt mellan små bugfixar,
-till att lägga till flera komponenter och moduler.`,
-        javascript: `Undder min utbildning så arbetade vi främst med JavaScript, CSS och HTML när vi utvecklade frontend.
-På mitt senaste arbete så använde vi endast JavaScript och Vue.js.`,
+        vue: `In my most recent job, I used Vue.js.
+The tasks could be anything from small bug fixes to adding multiple components and modules.`,
+        javascript: `During my education, we primarily worked with JavaScript, CSS, and HTML when developing the frontend.
+At my most recent job, we used JavaScript and Vue.js.`,
+
         html: `something four times`,
         css: `CSS och HTML är någont som vi har arbetat med under min utbildning och 
 hänger ihop med JavaScript och därför har jag också arbetat med det under mitt senaste arbete.`,
         
-        mysql: `Under min utbildning använde vi främst relationsdatabaser och MYSQL.
-Under mitt senaste arbete så var MYSQL det som användes.`,
+        mysql: `During my education, we primarily used relational databases. We primaryly used MySQL.
+At my most recent job, MySQL was what we used.`,
         postman: `something seven times`,
         tablePlus: `something eight times`,
         
-        git: `Båder under min utbildning samt mitt förra arbete så har vi självklart använda oss utav versionshanteringsverktyg.
-Tillsammans med Git så har jag främst använt Bitbucket och Github.`,
-        bitbucket: `something ten times`,
-        wrike: `something eleven times`
+        git: `Both during my education and at my previous job, we of course used version control tools.
+Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`,
       }
 
       return text[name]
