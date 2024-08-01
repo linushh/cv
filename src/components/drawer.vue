@@ -114,6 +114,10 @@ export default {
   margin-top: 1.5rem;
 }
 
+.icon:hover {
+  color: #ccc;
+}
+
 .drawer-color {
   flex-direction: column;
   background-color: #444444;
