@@ -1,11 +1,7 @@
 <template>
   <div class="background-color">
     <div class="container margin">
-      <card 
-        :image="image"
-        :name="getCardText()"
-        :title="socials.name"
-        class="pre-formatted" >
+      <card :image="image" :name="getCardText()" :title="socials.name" class="pre-formatted">
       </card>
     </div>
   </div>
@@ -17,7 +13,7 @@ const social = socials.getSocials()
 import selfie from '@/assets/selfie.jpg'
 import socials from '@/service/socials.js'
 
-import aboutMe from './contactView.vue'
+import aboutMe from './skillsView.vue'
 import card from '../components/card.vue'
 
 export default {
