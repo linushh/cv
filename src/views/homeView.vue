@@ -1,8 +1,7 @@
 <template>
   <div class="background-color">
     <div class="container margin">
-      <card :image="image" :name="getCardText()" :title="socials.name" class="pre-formatted">
-      </card>
+      <card :image="image" :name="getCardText()" :title="socials.name" class="pre-formatted" />
     </div>
   </div>
 </template>
@@ -64,10 +63,16 @@ I hope you find something interesting here and do not hesitate to contact me if 
 }
 
 .margin {
-  margin: 15px;
+  margin: 1rem;
 }
 
 .pre-formatted {
   white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .margin {
+    margin: 3rem;
+  }
 }
 </style>
