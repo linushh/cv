@@ -3,8 +3,8 @@
     <div class="container">
       <card
         :image="imgSkolon" 
-        :title="'Skolon AB - Fullstack utvecklare (praktik)'" 
-        :name="skolonText()"
+        :title="'Skolon AB - Fullstack Developer (Internship). Östra piren Karlshamn, Sweden'"
+        :name="getText('skolon')"
         class="pre-formatted">
       </card>
   </div>
@@ -12,8 +12,8 @@
   <div class="container spacing-around">
     <card
       :image="imgSaab" 
-      :title="'Saab AB - IT säkerhetsspecialist (praktik)'" 
-      :name="saabText()"
+      :title="'Saab AB - IT Security Specialist (Internship). Kockums Karlskrona, Sweden'"
+      :name="getText('saab')"
       class="pre-formatted">
     </card>
   </div>
@@ -21,8 +21,8 @@
   <div class="container spacing-around">
     <card
       :image="imgBredakra" 
-      :title="'Bredåkra - Säsongsanställning, grönytor'" 
-      :name="bredakraText()"
+      :title="'Bredåkra - Seasonal Employment, Green Spaces. Bredåkra Kallinge, Sweden'"
+      :name="getText('bredakra')"
       class="pre-formatted">
     </card>
   </div>
@@ -54,38 +54,39 @@ export default {
   },
 
   methods: {
-    skolonText() {
-      return `Under en av mina praktikperioder arbetade jag som fullstack webbutvecklare hos Skolon AB.
-      
-Tekinker som jag utvecklade lite mer under min tid hos Skolon var:
-    *   Java 17 och Spring Boot
-    *   JavaScript och Vue.js (Options API)
-    *   HTML och CSS
-    *   MySql
-    *   Postman
-    *   Table Plus
-    *   Git
-    *   Bitbucket
-    *   Wrike
-      
-En vanlig dag kunde vara standup möte, gå igenom vad som behövdes göras för dagen för varje specifik person. Ta emot tickets via Wrike och sedan utföra sina arbetsuppgifter inför dagen eller dagarna. Det kunde vara allt från att leta buggar till att implementera helt nya funktioner.
 
-När uppgiftens var klar och hade skickat in sina commits till Bitbucket så blev det alltid en code review där jag fick lära mig mycket genom konstruktiv kritik.`
-    },
+    getText(name) {
+      const text = {
+        skolon: `During one of my internships, I worked as a fullstack web developer at Skolon AB.
 
-    saabText() {
-      return `Under min utbildning som Javautvecklare lyckades jag få in en fot på Saab Kockums i Karlskrona. Där arbetade jag med IT-Säkerhet under en IT-Säkerhetsarkitekt.
-      
-Jag arbetade med verktyg som Jira och andra interna verktyg som Saab AB kunde erbjuda.
+Technologies that I further developed during my time at Skolon included:
+* Java 17 and Spring Boot
+* JavaScript and Vue.js (Options API)
+* HTML and CSS
+* MySQL
+* Postman
+* Table Plus
+* Git
+* Bitbucket
+* Wrike
 
-Vi hade dagliga standups och fick jag fick lära mig om diverse olika informationssäkerhets principer och taktiker.
+A typical day could involve a standup meeting, going through what needed to be done for the day for each specific person, receiving tickets via Wrike, and then carrying out the tasks for the day or days. This could range from finding bugs to implementing entirely new features.
 
-På grund av säkerhetsklassningen kan jag inte gå in på så mycket detaljer.`
-    },
+When the task was completed and commits were sent to Bitbucket, there was always a code review where I learned a lot through constructive criticism.`,
 
-    bredakraText() {
-      return `Jag arbetade inom parkförvaltningen och tog hand om både parkarbete (grönytor) och begravningsverksamhet som t.ex. att hölja både jordgravar med kistor och urnsättningar. 
-Användning av olika maskiner förekom ofta som t.ex. Walker gräsklippar och Avant.`
+        saab: `During my education as a Java developer, I managed to get a foot in the door at Saab Kockums in Karlskrona, where I worked with IT security under an IT security architect.
+
+I worked with tools like Jira and other internal tools that Saab AB could offer.
+
+We had daily standups, and I got to learn about various information security principles and tactics.
+
+Due to the security classification, I cannot go into much detail.`,
+
+        bredakra: `I worked in park management and took care of both park work (green spaces) and burial services, such as covering both earth graves with coffins and urn placements.
+The use of various machines was common, such as Walker mowers and Avant.`
+      }
+
+      return text[name]
     }
   }
 }
