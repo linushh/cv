@@ -1,4 +1,4 @@
-import{_ as i,c,a as o,b as n,s as d,r as l,o as m}from"./index-BE9u1A55.js";import{c as g}from"./card-BxnwuYaj.js";import"./progress-DcXEM_F8.js";const u="/cv/assets/skolon-Beqc4s9S.jpg",p="/cv/assets/saabVisbyCorvett-CNFAdMar.jpg",h="/cv/assets/bredakraHalloween-B2gHLRzi.jpg",k=d.getSocials(),f={components:{card:g},data(){return{imgSkolon:u,imgBredakra:h,imgSaab:p,socials:k}},methods:{getText(s){return{skolon:`During one of my internships, I worked as a fullstack web developer at Skolon AB.
+import{_ as i,c,a as o,b as n,s as d,r as l,o as m}from"./index-CbfzGga5.js";import{c as g}from"./card-mo3hluCU.js";import"./progress-DcXEM_F8.js";const u="/cv/assets/skolon-Beqc4s9S.jpg",p="/cv/assets/saabVisbyCorvett-CNFAdMar.jpg",h="/cv/assets/bredakraHalloween-B2gHLRzi.jpg",k=d.getSocials(),f={components:{card:g},data(){return{imgSkolon:u,imgBredakra:h,imgSaab:p,socials:k}},methods:{getText(s){return{skolon:`During one of my internships, I worked as a fullstack web developer at Skolon AB.
 
 Technologies that I further developed during my time at Skolon included:
 * Java 17 and Spring Boot
