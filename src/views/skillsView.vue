@@ -136,10 +136,7 @@ Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`,
   display: flex;
   justify-content: center;
 
-  margin-left: 10rem;
-  margin-right: 10rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 5rem auto;
 
   max-width: 768px;
   max-height: fit-content;
@@ -149,5 +146,26 @@ Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`,
 
 .margin-between {
   margin: 1rem;
+}
+
+@media (max-width: 768px) {
+  .centering {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .centering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    width: 100%;
+    padding: 0;
+  }
 }
 </style>
