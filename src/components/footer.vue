@@ -17,9 +17,26 @@
     <div class="space-between">
       <p class="title-size">Links</p>
       <div class="link-box">
-        <a :href=links[0] target="_blank" class="text-size">Github</a>
-        <a :href=links[1] target="_blank" class="text-size">LinkedIn</a>
-        <a :href=links[2] target="_blank" class="text-size">Facebook</a>
+        <a 
+          :href=links[0] 
+          target="_blank" class="text-size">
+            Github 
+            <i class="fa-brands fa-github" />
+        </a>
+        <a 
+          :href=links[1] 
+          target="_blank" 
+          class="text-size">
+            LinkedIn
+            <i class="fa-brands fa-linkedin" />
+        </a>
+        <a 
+          :href=links[2] 
+          target="_blank" 
+          class="text-size">
+            Facebook
+            <i class="fa-brands fa-facebook" />
+        </a>
       </div>
     </div>
 
