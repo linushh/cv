@@ -69,8 +69,6 @@ export default {
 
 @media (max-width: 768px) {
   .img {
-    max-height: 200px;
-    max-width: auto;
     margin: 2px;
     width: 250px;
     height: auto;
