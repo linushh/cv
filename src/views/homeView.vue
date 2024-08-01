@@ -31,18 +31,18 @@ export default {
 
   methods: {
     getCardText() {
-      const text = `Hej!
-Jag heter Linus Håkansson och jag är en passionerad webbutvecklare med en kärlek för att skapa och utforska.
-När jag inte arbetar med att bygga webbsidor, finner du mig ofta på gymmet eller i någon idrottslokal.
+      const text = `Hi!
+My name is Linus Håkansson and I am a passionate web developer with a love for creating and exploring.
+When I am not working on building websites, you will often find me at the gym or in some sports venue.
 
-Min resa inom IT började när jag var 14-15 år gammal och byggde min första dator hemma tillsammans med min bror. Sedan dess har jag varit fast och älskar att dyka ner i nya teknologier och lösa problem.
+My journey in IT began when I was 14-15 years old and built my first computer at home together with my brother. Since then, I have been hooked and love diving into new technologies and solving problems.
 
-Jag har arbetat med flera projekt som har hjälpt mig att växa både professionellt och personligt.
+I have worked on several projects that have helped me grow both professionally and personally.
 
-Utöver datorer, teknik och idrott är jag en också en stor naturälskare. Jag tycker om att tillbringa tid utomhus. Dessa upplevelser hjälper mig att hålla mig inspirerad och kreativ.
+Besides computers, technology, and sports, I am also a big nature lover. I enjoy spending time outdoors. These experiences help me stay inspired and creative.
 
-Denna hemsida har jag skapat för att dela med mig av mina projekt, mina tankar och för att du ska få en bättre bild av vem jag är som person.
-Jag hoppas att du finner något intressant här och tveka inte att kontakta mig om du vill veta mer eller bara säga hej!`
+I created this website to share my projects, my thoughts, and to give you a better picture of who I am as a person.
+I hope you find something interesting here and do not hesitate to contact me if you want to know more or just say hi!`
       return text
     }
   }
