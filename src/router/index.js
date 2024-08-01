@@ -11,7 +11,7 @@ const router = createRouter({
     },
 
     {
-      path: '/contact',
+      path: '/skills',
       name: 'contactView',
       component: () => import('../views/skillsView.vue')
     },

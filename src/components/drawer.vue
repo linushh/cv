@@ -16,25 +16,25 @@
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
       <ul>
-        <li @click="$router.push('/')">
+        <li @click="pushEvent('')">
           <a>
             Home
           </a>
         </li>
         
-        <li @click="$router.push('/contact')">
+        <li @click="pushEvent('skills')">
           <a>
             My Skills
           </a>
         </li>
         
-        <li @click="$router.push('/projects')">
+        <li @click="pushEvent('projects')">
           <a>
             Projects
           </a>
         </li>
 
-        <li @click="$router.push('/experience')">
+        <li @click="pushEvent('experience')">
           <a>
             Experience
           </a>
@@ -83,6 +83,16 @@ export default {
   methods: {
     toggleDrawer() {
       this.isDrawerOpen = !this.isDrawerOpen
+    },
+
+    pushEvent(name) {
+      this.$router.push('/' + name)
+    }
+  },
+
+  watch: {
+    $route() {
+      this.isDrawerOpen = false
     }
   }
 }
