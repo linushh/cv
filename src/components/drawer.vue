@@ -1,13 +1,12 @@
 <template>
   <div id="app" class="position-absolute">
-
     <div class="content" :class="{ open: isDrawerOpen }">
-      <button
-        v-if="isDrawerOpen" 
-        @click="toggleDrawer" 
-        class="drawer-color box-shadow pointer">
-          X
-      </button>
+      <i 
+        v-if="isDrawerOpen"
+        @click="toggleDrawer"
+        class="fa-solid fa-circle-xmark fa-xl pointer icon"
+        >
+      </i>
     </div>
 
     <button
@@ -18,6 +17,7 @@
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
     </button>
+
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
       <ul>
@@ -115,6 +115,11 @@ export default {
   border-radius: 5px;
 }
 
+.icon {
+  margin-left: 0.5rem; 
+  margin-top: 1.5rem;
+}
+
 .drawer-color {
   flex-direction: column;
   background-color: #444444;
@@ -172,6 +177,11 @@ li a:hover {
 @media (max-width: 768px) {
   .content.open {
     margin-left: 210px; /* Content moves to the right when drawer opens */
+  }
+
+  .icon {
+    margin-left: 30px;
+    margin-top: 0;
   }
 
   .move-burger-menu {

@@ -11,11 +11,12 @@
     
     <div class="modal" v-if="previewImage">
 
-      <span 
-        class="close" 
-        @click="closePreview"> 
-        &times; 
-      </span>
+      <i 
+      @click="closePreview"
+      class="fa-solid fa-circle-xmark fa-xl pointer close"
+      style="margin-top: 2rem;"
+      >
+    </i>
         
       <img :src="previewImage" alt="Preview">
 
