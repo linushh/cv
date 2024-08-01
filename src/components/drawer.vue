@@ -1,18 +1,13 @@
 <template>
   <div id="app" class="position-absolute">
     <div class="content" :class="{ open: isDrawerOpen }">
-      <i 
-        v-if="isDrawerOpen"
-        @click="toggleDrawer"
-        class="fa-solid fa-circle-xmark fa-xl pointer icon"
-        >
-      </i>
+      <i v-if="isDrawerOpen" @click="toggleDrawer" class="fa-solid fa-circle-xmark fa-xl pointer icon" />
     </div>
 
     <button
       v-if="!isDrawerOpen"
       @click="toggleDrawer"
-      class="drawer-color box-shadow pointer move-burger-menu" >
+      class="drawer-color box-shadow pointer move-burger-menu">
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
         <div class="burger-menu"></div>
@@ -21,7 +16,6 @@
 
     <div class="drawer" :class="{ open: isDrawerOpen }">
       <ul>
-        
         <li @click="$router.push('/')">
           <a>
             Home

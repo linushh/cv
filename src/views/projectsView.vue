@@ -1,5 +1,5 @@
 <template>
-  <div class="background-color">
+  <div class="background-color margin">
     <gallery 
       :frontend="getFrontend()"
       :backend="getBackend()"
@@ -45,5 +45,9 @@ export default {
 <style>
 .background-color {
   background-color: var(--color-background);
+}
+
+.margin {
+  margin: 2rem;
 }
 </style>
