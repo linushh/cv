@@ -1,18 +1,13 @@
 <template>
   <h1 class="title-center">{{ title }}</h1>
   <div class="image-container">
-
     <img
       v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" 
       v-for="(picture, index) in images" :key="index"
-      @click="showPreview(picture.src, images, index)"
-      >
+      @click="showPreview(picture.src, images, index)">
     </div>
     
     <div class="modal" v-if="previewImage">
-
-      
-        
       <img :src="previewImage" alt="Preview">
 
       <button @click="previousImage" class="float-left space-around left-arrow" />
