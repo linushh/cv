@@ -11,17 +11,14 @@
     
     <div class="modal" v-if="previewImage">
 
-      <i 
-      @click="closePreview"
-      class="fa-solid fa-circle-xmark fa-xl pointer close"
-      style="margin-top: 2rem;"
-      >
-    </i>
+      
         
       <img :src="previewImage" alt="Preview">
 
       <button @click="previousImage" class="float-left space-around left-arrow" />
       <button @click="nextImage" class="float-right space-around right-arrow" />
+      
+      <i @click="closePreview" class="fa-solid fa-circle-xmark fa-xl pointer close" />
     </div>
 
     <footer class="title-center">
@@ -107,9 +104,9 @@ export default {
   -webkit-transform: rotate(-225deg);
   background-color: transparent;
   cursor: pointer;
-  position: absolute; 
-  top: 33%; 
-  left: 5%;
+  position: absolute;
+  top: 450px;
+  left: 70px;
 }
 
 .right-arrow {
@@ -122,8 +119,21 @@ export default {
   background-color: transparent;
   cursor: pointer;
   position: absolute;
-  top: 33%; 
-  right: 5%;
+  top: 450px;
+  right: 70px;
+}
+
+.close {
+  color: grey;
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 2rem;
+  -webkit-animation-timing-function: linear;
+  -webkit-transition: ease-in-out 0.1s;
 }
 
 .right-arrow:hover, .left-arrow:hover {
@@ -194,17 +204,6 @@ export default {
   border-radius: 5px;
 }
 
-.close {
-  color: grey;
-  position: absolute;
-  top: 0;
-  right: 5%;
-  font-size: 40px;
-  cursor: pointer;
-  -webkit-animation-timing-function: linear;
-  -webkit-transition: ease-in-out 0.1s;
-}
-
 .close:hover, .close:focus {
   color: #ccc;
   text-decoration: none;
@@ -213,21 +212,44 @@ export default {
 
 @media (max-width: 768px) {
   .close {
-    top: 0;
-    right: 3%;
-    font-size: 30px;
+    font-size: 25px;
+    right: 10px;
   }
 
   .right-arrow {
-    top: 10%;
-    right: 3%;
     padding: 7px;
+    top: 100px;
+    right: 15px;
   }
 
   .left-arrow {
-    top: 10%;
-    left: 3%;
     padding: 7px;
+    top: 100px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .close {
+    right: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .close {
+    font-size: 15px;
+    right: 7px;
+    top: 0;
+  }
+
+  .right-arrow {
+    top: 80px;
+    right: 10px;
+  }
+
+  .left-arrow {
+    top: 80px;
+    left: 10px;
   }
 }
 </style>
