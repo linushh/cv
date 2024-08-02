@@ -1,4 +1,4 @@
-import{a as s,s as n}from"./skillsView-BOJRrq7k.js";import{_ as r,c as i,a as c,b as m,s as d,r as l,o as h}from"./index-CbfzGga5.js";import{c as p}from"./card-mo3hluCU.js";import"./progress-DcXEM_F8.js";const g=d.getSocials(),u={components:{aboutMe:s,card:p},data(){return{image:n,socials:g}},methods:{getCardText(){return`Hi!
+import{a as s,s as n}from"./skillsView-Cgci7JBb.js";import{_ as r,c as i,a as c,b as m,s as d,r as l,o as h}from"./index-Kc-CWc5M.js";import{c as p}from"./card-lDcG89jM.js";import"./progress-DcXEM_F8.js";const g=d.getSocials(),u={components:{aboutMe:s,card:p},data(){return{image:n,socials:g}},methods:{getCardText(){return`Hi!
 My name is Linus Håkansson and I am a passionate web developer with a love for creating and exploring.
 When I am not working on building websites, you will often find me at the gym or in some sports venue.
 
