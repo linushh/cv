@@ -1,11 +1,24 @@
 <template>
   <div class="background-color margin">
-    <gallery 
-      :frontend="getFrontend()"
-      :backend="getBackend()"
-      :title="'Todo Application: Java, Vue, MySql'"
-      :images="images">
-    </gallery>
+    <div class='margin-bottom'>
+      <gallery 
+        :frontend="getFrontend()"
+        :frontend-name="'Todo Application: frontend, vue, java'"
+        :backend="getBackend()"
+        :backend-name="'Todo Application: backend, spring boot, mysql'"
+        :title="'Todo Application: Java, Vue, MySql'"
+        :images="images">
+      </gallery>
+    </div>
+
+    <div class="margin-top margin-bottom">
+      <gallery
+        :images="sunbotImages"
+        :title="'SunbotJs. A discord music bot with a discord api. (In progress)'"
+        :backend="getSunbotGithub()"
+        :backend-name="'SunbotJs: in JavaScript!'">
+      </gallery>
+    </div>
   </div>
 </template>
 
@@ -18,6 +31,9 @@ import images from '@/service/photoService/todoGallery.js'
 import socials from '@/service/socials'
 import projects from '@/service/photoService/github'
 
+import sunbotImages from '@/service/photoService/sunbotGallery.js'
+import sunbotGithub from '@/service/photoService/sunbotjsGithub.js'
+
 export default {
   components: {
     gallery
@@ -26,7 +42,10 @@ export default {
   data() {
     return {
       images,
-      socials: socialData
+      socials: socialData,
+      
+      sunbotImages,
+      sunbotGithub
     }
   },
 
@@ -37,6 +56,10 @@ export default {
 
     getBackend() {
       return projects.getProjects() !== null ? projects.getProjects().todoBackend: ''
+    },
+
+    getSunbotGithub() {
+      return sunbotGithub.getProject() !== null ? sunbotGithub.getProject().sunbotJs: ''
     }
   }
 }
@@ -49,5 +72,13 @@ export default {
 
 .margin {
   margin: 2rem;
+}
+
+.margin-top {
+  margin-top: 5rem;
+}
+
+.margin-bottom {
+  margin-bottom: 5rem;
 }
 </style>
