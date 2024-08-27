@@ -17,8 +17,8 @@
     </div>
 
     <footer class="title-center">
-      <a :href="getFrontend()" target="_blank"> Frontend </a>
-      <a :href="getBackend()" target="_blank"> Backend </a>
+      <a v-if="getFrontend()" :href="getFrontend()" target="_blank"> {{ frontendName }} </a>
+      <a v-if="getBackend()" :href="getBackend()" target="_blank"> {{ backendName }} </a>
     </footer>
 </template>
 
@@ -30,7 +30,9 @@ export default {
     images: Array,
     title: String,
     frontend: String,
-    backend: String
+    backend: String,
+    frontendName: String,
+    backendName: String
   },
 
   data() {
