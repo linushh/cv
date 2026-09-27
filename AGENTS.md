@@ -13,7 +13,7 @@ No linter or test framework is set up yet. Verify changes with `npm run build` a
 ## Stack
 
 - Vue 3 (Composition or Options API — match the file you're editing)
-- Vite 5 (config in `vite.config.js`, base path is `/cv/`, `@` aliases to `src/`)
+- Vite 7 (config in `vite.config.js`, base path is `/cv/`, `@` aliases to `src/`)
 - Vue Router 4 (`src/router/index.js`)
 - Pinia (`src/stores/`)
 - vue-i18n 11 (`src/i18n/index.js`, legacy mode — `$t()` in templates)
