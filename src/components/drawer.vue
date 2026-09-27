@@ -2,19 +2,19 @@
   <div id="app" class="position-absolute">
     <nav class="mini-drawer" @mouseenter="openDrawer">
       <ul>
-        <li class="pointer" :title="$t('nav.home')" @click="pushEvent('')">
+        <li class="pointer" :class="{ active: isActive('') }" :title="$t('nav.home')" @click="pushEvent('')">
           <i class="fa-solid fa-house"></i>
         </li>
 
-        <li class="pointer" :title="$t('nav.skills')" @click="pushEvent('skills')">
+        <li class="pointer" :class="{ active: isActive('skills') }" :title="$t('nav.skills')" @click="pushEvent('skills')">
           <i class="fa-solid fa-gears"></i>
         </li>
 
-        <li class="pointer" :title="$t('nav.projects')" @click="pushEvent('projects')">
+        <li class="pointer" :class="{ active: isActive('projects') }" :title="$t('nav.projects')" @click="pushEvent('projects')">
           <i class="fa-solid fa-folder-open"></i>
         </li>
 
-        <li class="pointer" :title="$t('nav.experience')" @click="pushEvent('experience')">
+        <li class="pointer" :class="{ active: isActive('experience') }" :title="$t('nav.experience')" @click="pushEvent('experience')">
           <i class="fa-solid fa-briefcase"></i>
         </li>
 
@@ -49,25 +49,25 @@
       :class="{ open: isDrawerOpen }"
       @mouseleave="scheduleClose">
       <ul>
-        <li @click="pushEvent('')">
+        <li :class="{ active: isActive('') }" @click="pushEvent('')">
           <a>
             {{ $t('nav.home') }}
           </a>
         </li>
 
-        <li @click="pushEvent('skills')">
+        <li :class="{ active: isActive('skills') }" @click="pushEvent('skills')">
           <a>
             {{ $t('nav.skills') }}
           </a>
         </li>
 
-        <li @click="pushEvent('projects')">
+        <li :class="{ active: isActive('projects') }" @click="pushEvent('projects')">
           <a>
             {{ $t('nav.projects') }}
           </a>
         </li>
 
-        <li @click="pushEvent('experience')">
+        <li :class="{ active: isActive('experience') }" @click="pushEvent('experience')">
           <a>
             {{ $t('nav.experience') }}
           </a>
@@ -117,6 +117,10 @@ export default {
   },
 
   methods: {
+    isActive(name) {
+      return this.$route.path === '/' + name
+    },
+
     openDrawer() {
       clearTimeout(this.closeTimer)
       this.isDrawerOpen = true
@@ -181,7 +185,8 @@ export default {
   transition: background-color 0.2s ease;
 }
 
-.mini-drawer li:hover {
+.mini-drawer li:hover,
+.mini-drawer li.active {
   background-color: var(--color-surface-hover);
 }
 
@@ -251,7 +256,8 @@ li a {
   transition: background-color 0.2s ease;
 }
 
-li a:hover {
+li a:hover,
+.drawer li.active a {
   background-color: var(--color-surface-hover);
   cursor: pointer;
 }
