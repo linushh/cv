@@ -40,7 +40,21 @@ export default {
     }
   },
 
+  mounted() {
+    document.addEventListener('keydown', this.onKeyDown)
+  },
+
+  beforeUnmount() {
+    document.removeEventListener('keydown', this.onKeyDown)
+  },
+
   methods: {
+    onKeyDown(event) {
+      if (event.key === 'Escape' && this.isPreviewOpen) {
+        this.closePreview()
+      }
+    },
+
     showPreview() {
       this.isPreviewOpen = true
     },
