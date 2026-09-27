@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="position-absolute">
-    <nav class="mini-drawer" @mouseenter="openDrawer">
+    <nav class="mini-drawer" @pointerenter="onPointerEnter">
       <ul>
         <li class="pointer" :class="{ active: isActive('') }" :title="$t('nav.home')" @click="pushEvent('')">
           <i class="fa-solid fa-house"></i>
@@ -119,6 +119,12 @@ export default {
   methods: {
     isActive(name) {
       return this.$route.path === '/' + name
+    },
+
+    onPointerEnter(event) {
+      if (event.pointerType === 'mouse') {
+        this.openDrawer()
+      }
     },
 
     openDrawer() {
