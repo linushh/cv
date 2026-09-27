@@ -3,6 +3,10 @@ export default {
     switchTheme: 'Changer de thème'
   },
 
+  common: {
+    backToTop: 'Retour en haut'
+  },
+
   nav: {
     home: 'Accueil',
     skills: 'Mes compétences',
