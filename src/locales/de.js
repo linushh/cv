@@ -3,6 +3,10 @@ export default {
     switchTheme: 'Design wechseln'
   },
 
+  common: {
+    backToTop: 'Nach oben'
+  },
+
   nav: {
     home: 'Start',
     skills: 'Meine Fähigkeiten',

@@ -3,6 +3,10 @@ export default {
     switchTheme: 'Switch theme'
   },
 
+  common: {
+    backToTop: 'Back to top'
+  },
+
   nav: {
     home: 'Home',
     skills: 'My Skills',

@@ -10,6 +10,8 @@
     <RouterView />
   </div>
 
+  <scrollToTop />
+
   <Footer
     :author="socials.name"
     :email="socials.email"
@@ -24,6 +26,7 @@ import Footer from '@/components/footer.vue'
 import Drawer from '@/components/drawer.vue'
 import languageSwitcher from '@/components/languageSwitcher.vue'
 import themeToggle from '@/components/themeToggle.vue'
+import scrollToTop from '@/components/scrollToTop.vue'
 import socials from '@/service/socials'
 import { useThemeStore } from '@/stores/theme'
 
@@ -32,7 +35,8 @@ export default {
     Footer,
     Drawer,
     languageSwitcher,
-    themeToggle
+    themeToggle,
+    scrollToTop
   },
 
   created() {

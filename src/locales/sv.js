@@ -3,6 +3,10 @@ export default {
     switchTheme: 'Byt tema'
   },
 
+  common: {
+    backToTop: 'Till toppen'
+  },
+
   nav: {
     home: 'Hem',
     skills: 'Mina kunskaper',
