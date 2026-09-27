@@ -40,10 +40,21 @@ Dans mon emploi le plus récent, nous utilisions JavaScript et Vue.js.`,
     mysql: `Pendant ma formation, nous utilisions principalement des bases de données relationnelles, surtout MySQL.
 Dans mon emploi le plus récent, c'était MySQL que nous utilisions.`,
     git: `Pendant ma formation comme dans mon précédent emploi, nous utilisions bien sûr des outils de gestion de versions.
-Avec Git, j'ai principalement utilisé Bitbucket, GitHub et Wrike.`
+Avec Git, j'ai principalement utilisé Bitbucket, GitHub et Wrike.`,
+    dotNet: `Dans mon emploi actuel, j'utilise C# et .NET quotidiennement pour développer le logiciel utilisé dans la plateforme Hyrma.
+C'est aujourd'hui ma principale stack technique.`,
+    mariaDb: `Dans mon emploi actuel, nous utilisons MariaDB, une base de données relationnelle dérivée de MySQL.
+Travailler avec est très similaire à travailler avec MySQL.`
   },
 
   experience: {
+    infobricTitle: 'Infobric Hyrma AB - Développeur logiciel. Suède',
+    infobric: `Chez Infobric Hyrma, je travaille comme développeur logiciel et je développe le logiciel utilisé dans la plateforme Hyrma.
+
+Mon travail est principalement axé sur C#, MVC, JavaScript et MariaDB/MySQL.
+
+Une journée type se compose de codage et d'un workflow agile avec des sprints, des standups quotidiens et d'autres pratiques agiles, en suivant toujours les meilleures pratiques.`,
+
     skolonTitle: 'Skolon AB - Développeur Fullstack (Stage). Östra piren Karlshamn, Suède',
     skolon: `Lors de l'un de mes stages, j'ai travaillé comme développeur web fullstack chez Skolon AB.
 

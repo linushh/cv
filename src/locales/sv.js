@@ -40,10 +40,21 @@ På mitt senaste jobb använde vi JavaScript och Vue.js.`,
     mysql: `Under min utbildning använde vi främst relationsdatabaser. Vi använde mest MySQL.
 På mitt senaste jobb var MySQL det vi använde.`,
     git: `Både under min utbildning och på mitt tidigare jobb använde vi såklart versionshanteringsverktyg.
-Tillsammans med Git har jag främst använt Bitbucket, GitHub och Wrike.`
+Tillsammans med Git har jag främst använt Bitbucket, GitHub och Wrike.`,
+    dotNet: `På mitt nuvarande jobb använder jag C# och .NET dagligen för att utveckla mjukvaran som används i Hyrma-plattformen.
+Numera är det min huvudsakliga teknikstack.`,
+    mariaDb: `På mitt nuvarande jobb använder vi MariaDB, en relationsdatabas som är en fork av MySQL.
+Att arbeta med den känns väldigt likt att arbeta med MySQL.`
   },
 
   experience: {
+    infobricTitle: 'Infobric Hyrma AB - Mjukvaruutvecklare. Sverige',
+    infobric: `På Infobric Hyrma arbetar jag som mjukvaruutvecklare och utvecklar mjukvaran som används i Hyrma-plattformen.
+
+Mitt arbete är främst fokuserat på C#, MVC, JavaScript och MariaDB/MySQL.
+
+En typisk dag består av kodning och ett agilt arbetssätt med sprintar, dagliga standups och andra agila praktiker, där jag alltid följer best practices.`,
+
     skolonTitle: 'Skolon AB - Fullstackutvecklare (Praktik). Östra piren Karlshamn, Sverige',
     skolon: `Under en av mina praktikperioder arbetade jag som fullstackutvecklare på Skolon AB.
 

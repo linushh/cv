@@ -2,6 +2,22 @@
   <div class="background-color">
     <div class="centering">
       <card
+        :image="dotNet"
+        title=".NET"
+        :name="$t('skills.dotNet')"
+        class="preformatted margin-between">
+      </card>
+
+      <card
+        :image="mariaDb"
+        title="MariaDB"
+        :name="$t('skills.mariaDb')"
+        class="preformatted margin-between">
+      </card>
+    </div>
+
+    <div class="centering">
+      <card
         :image="java"
         title="Java"
         :name="$t('skills.java')"
@@ -46,8 +62,8 @@
         :name="$t('skills.git')"
         class="preformatted margin-between">
       </card>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -57,6 +73,8 @@ import vueJs from '@/assets/iconsMySkills/vue-js.png'
 import javascript from '@/assets/iconsMySkills/javascript.png'
 import mysql from '@/assets/iconsMySkills/mysql.png'
 import git from '@/assets/iconsMySkills/git.png'
+import dotNet from '@/assets/iconsMySkills/dotNet.png'
+import mariaDb from '@/assets/iconsMySkills/mariaDb.png'
 
 import card from '@/components/card.vue'
 
@@ -72,7 +90,9 @@ export default {
       mysql: mysql,
       javascript: javascript,
       vue: vueJs,
-      git: git
+      git: git,
+      dotNet: dotNet,
+      mariaDb: mariaDb
     }
   }
 }
@@ -85,6 +105,12 @@ export default {
 
 .preformatted {
   white-space: pre-wrap;
+}
+
+.centering .img {
+  width: 350px;
+  height: 220px;
+  object-fit: contain;
 }
 .centering {
   display: flex;
@@ -103,6 +129,16 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .background-color {
+    padding-top: 3.5rem;
+  }
+
+  .centering .img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+  }
+
   .centering {
     display: flex;
     flex-direction: column;

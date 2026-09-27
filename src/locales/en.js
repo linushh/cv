@@ -40,10 +40,21 @@ At my most recent job, we used JavaScript and Vue.js.`,
     mysql: `During my education, we primarily used relational databases. We mostly used MySQL.
 At my most recent job, MySQL was what we used.`,
     git: `Both during my education and at my previous job, we of course used version control tools.
-Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`
+Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`,
+    dotNet: `In my current job, I use C# and .NET daily to develop the software used in the Hyrma platform.
+Today it is my main technology stack.`,
+    mariaDb: `At my current job, we use MariaDB, a relational database and a fork of MySQL.
+Working with it feels very similar to working with MySQL.`
   },
 
   experience: {
+    infobricTitle: 'Infobric Hyrma AB - Software Developer. Sweden',
+    infobric: `At Infobric Hyrma I work as a software developer, developing the software used in the Hyrma platform.
+
+My work is mainly focused on C#, MVC, JavaScript and MariaDB/MySQL.
+
+A typical day involves coding and following an agile workflow with sprints, daily standups and other agile practices, always following best practices.`,
+
     skolonTitle: 'Skolon AB - Fullstack Developer (Internship). Östra piren Karlshamn, Sweden',
     skolon: `During one of my internships, I worked as a fullstack web developer at Skolon AB.
 

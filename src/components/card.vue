@@ -1,6 +1,7 @@
 <template>
   <div class="card">
     <img
+      v-if="image"
       v-lazy="{ src: image, loading: load}"
       class="img margin"
       :class="{ round: round }"
