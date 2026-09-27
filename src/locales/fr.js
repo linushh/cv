@@ -33,7 +33,8 @@ Mon parcours en informatique a commencé quand j'avais 14-15 ans et j'ai constru
 En plus des ordinateurs, de la technologie et du sport, je suis aussi un grand amoureux de la nature. J'aime passer du temps à l'extérieur. Ces expériences m'aident à rester inspiré et créatif.
 
 J'ai créé ce site web pour partager mes projets, mes réflexions et pour vous donner une meilleure image de qui je suis en tant que personne.
-J'espère que vous y trouverez quelque chose d'intéressant et n'hésitez pas à me contacter si vous voulez en savoir plus ou juste dire bonjour !`
+J'espère que vous y trouverez quelque chose d'intéressant et n'hésitez pas à me contacter si vous voulez en savoir plus ou juste dire bonjour !`,
+    downloadCv: 'Télécharger le CV'
   },
 
   skills: {

@@ -33,7 +33,8 @@ My journey in IT began when I was 14-15 years old and built my first computer at
 Besides computers, technology, and sports, I am also a big nature lover. I enjoy spending time outdoors. These experiences help me stay inspired and creative.
 
 I created this website to share my projects, my thoughts, and to give you a better picture of who I am as a person.
-I hope you find something interesting here and do not hesitate to contact me if you want to know more or just say hi!`
+I hope you find something interesting here and do not hesitate to contact me if you want to know more or just say hi!`,
+    downloadCv: 'Download CV'
   },
 
   skills: {

@@ -33,7 +33,8 @@ Min resa inom IT började när jag var 14-15 år gammal och byggde min första d
 Förutom datorer, teknik och idrott är jag också en stor naturälskare. Jag tycker om att spendera tid utomhus. Dessa upplevelser hjälper mig att hålla mig inspirerad och kreativ.
 
 Jag skapade den här webbplatsen för att dela med mig av mina projekt, mina tankar och för att ge dig en bättre bild av vem jag är som person.
-Jag hoppas att du hittar något intressant här, och tveka inte att kontakta mig om du vill veta mer eller bara säga hej!`
+Jag hoppas att du hittar något intressant här, och tveka inte att kontakta mig om du vill veta mer eller bara säga hej!`,
+    downloadCv: 'Ladda ner CV'
   },
 
   skills: {

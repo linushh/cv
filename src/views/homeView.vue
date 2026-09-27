@@ -2,6 +2,7 @@
   <div class="background-color">
     <div class="container margin">
       <card :image="image" :name="$t('home.about')" :title="socials.name" round class="pre-formatted" />
+      <download-button :href="resumePath">{{ $t('home.downloadCv') }}</download-button>
     </div>
   </div>
 </template>
@@ -9,17 +10,26 @@
 <script>
 import selfie from '@/assets/selfie.jpg'
 import socials from '@/service/socials.js'
+import resume from '@/service/resume.js'
 import card from '@/components/card.vue'
+import downloadButton from '@/components/downloadButton.vue'
 
 export default {
   components: {
-    card
+    card,
+    downloadButton
   },
 
   data() {
     return {
       image: selfie,
       socials: socials.getSocials()
+    }
+  },
+
+  computed: {
+    resumePath() {
+      return resume.getResume(this.$i18n.locale)
     }
   }
 }
@@ -40,6 +50,10 @@ export default {
 
 .pre-formatted {
   white-space: pre-wrap;
+}
+
+.margin :deep(.download-button) {
+  margin-top: 3rem;
 }
 
 .pre-formatted :deep(p) {
