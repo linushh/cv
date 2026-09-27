@@ -1,13 +1,22 @@
 <template>
   <div class="spacing-around bottom-margin">
-    <div class="container">
+    <div class="container spacing-around">
+      <card
+        :image="imgHyrma"
+        :title="$t('experience.infobricTitle')"
+        :name="$t('experience.infobric')"
+        class="pre-formatted">
+      </card>
+    </div>
+
+    <div class="container spacing-around">
       <card
         :image="imgSkolon"
         :title="$t('experience.skolonTitle')"
         :name="$t('experience.skolon')"
         class="pre-formatted">
       </card>
-  </div>
+    </div>
 
   <div class="container spacing-around">
     <card
@@ -33,6 +42,7 @@
 import imgSkolon from '@/assets/imgPastWork/imgSkolon/skolon.jpg'
 import imgSaab from '@/assets/imgPastWork/imgSaab/saabVisbyCorvett.jpg'
 import imgBredakra from '@/assets/imgPastWork/imgBredakra/bredakraHalloween.jpg'
+import imgHyrma from '@/assets/imgPastWork/imgHyrma/hyrma.png'
 
 import card from '@/components/card.vue'
 
@@ -45,7 +55,8 @@ export default {
     return {
       imgSkolon: imgSkolon,
       imgBredakra: imgBredakra,
-      imgSaab: imgSaab
+      imgSaab: imgSaab,
+      imgHyrma: imgHyrma
     }
   }
 }
