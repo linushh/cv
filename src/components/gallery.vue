@@ -57,7 +57,43 @@ export default {
     }
   },
 
+  mounted() {
+    document.addEventListener('keydown', this.onKeyDown)
+  },
+
+  beforeUnmount() {
+    document.removeEventListener('keydown', this.onKeyDown)
+  },
+
   methods: {
+    onKeyDown(event) {
+      if (this.currentIndex === null) {
+        return
+      }
+
+      if (event.key === 'Escape') {
+        this.closePreview()
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault()
+        this.nextImage()
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault()
+        this.previousImage()
+      }
+    },
+
+    nextImage() {
+      if (this.currentIndex < this.images.length - 1) {
+        this.currentIndex++
+      }
+    },
+
+    previousImage() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--
+      }
+    },
+
     openPreview(index) {
       this.currentIndex = index
     },
