@@ -73,6 +73,14 @@ export default {
   white-space: pre-wrap;
 }
 
+.pre-formatted p {
+  color: #f0f0f0;
+}
+
+body.light-mode .pre-formatted p {
+  color: var(--color-text);
+}
+
 .spacing-around {
   margin: 2rem;
 }

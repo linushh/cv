@@ -80,7 +80,7 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
-  background-color: #282828;
+  background-color: var(--color-card);
   max-width: 960px;
 }
 
@@ -92,6 +92,7 @@ export default {
   padding: 2px 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: auto;
 }
 

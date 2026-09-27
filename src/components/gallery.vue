@@ -114,20 +114,20 @@ export default {
 }
 
 .back-button {
-  background-color: #444444;
+  background-color: var(--color-surface-alt);
   border: none;
   border-radius: 5px;
-  color: white;
+  color: var(--color-on-surface);
   font-size: 1rem;
   padding: 0.5rem 0.8rem;
 }
 
 .back-button:hover {
-  background-color: #555555;
+  background-color: var(--color-surface-hover);
 }
 
 .gallery-title {
-  color: white;
+  color: var(--color-heading);
 }
 
 .image-grid {

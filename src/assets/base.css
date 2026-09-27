@@ -33,7 +33,42 @@
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-text-dark-2);
 
+  --color-surface: #333333;
+  --color-surface-alt: #444444;
+  --color-surface-hover: #555555;
+  --color-card: #282828;
+  --color-on-surface: #ffffff;
+  --color-anchor-bg: #212121;
+  --color-paragraph: #8ecccc;
+  --color-chip-border: #3a4042;
+  --color-icon-muted: #ffffff;
+  --shadow-rail: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+
   --section-gap: 160px;
+}
+
+/* light mode: only the variables change, components keep using them */
+body.light-mode {
+  --color-background: var(--vt-c-white-mute);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: #212427;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #e2e2e2;
+  --color-surface-hover: #cfcfcf;
+  --color-card: #ffffff;
+  --color-on-surface: #212427;
+  --color-anchor-bg: #e8e8e8;
+  --color-paragraph: #212427;
+  --color-chip-border: #cfcfcf;
+  --color-icon-muted: #212427;
+  --shadow-rail: 0 0 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 :root {
@@ -83,7 +118,7 @@ body {
 }
 
 p {
-  color: #8ecccc;
+  color: var(--color-paragraph);
 }
 
 li {
@@ -91,12 +126,12 @@ li {
   float: left;
   margin: 2px;
 
-  border: solid 2px #3a4042;
+  border: solid 2px var(--color-chip-border);
   border-radius: 4px;
 }
 
 a {
   display: block;
   padding: 8px;
-  background-color: #212121;
+  background-color: var(--color-anchor-bg);
 }

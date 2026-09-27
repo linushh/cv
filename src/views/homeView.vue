@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .background-color {
   background-color: var(--color-background);
 }
@@ -34,17 +34,20 @@ export default {
   align-items: center;
 }
 
-.navigation {
-  display: flex;
-  justify-content: center;
-}
-
 .margin {
   margin: 1rem;
 }
 
 .pre-formatted {
   white-space: pre-wrap;
+}
+
+.pre-formatted :deep(p) {
+  color: #f0f0f0;
+}
+
+body.light-mode .pre-formatted :deep(p) {
+  color: var(--color-text);
 }
 
 @media (max-width: 768px) {

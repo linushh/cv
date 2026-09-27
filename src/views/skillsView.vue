@@ -112,6 +112,14 @@ export default {
   height: 220px;
   object-fit: contain;
 }
+
+.centering p {
+  color: #f0f0f0;
+}
+
+body.light-mode .centering p {
+  color: var(--color-text);
+}
 .centering {
   display: flex;
   justify-content: center;

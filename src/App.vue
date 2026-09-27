@@ -1,7 +1,11 @@
 <template>
+  <header class="top-controls">
+    <languageSwitcher />
+    <themeToggle />
+  </header>
+
   <div class="body-size">
     <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
-    <languageSwitcher />
 
     <RouterView />
   </div>
@@ -14,30 +18,46 @@
 </template>
 
 <script>
-const socialData = socials.getSocials()
 import { RouterLink, RouterView } from 'vue-router'
 
 import Footer from '@/components/footer.vue'
 import Drawer from '@/components/drawer.vue'
 import languageSwitcher from '@/components/languageSwitcher.vue'
+import themeToggle from '@/components/themeToggle.vue'
 import socials from '@/service/socials'
+import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
     Footer,
     Drawer,
-    languageSwitcher
+    languageSwitcher,
+    themeToggle
+  },
+
+  created() {
+    useThemeStore().init()
   },
 
   data() {
     return {
-      socials: socialData
+      socials: socials.getSocials()
     }
   }
 }
 </script>
 
 <style>
+.top-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .body-size {
   min-height: calc(100vh - 93px);
 }

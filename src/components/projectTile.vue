@@ -34,7 +34,7 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  background-color: #282828;
+  background-color: var(--color-card);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   aspect-ratio: 16 / 10;

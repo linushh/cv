@@ -164,8 +164,8 @@ export default {
   top: 0;
   bottom: 0;
   width: var(--mini-drawer-width);
-  background-color: #333;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-rail);
   z-index: 1;
 }
 
@@ -178,10 +178,11 @@ export default {
   border: none;
   border-radius: 0;
   float: none;
+  transition: background-color 0.2s ease;
 }
 
 .mini-drawer li:hover {
-  background-color: #555;
+  background-color: var(--color-surface-hover);
 }
 
 .mini-drawer a {
@@ -189,14 +190,18 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: white;
+  color: var(--color-on-surface);
   padding: 0;
   background-color: transparent;
 }
 
 .mini-drawer i {
-  color: white;
+  color: var(--color-icon-muted);
   font-size: 1rem;
+}
+
+.mini-drawer li:hover i {
+  color: var(--color-on-surface);
 }
 
 .overlay {
@@ -211,10 +216,10 @@ export default {
   left: -250px; /* Drawer is hidden off-screen by default */
   top: 0;
   bottom: 0;
-  background-color: #333;
+  background-color: var(--color-surface);
   overflow-x: hidden;
   transition: left 0.3s ease;
-  color: white;
+  color: var(--color-on-surface);
   padding: 1rem;
   z-index: 2;
 }
@@ -230,24 +235,30 @@ ul {
   padding: 0;
 }
 
+.drawer li {
+  border-radius: 8px;
+}
+
 li a {
-  color: white;
+  color: var(--color-on-surface);
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  padding: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
 
 li a:hover {
-  background-color: #555;
+  background-color: var(--color-surface-hover);
   cursor: pointer;
 }
 
 .drawer-divider {
   margin: 0.75rem 0;
-  border-top: 1px solid #555;
+  border-top: 1px solid var(--color-surface-hover);
 }
 
 .socials-link a:hover {
