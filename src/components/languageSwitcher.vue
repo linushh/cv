@@ -50,15 +50,11 @@ export default {
 
 <style scoped>
 .language-switcher {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 3;
   display: flex;
 }
 
 .language-button {
-  background-color: #444444;
+  background-color: var(--color-surface-alt);
   border: none;
   border-radius: 5px;
   padding: 0.3rem 0.5rem;
@@ -67,7 +63,7 @@ export default {
 }
 
 .language-button:hover {
-  background-color: #555555;
+  background-color: var(--color-surface-hover);
 }
 
 .language-button.active {

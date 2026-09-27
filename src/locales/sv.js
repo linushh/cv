@@ -1,4 +1,8 @@
 export default {
+  header: {
+    switchTheme: 'Byt tema'
+  },
+
   nav: {
     home: 'Hem',
     skills: 'Mina kunskaper',

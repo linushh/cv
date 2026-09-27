@@ -26,7 +26,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+footer p {
+  color: var(--color-text);
+}
+
 .box {
   display: flex;
   justify-content: center;

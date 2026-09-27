@@ -1,4 +1,8 @@
 export default {
+  header: {
+    switchTheme: 'Switch theme'
+  },
+
   nav: {
     home: 'Home',
     skills: 'My Skills',
