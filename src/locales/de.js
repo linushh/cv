@@ -33,7 +33,8 @@ Meine Reise in die IT begann, als ich 14-15 Jahre alt war und zusammen mit meine
 Neben Computern, Technik und Sport bin ich auch ein großer Naturfreund. Ich verbringe gerne Zeit draußen. Diese Erfahrungen helfen mir, inspiriert und kreativ zu bleiben.
 
 Ich habe diese Website erstellt, um meine Projekte und meine Gedanken zu teilen und um dir ein besseres Bild davon zu geben, wer ich als Person bin.
-Ich hoffe, du findest hier etwas Interessantes, und zögere nicht, mich zu kontaktieren, wenn du mehr wissen möchtest oder einfach Hallo sagen willst!`
+Ich hoffe, du findest hier etwas Interessantes, und zögere nicht, mich zu kontaktieren, wenn du mehr wissen möchtest oder einfach Hallo sagen willst!`,
+    downloadCv: 'Lebenslauf herunterladen'
   },
 
   skills: {
