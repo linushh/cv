@@ -1,63 +1,98 @@
 <template>
   <div id="app" class="position-absolute">
-    <div class="content" :class="{ open: isDrawerOpen }">
-      <i v-if="isDrawerOpen" @click="toggleDrawer" class="fa-solid fa-circle-xmark fa-xl pointer icon" />
+    <nav class="mini-drawer" @mouseenter="openDrawer">
+      <ul>
+        <li class="pointer" :title="$t('nav.home')" @click="pushEvent('')">
+          <i class="fa-solid fa-house"></i>
+        </li>
+
+        <li class="pointer" :title="$t('nav.skills')" @click="pushEvent('skills')">
+          <i class="fa-solid fa-gears"></i>
+        </li>
+
+        <li class="pointer" :title="$t('nav.projects')" @click="pushEvent('projects')">
+          <i class="fa-solid fa-folder-open"></i>
+        </li>
+
+        <li class="pointer" :title="$t('nav.experience')" @click="pushEvent('experience')">
+          <i class="fa-solid fa-briefcase"></i>
+        </li>
+
+        <li>
+          <a :href="links[0]" target="_blank" title="Github">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+
+        <li>
+          <a :href="links[1]" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+
+        <li>
+          <a :href="links[2]" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div
+      v-if="isDrawerOpen"
+      class="overlay"
+      @click="toggleDrawer">
     </div>
 
-    <button
-      v-if="!isDrawerOpen"
-      @click="toggleDrawer"
-      class="drawer-color box-shadow pointer move-burger-menu">
-        <div class="burger-menu"></div>
-        <div class="burger-menu"></div>
-        <div class="burger-menu"></div>
-    </button>
-
-
-    <div class="drawer" :class="{ open: isDrawerOpen }">
+    <div
+      class="drawer"
+      :class="{ open: isDrawerOpen }"
+      @mouseleave="scheduleClose">
       <ul>
         <li @click="pushEvent('')">
           <a>
-            Home
+            {{ $t('nav.home') }}
           </a>
         </li>
-        
+
         <li @click="pushEvent('skills')">
           <a>
-            My Skills
+            {{ $t('nav.skills') }}
           </a>
         </li>
-        
+
         <li @click="pushEvent('projects')">
           <a>
-            Projects
+            {{ $t('nav.projects') }}
           </a>
         </li>
 
         <li @click="pushEvent('experience')">
           <a>
-            Experience
+            {{ $t('nav.experience') }}
           </a>
         </li>
-        
-        <li>
-          <a 
+
+        <li class="drawer-divider"></li>
+
+        <li class="socials-link">
+          <a
             :href=links[0]
             target="_blank">
               Github
           </a>
         </li>
-        
-        <li>
-          <a 
+
+        <li class="socials-link">
+          <a
             :href=links[1]
             target="_blank">
               LinkedIn
           </a>
         </li>
-        
-        <li>
-          <a 
+
+        <li class="socials-link">
+          <a
             :href=links[2]
             target="_blank">
               Facebook
@@ -76,12 +111,26 @@ export default {
 
   data() {
     return {
-      isDrawerOpen: false
+      isDrawerOpen: false,
+      closeTimer: null
     }
   },
 
   methods: {
+    openDrawer() {
+      clearTimeout(this.closeTimer)
+      this.isDrawerOpen = true
+    },
+
+    scheduleClose() {
+      clearTimeout(this.closeTimer)
+      this.closeTimer = setTimeout(() => {
+        this.isDrawerOpen = false
+      }, 300)
+    },
+
     toggleDrawer() {
+      clearTimeout(this.closeTimer)
       this.isDrawerOpen = !this.isDrawerOpen
     },
 
@@ -102,37 +151,57 @@ export default {
 .pointer {
   cursor: pointer;
 }
+
 .position-absolute {
   position: fixed;
   top: 0;
 }
 
-.box-shadow:hover {
-  box-shadow: 0 8px 16px 0 #3a4042;
+.mini-drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--mini-drawer-width);
+  background-color: #333;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-.burger-menu {
-  width: 35px;
-  height: 5px;
-  background-color: rgb(28, 28, 28);
-  margin: 6px 0;
-  border-radius: 5px;
+.mini-drawer li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  float: none;
 }
 
-.icon {
-  margin-left: 0.5rem; 
-  margin-top: 1.5rem;
+.mini-drawer li:hover {
+  background-color: #555;
 }
 
-.icon:hover {
-  color: #ccc;
+.mini-drawer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  padding: 0;
+  background-color: transparent;
 }
 
-.drawer-color {
-  flex-direction: column;
-  background-color: #444444;
-  margin: 10px;
-  border-radius: 5px;
+.mini-drawer i {
+  color: white;
+  font-size: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
 }
 
 .drawer {
@@ -146,18 +215,11 @@ export default {
   transition: left 0.3s ease;
   color: white;
   padding: 1rem;
+  z-index: 2;
 }
 
 .drawer.open {
   left: 0; /* Drawer slides in */
-}
-
-.content {
-  transition: margin-left 0.3s ease;
-}
-
-.content.open {
-  margin-left: 250px; /* Content moves to the right when drawer opens */
 }
 
 ul {
@@ -182,27 +244,12 @@ li a:hover {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .content.open {
-    margin-left: 210px; /* Content moves to the right when drawer opens */
-  }
+.drawer-divider {
+  margin: 0.75rem 0;
+  border-top: 1px solid #555;
+}
 
-  .icon {
-    margin-left: 30px;
-    margin-top: 0;
-  }
-
-  .move-burger-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 1px;
-  }
-
-  .burger-menu {
-    width: 20px; /* Reduce the width of the bars */
-    height: 3px; /* Reduce the height of the bars */
-    margin: 3px 0;
-  }
+.socials-link a:hover {
+  background-color: transparent;
 }
 </style>

@@ -36,12 +36,23 @@
   --section-gap: 160px;
 }
 
+:root {
+  --mini-drawer-width: 40px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+}
+
+/* Pseudo-elements must inherit font-weight (not be forced to normal),
+   otherwise Font Awesome solid glyphs (weight 900) can't resolve. */
+*::before,
+*::after {
+  font-weight: inherit;
 }
 
 body {
