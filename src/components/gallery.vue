@@ -1,25 +1,38 @@
 <template>
-  <h1 class="title-center">{{ title }}</h1>
-  <div class="image-container">
-    <img
-      v-lazy="{src: picture.src, loading: load, error: '../assets/loading.png'}" 
-      v-for="(picture, index) in images" :key="index"
-      @click="showPreview(picture.src, images, index)">
-    </div>
-    
-    <div class="modal" v-if="previewImage">
-      <img :src="previewImage" alt="Preview">
+  <div v-if="images && images.length">
+    <header class="gallery-header">
+      <button class="back-button pointer" @click="$emit('close')">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <h1 class="gallery-title">{{ title }}</h1>
+    </header>
 
-      <button @click="previousImage" class="float-left space-around left-arrow" />
-      <button @click="nextImage" class="float-right space-around right-arrow" />
-      
-      <i @click="closePreview" class="fa-solid fa-circle-xmark fa-xl pointer close" />
+    <div class="image-grid">
+      <img
+        v-for="(image, index) in images"
+        :key="index"
+        v-lazy="{ src: image.src, loading: load }"
+        @click="openPreview(index)">
     </div>
 
-    <footer class="title-center">
-      <a v-if="getFrontend()" :href="getFrontend()" target="_blank"> {{ frontendName }} </a>
-      <a v-if="getBackend()" :href="getBackend()" target="_blank"> {{ backendName }} </a>
+    <footer class="gallery-links">
+      <a v-if="frontend" :href="frontend" target="_blank">{{ frontendName }}</a>
+      <a v-if="backend" :href="backend" target="_blank">{{ backendName }}</a>
     </footer>
+
+    <div class="modal" v-if="currentIndex !== null" @click.self="closePreview">
+      <img :src="images[currentIndex].src" alt="Preview" class="preview">
+
+      <div class="filmstrip">
+        <img
+          v-for="(image, index) in images"
+          :key="index"
+          :src="image.src"
+          :class="{ active: index === currentIndex }"
+          @click="openPreview(index)">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -27,233 +40,139 @@ import load from '@/assets/progress.jpg'
 
 export default {
   props: {
-    images: Array,
     title: String,
+    images: Array,
     frontend: String,
     backend: String,
     frontendName: String,
     backendName: String
   },
 
+  emits: ['close'],
+
   data() {
     return {
-      previewImage: '',
-      load,
       currentIndex: null,
-      allImages: null
-    }
-  },
-
-  computed: {
-    nextImage() {
-      if (this.currentIndex < this.allImages.length -1) {
-        this.currentIndex ++  
-        this.previewImage = this.allImages[this.currentIndex].src
-      } 
-      
-      if (this.currentIndex > this.allImages.length -1) {
-        this.currentIndex = this.allImages.length -1
-      }
-    },
-
-    previousImage() {
-      if (this.currentIndex > 0) {
-        this.currentIndex --
-        this.previewImage = this.allImages[this.currentIndex].src
-      } 
-      
-      if (this.currentIndex <= 0) {
-        this.currentIndex = 0
-      }
+      load
     }
   },
 
   methods: {
-    showPreview(picture, images, index) {
-      this.previewImage = picture
-
+    openPreview(index) {
       this.currentIndex = index
-      this.allImages = images
     },
 
     closePreview() {
-      this.previewImage = ''
-    },
-
-    getFrontend() {
-      return this.frontend !== null ? this.frontend : ''
-    },
-
-    getBackend() {
-      return this.backend !== null ? this.backend : ''
+      this.currentIndex = null
     }
   }
 }
 </script>
 
-<style>
-.left-arrow {
-  padding: 10px;
-  border: solid grey;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  transform: rotate(-225deg);
-  -webkit-transform: rotate(-225deg);
-  background-color: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 450px;
-  left: 70px;
-}
-
-.right-arrow {
-  padding: 10px;
-  border: solid grey;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  background-color: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 450px;
-  right: 70px;
-}
-
-.close {
-  color: grey;
-  position: absolute;
-  top: 10px;
-  right: 70px;
-  transform: translateY(-50%);
-  font-size: 30px;
-  cursor: pointer;
-  margin-top: 2rem;
-  -webkit-animation-timing-function: linear;
-  -webkit-transition: ease-in-out 0.1s;
-}
-
-.right-arrow:hover, .left-arrow:hover {
-  border-color: #ccc;
-  -webkit-animation-timing-function: linear;
-  -webkit-transition: ease-in-out 0.1s;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.space-around {
-  margin: 5px;
-}
-
-.title-center{
-  text-align: center;
-}
-
-.image-container {
+<style scoped>
+.gallery-header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 2rem 1rem calc(var(--mini-drawer-width) + 2rem);
 }
 
-.image-container img {
-  height: 20%;
-  width: 20%;
-  margin: 1rem;
-  cursor: pointer;
+.back-button {
+  background-color: #444444;
+  border: none;
   border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
 }
 
-@media(max-width: 768px) {
-  .image-container img {
-    height: 40%;
-    width: 40%;
-  }
+.back-button:hover {
+  background-color: #555555;
 }
 
-.image-container img:hover {
-  border: 3px solid #8ecccc;
-  -webkit-animation-timing-function: linear;
-  -webkit-transition: ease-in-out 0.1s;
+.gallery-title {
+  color: white;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0 2rem 2rem calc(var(--mini-drawer-width) + 2rem);
+}
+
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-grid img:hover {
+  outline: 3px solid #8ecccc;
+}
+
+.gallery-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 2rem 2rem calc(var(--mini-drawer-width) + 2rem);
 }
 
 .modal {
-  display: block;
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal img {
+.preview {
   margin: auto;
-  display: block;
   max-width: 80%;
-  max-height: 80%;
+  max-height: 70vh;
   border-radius: 5px;
 }
 
-.close:hover, .close:focus {
-  color: #ccc;
-  text-decoration: none;
+.filmstrip {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 90%;
+  margin: 0 auto 1rem;
+  padding: 0.25rem;
+  overflow-x: auto;
+}
+
+.filmstrip img {
+  height: 70px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
   cursor: pointer;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.filmstrip img:hover {
+  opacity: 1;
+}
+
+.filmstrip img.active {
+  outline: 3px solid hsla(160, 100%, 37%, 1);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
-  .close {
-    font-size: 25px;
-    right: 10px;
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
-  .right-arrow {
-    padding: 7px;
-    top: 100px;
-    right: 15px;
-  }
-
-  .left-arrow {
-    padding: 7px;
-    top: 100px;
-    left: 15px;
+  .preview {
+    max-width: 92%;
   }
 }
-
-@media (max-width: 1024px) {
-  .close {
-    right: 35px;
-  }
-}
-
-@media (max-width: 450px) {
-  .close {
-    font-size: 15px;
-    right: 7px;
-    top: 0;
-  }
-
-  .right-arrow {
-    top: 80px;
-    right: 10px;
-  }
-
-  .left-arrow {
-    top: 80px;
-    left: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-    .close {
-      right: 15px;
-      top: 0px;
-    }
-  }
 </style>

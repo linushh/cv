@@ -77,6 +77,7 @@ Användning av olika maskiner var vanligt, som Walker-klippare och Avant.`
   },
 
   projects: {
+    images: '{0} bilder',
     todoTitle: 'Todo-applikation: Java, Vue, MySql',
     todoFrontendName: 'Todo-applikation: frontend, vue, java',
     todoBackendName: 'Todo-applikation: backend, spring boot, mysql',

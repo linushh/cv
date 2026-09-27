@@ -77,6 +77,7 @@ L'utilisation de diverses machines était courante, comme des tondeuses Walker e
   },
 
   projects: {
+    images: '{0} images',
     todoTitle: 'Application Todo : Java, Vue, MySql',
     todoFrontendName: 'Application Todo : frontend, vue, java',
     todoBackendName: 'Application Todo : backend, spring boot, mysql',

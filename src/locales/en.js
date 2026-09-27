@@ -77,6 +77,7 @@ The use of various machines was common, such as Walker mowers and Avant.`
   },
 
   projects: {
+    images: '{0} images',
     todoTitle: 'Todo Application: Java, Vue, MySql',
     todoFrontendName: 'Todo Application: frontend, vue, java',
     todoBackendName: 'Todo Application: backend, spring boot, mysql',

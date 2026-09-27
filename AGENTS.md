@@ -37,6 +37,7 @@ No linter or test framework is set up yet. Verify changes with `npm run build` a
 - Match existing component style (script setup vs options API) when editing a file
 - Don't add dependencies without asking first
 - Any new user-facing string must be added to all four locale files (en, sv, fr, de)
+- vue-i18n runs in legacy mode: dynamic values use list interpolation — `$t('key', [value])` with `'{0}'` in the message; named-object args (`$t('key', { n })`) throw "Invalid arguments"
 
 ## Code quality goals
 

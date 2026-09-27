@@ -77,6 +77,7 @@ Der Einsatz verschiedener Maschinen war üblich, wie Walker-Rasenmäher und Avan
   },
 
   projects: {
+    images: '{0} Bilder',
     todoTitle: 'Todo-Anwendung: Java, Vue, MySql',
     todoFrontendName: 'Todo-Anwendung: Frontend, Vue, Java',
     todoBackendName: 'Todo-Anwendung: Backend, Spring Boot, MySQL',
