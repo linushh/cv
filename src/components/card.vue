@@ -1,6 +1,10 @@
 <template>
   <div class="card">
-    <img v-lazy="{ src: image, loading: load}"  class="img margin">
+    <img
+      v-lazy="{ src: image, loading: load}"
+      class="img margin"
+      :class="{ round: round }"
+      @click="showPreview">
 
     <div class="container">
       <h4>
@@ -10,7 +14,10 @@
       </h4>
       <p class="margin-ten">{{ name }}</p>
     </div>
-    </img>
+
+    <div v-if="isPreviewOpen" class="modal" @click="closePreview">
+      <img :src="image" alt="Preview" :class="{ round: round }">
+    </div>
   </div>
 </template>
 
@@ -21,12 +28,24 @@ export default {
   props: {
     name: String,
     title: String,
-    image: String
+    image: String,
+    round: Boolean
   },
 
   data() {
     return {
-      load
+      load,
+      isPreviewOpen: false
+    }
+  },
+
+  methods: {
+    showPreview() {
+      this.isPreviewOpen = true
+    },
+
+    closePreview() {
+      this.isPreviewOpen = false
     }
   }
 }
@@ -65,6 +84,38 @@ export default {
   border-radius: 5px 5px 5px 5px;
   max-height: 350px;
   max-width: auto;
+  cursor: pointer;
+}
+
+.img.round {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.modal img {
+  max-width: 40%;
+  max-height: 40%;
+  border-radius: 5px;
+}
+
+.modal img.round {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {

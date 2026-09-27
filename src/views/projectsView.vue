@@ -1,12 +1,12 @@
 <template>
   <div class="background-color margin">
     <div class='margin-bottom'>
-      <gallery 
+      <gallery
         :frontend="getFrontend()"
-        :frontend-name="'Todo Application: frontend, vue, java'"
+        :frontend-name="$t('projects.todoFrontendName')"
         :backend="getBackend()"
-        :backend-name="'Todo Application: backend, spring boot, mysql'"
-        :title="'Todo Application: Java, Vue, MySql'"
+        :backend-name="$t('projects.todoBackendName')"
+        :title="$t('projects.todoTitle')"
         :images="images">
       </gallery>
     </div>
@@ -14,21 +14,18 @@
     <div class="margin-top margin-bottom">
       <gallery
         :images="sunbotImages"
-        :title="'SunbotJs. A discord music bot with a discord api. (In progress)'"
+        :title="$t('projects.sunbotTitle')"
         :backend="getSunbotGithub()"
-        :backend-name="'SunbotJs: in JavaScript!'">
+        :backend-name="$t('projects.sunbotBackendName')">
       </gallery>
     </div>
   </div>
 </template>
 
 <script>
-const socialData = socials.getSocials()
-
-import gallery from '../components/gallery.vue'
+import gallery from '@/components/gallery.vue'
 
 import images from '@/service/photoService/todoGallery.js'
-import socials from '@/service/socials'
 import projects from '@/service/photoService/github'
 
 import sunbotImages from '@/service/photoService/sunbotGallery.js'
@@ -42,10 +39,7 @@ export default {
   data() {
     return {
       images,
-      socials: socialData,
-      
-      sunbotImages,
-      sunbotGithub
+      sunbotImages
     }
   },
 
