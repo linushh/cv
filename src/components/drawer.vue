@@ -155,6 +155,7 @@ export default {
 .position-absolute {
   position: fixed;
   top: 0;
+  z-index: 4;
 }
 
 .mini-drawer {
