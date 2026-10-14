@@ -2,11 +2,11 @@
 
 | | |
 |---|---|
-| **Status** | Draft — awaiting approval |
+| **Status** | Approved — 2026-10-14 |
 | **Created** | 2026-10-14 |
 | **Owner** | Linus Håkansson |
 | **Input** | Structured interview, 2026-10-14 |
-| **Follow-ups** | `plan.md` / `tasks.md` to be written after approval |
+| **Follow-ups** | Execution per `plan.md` / `tasks.md` in this folder |
 
 ## 1. Problem statement
 
@@ -80,7 +80,7 @@ After this change:
 | Sub navbar content | The four routes again, active one highlighted — no new pages or anchors yet |
 | Drawer | Removed completely; no icon rail |
 | Mobile | Burger menu below ~768px |
-| Mobile menu content | Routes, socials, language and theme live in the panel (draft call — easy to change to controls-stay-in-bar if preferred) |
+| Mobile menu content | Routes, socials, language and theme live in the panel |
 | Deploy | Unchanged: manual subtree push of `dist/` to `gh-pages` |
 
 ## 8. Constraints and notes
