@@ -1,8 +1,10 @@
-# Tasks: 002 — Replace the drawer with a navbar and sub navbar
+# Tasks: 002 — Extending left sidebar (sub navbar)
 
 Execution checklist for `spec.md` / `plan.md`. Phases are ordered unless marked `[P]`. Each task lists its verification; checkpoint lines gate the next phase.
 
 Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
+
+> **Revision (2026-10-14):** the first design (top navbar + route sub bar, Phases A–E below) was rejected in review. **Phase R** reworks navigation into the extending left sidebar recorded in `spec.md`; it supersedes the navigation-specific tasks of Phases A–D, which remain as the execution record of the first attempt.
 
 ---
 
@@ -60,3 +62,19 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 - [ ] **E04** Deploy after sign-off: `git subtree push --prefix dist origin gh-pages`; cache-busted spot check of the live site. (*SC-6*)
 
 **Checkpoint E:** branch committed; live site serves the new navigation.
+
+---
+
+## Phase R — Revision (supersedes the navigation tasks of Phases A–D)
+
+- [ ] **R01** Create `src/components/sidebar.vue`: fixed left rail (route icons + social icons, active route highlighted); pressing an icon toggles the extension; labels fade in beside the fixed icon column; route labels navigate + collapse; overlay click / Escape / second press / route change collapse; mobile burger + off-canvas panel. (*FR-1…FR-4, FR-6*)
+- [ ] **R02** `src/service/nav.js`: add `icon` classes to the four route items. (*FR-1*)
+- [ ] **R03** `src/assets/base.css`: replace `--navbar-height` / `--sub-navbar-height` with `--sidebar-width` (40px) and `--sidebar-expanded-width` (220px). (*FR-7*)
+- [ ] **R04** `src/App.vue`: restore floating `.top-controls` (language + theme); compose `sidebar` with the service data; mobile `.body-size` top padding for the floating chrome. (*FR-5, FR-7*)
+- [ ] **R05** Restore rail offsets: `projectsView.vue` (desktop margins + compact mobile), `gallery.vue` (3 margins + mobile override); remove `skillsView.vue`'s redundant mobile `padding-top`. (*FR-7*)
+- [ ] **R06** Delete `navbar.vue`, `subNavbar.vue`, `navLinks.vue`; greps for top-bar leftovers. (*FR-9, SC-5*)
+- [ ] **R07** Build + headless pass: desktop collapsed/expanded, icon toggles, label navigation + collapse, Escape/overlay, active states on all four routes; mobile burger open/close; screenshots reviewed. (*SC-1…SC-4*)
+- [ ] **R08** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2…SC-4*)
+- [ ] **R09** Rebuild `dist/`, commit; deploy via `git subtree push --prefix dist origin gh-pages` after sign-off. (*FR-10, SC-6*)
+
+**Checkpoint R:** left sidebar behaves as specified; top bars removed; owner sign-off and deploy pending.

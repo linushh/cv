@@ -1,111 +1,120 @@
-# 002 — Replace the drawer with a navbar and sub navbar
+# 002 — Extending left sidebar (sub navbar)
 
 | | |
 |---|---|
-| **Status** | Implemented — 2026-10-14 |
+| **Status** | Implemented — 2026-10-14 (revision R1) |
 | **Created** | 2026-10-14 |
 | **Owner** | Linus Håkansson |
-| **Input** | Structured interview, 2026-10-14 |
-| **Follow-ups** | Execution recorded in `plan.md` / `tasks.md`; owner visual pass (D04) and `gh-pages` deploy (E04) remain |
+| **Input** | Structured interview, 2026-10-14; design revision after implementation review |
+| **Follow-ups** | Execution recorded in `plan.md` / `tasks.md` (Phase R); owner visual pass and `gh-pages` deploy remain |
+
+> **Revision (2026-10-14):** The first implementation moved navigation to a top navbar with a route sub bar. Review rejected it: navigation must stay a **left sidebar with icons**, where **pressing an icon extends the sidebar to reveal the menu labels without hiding the icons**. The spec below records the corrected design and supersedes the first one (kept in git history / Phase A–D of `tasks.md`).
 
 ## 1. Problem statement
 
-Navigation today is a fixed left icon rail (`mini-drawer`, 40px wide) that expands a larger drawer on pointer hover (`src/components/drawer.vue`). It is clunky:
+Navigation is a fixed left icon rail (`mini-drawer`, 40px) that expands a *separate* drawer on pointer hover (`drawer.vue`). It is clunky:
 
-- It is hover-driven: the drawer opens on `pointerenter` and closes 300 ms after `mouseleave`; a small wrong movement dismisses it.
-- On touch devices the hover never fires, so the labeled drawer is effectively unreachable; tapping an icon navigates directly and the labels are never seen.
-- The rail permanently consumes layout width: `src/views/projectsView.vue` and `src/components/gallery.vue` hardcode margins around `calc(var(--mini-drawer-width) + …)`.
-- There is no persistent overview of the site's sections and no "where am I" indicator beyond the small icon highlight; social links are buried inside the hover drawer.
+- Hover-driven: the drawer opens on `pointerenter` and closes 300 ms after `mouseleave`; a wrong movement dismisses it, and touch devices never see it.
+- The opened drawer (250px, `z-index` above the rail) **slides over and hides the rail icons**, so icons and labels are never visible at the same time.
+- Labels are only reachable through hover; pressing an icon navigates instantly, so an accidental press while browsing is easy.
 
 ## 2. Goal
 
 After this change:
 
-1. A clear two-tier navigation replaces the drawer: a top **navbar** with the site name, social links, language switcher and theme toggle; directly below it a **sub navbar** listing the four routes with the active route highlighted.
-2. The drawer and the icon rail are gone completely, including `--mini-drawer-width` and every layout offset that depended on it.
-3. On small screens (< 768px) the navigation collapses into a burger menu that still reaches every route, every social link and both controls.
+1. The left sidebar stays: icons for the four routes (Home, Skills, Projects, Experience) and the three socials (GitHub, LinkedIn, Facebook) are always visible.
+2. **Pressing an icon extends the sidebar in place** (40px → ~220px) so labels appear next to the icons. The icons remain visible and in the same position the whole time — no separate drawer, no hiding.
+3. Labels are the navigation targets: route labels navigate (and collapse the sidebar), social labels open external links.
+4. **Outside click, Escape, pressing an icon again, or a route change collapse** the sidebar.
+5. Language switcher and theme toggle return to the floating top-right controls (`.top-controls`) as before the first implementation.
+6. Below 768px the rail becomes a burger button that opens the same icon + label panel as an overlay.
 
 ## 3. Non-goals (out of scope)
 
-- No new routes, pages, or in-page section anchors: the sub navbar lists exactly the four existing routes (Home, Skills, Projects, Experience). Growing real sub items is a possible later change, not this one.
-- No redesign of view content; only the offset/margin adjustments required because the rail is gone.
+- No top bars: the top navbar and route sub bar from the first implementation are removed (revision R1).
+- No hover-open behaviour: opening is press-only.
+- No new routes, pages, or in-page anchors.
+- No redesign of view content; only the rail-offset margins (projects grid, gallery) are restored.
 - No changes to the i18n setup, theme store, router, or dependencies.
-- No changes to `scrollToTop` behaviour.
-- No automations (CI, deploy scripts) — deployment stays a manual `gh-pages` subtree push.
 
 ## 4. Affected surfaces
 
 | Surface | Today | Target |
 |---|---|---|
-| `src/App.vue` | `.top-controls` header (language + theme) and `<Drawer>` | composes `navbar` + `subNavbar`; drawer import/usage removed |
-| `src/components/drawer.vue` | rail + hover drawer, routes + socials | deleted |
-| New: `src/components/navbar.vue` | — | top bar: brand, socials, language switcher, theme toggle, mobile burger |
-| New: `src/components/subNavbar.vue` | — | the four routes, active route highlighted |
-| New: `src/service/nav.js` | — | ordered nav item list (`path` + i18n label key) |
-| `src/assets/base.css` | `--mini-drawer-width: 40px` | variable removed |
-| `src/views/projectsView.vue` | 2 rail-based margins | plain margins, no rail offset |
-| `src/components/gallery.vue` | 3 rail-based margins | plain margins, no rail offset |
-| `src/locales/{en,sv,fr,de}.js` | `nav.*` labels, `header.switchTheme` | reuse; add one new key for the burger menu label (all four) |
-| `dist/` (committed) | build output with the drawer | rebuilt with the new navigation |
-| `origin/gh-pages` (deployed) | served build with the drawer | refreshed via the usual manual subtree push |
+| `src/components/navbar.vue`, `subNavbar.vue`, `navLinks.vue` | top navbar + route sub bar (first implementation) | deleted |
+| New: `src/components/sidebar.vue` | — | fixed left rail; press-to-extend; labels; mobile burger + overlay panel |
+| `src/App.vue` | composed top navbar + sub navbar | restore `.top-controls` (language + theme); compose `sidebar`; mobile top padding for floating chrome |
+| `src/service/nav.js` | route items (`path`, `labelKey`) | adds `icon` class per item |
+| `src/assets/base.css` | `--navbar-height`, `--sub-navbar-height` | `--sidebar-width: 40px`, `--sidebar-expanded-width: 220px` |
+| `src/views/projectsView.vue` | plain margins | rail-offset margins restored (desktop), compact mobile margins |
+| `src/components/gallery.vue` | plain margins | rail-offset margins restored (desktop), compact mobile margins |
+| `src/views/skillsView.vue` | mobile `padding-top` for the old floating controls | removed (global mobile padding covers the chrome) |
+| `src/locales/{en,sv,fr,de}.js` | `nav.menu` added | unchanged (burger label) |
+| `dist/`, `origin/gh-pages` | built with the top bars | rebuilt, then deployed via the usual manual subtree push |
+
+`src/components/drawer.vue` (deleted in the first implementation) stays deleted; its role is taken over by `sidebar.vue` without the separate-drawer hover behaviour.
 
 ## 5. Requirements (FR)
 
-- **FR-1 Navbar.** New presentational component `src/components/navbar.vue`: brand = `socials.name` from `src/service/socials.js`, linked to home; social links (GitHub, LinkedIn, Facebook) and the existing `languageSwitcher` + `themeToggle` components on the right; fixed at the top of the viewport above content; replaces the `.top-controls` header in `src/App.vue`. Styles `<style scoped>` using existing CSS variables so dark and light modes both look right.
-- **FR-2 Sub navbar.** New presentational component `src/components/subNavbar.vue`: renders the four routes as links, directly below the navbar, on every route. The active route is visually highlighted (same treatment idea as today's drawer active state). Works with hash routing (`createWebHashHistory`) — use `RouterLink`/`$route` matching, not raw `location` checks.
-- **FR-3 Nav data service.** `src/service/nav.js` exports the ordered items `[{ path, labelKey }]` (`/` → `nav.home`, `/skills` → `nav.skills`, `/projects` → `nav.projects`, `/experience` → `nav.experience`). Components stay presentational; a future sub item is a data change, not a markup change.
-- **FR-4 Drawer removal.** Delete `src/components/drawer.vue`; remove its import, registration and template usage from `src/App.vue`. `App.vue` keeps only navbar composition, `RouterView` and `scrollToTop`.
-- **FR-5 Rail removal.** Delete `--mini-drawer-width` from `src/assets/base.css`; remove its five usages (`projectsView.vue` ×2, `gallery.vue` ×3). No occurrence of `mini-drawer` remains anywhere in `src/`.
-- **FR-6 Layout.** Content always starts below the two bars and nothing is hidden behind them (including after scrolling, on all four routes). Space freed by the rail is reclaimed: content uses full width with sensible padding on desktop. The gallery modal must stay above the navigation; `scrollToTop` keeps working.
-- **FR-7 Mobile (< 768px).** The top bar shows the brand and a burger button; the burger toggles a menu containing the four routes (active highlighted), the social links, the language switcher and the theme toggle. The menu closes on route change, overlay click and Escape. The burger exposes `aria-label` and `aria-expanded`. No hover-only interaction anywhere.
-- **FR-8 i18n.** All labels come from the locale files (`nav.*`, `header.switchTheme`). Add the burger label as a new key (e.g. `nav.menu`) to all four locales (`en`, `sv`, `fr`, `de`) with real translations. No hardcoded user-facing strings.
-- **FR-9 No dead code.** No unused imports, styles, or leftovers from the drawer/rail; new components follow repo conventions (lowercase filenames, presentational, scoped styles, `@` alias imports).
-- **FR-10 Build and deploy.** `npm run build` succeeds; committed `dist/` is rebuilt; deployment is the usual manual `gh-pages` subtree push (the site is served from committed artifacts).
+- **FR-1 Rail.** `sidebar.vue` renders a fixed left sidebar with an icon column: the four routes (from `src/service/nav.js`, active route highlighted) and the three socials. Icons are always visible. Overrides the global `li`/`a` styles in scoped CSS, like the old rail did. Uses existing CSS variables so dark and light modes work.
+- **FR-2 Extend on press.** Pressing any icon toggles the expanded state. The sidebar width animates from `--sidebar-width` to `--sidebar-expanded-width`; labels fade in beside the icons; the icons do not move or hide. No hover trigger.
+- **FR-3 Labels navigate.** Route labels are `RouterLink`s: clicking navigates and collapses the sidebar. Social labels are external links opening in a new tab. While collapsed, labels are hidden and not focusable (`visibility: hidden`).
+- **FR-4 Collapse.** Overlay click (transparent click-catcher over the page), Escape, pressing an icon again, and route changes collapse the sidebar.
+- **FR-5 Top-right controls.** Language switcher and theme toggle return to the floating top-right `.top-controls` header exactly as before the first implementation.
+- **FR-6 Mobile (< 768px).** The rail is replaced by a burger button (fixed top-left) that toggles the sidebar as an off-canvas overlay panel with icons + labels. The burger sits above the panel and doubles as the close toggle; the panel keeps top padding so the burger stays visible. Overlay click, Escape and route change also close it.
+- **FR-7 Layout.** Restore the rail offsets in `projectsView.vue` (content margin next to the rail) and `gallery.vue` (header/grid/link margins) using `--sidebar-width`; compact mobile margins where the rail no longer exists on small screens. `.body-size` gains a mobile top padding so content clears the burger and the floating controls. On desktop, content spacing (e.g. projects grid top margin) returns to its original values.
+- **FR-8 i18n.** Reuse `nav.*` labels and the `nav.menu` burger label; no new user-facing strings are needed. All four locales stay in sync.
+- **FR-9 No dead code.** `navbar.vue`, `subNavbar.vue`, `navLinks.vue` and the `--navbar-height`/`--sub-navbar-height` variables are removed; no top-bar leftovers in `src/`.
+- **FR-10 Build and deploy.** `npm run build` succeeds; committed `dist/` is rebuilt; deployment stays the manual `gh-pages` subtree push.
 
 ## 6. Success criteria
 
 - **SC-1** `npm run build` succeeds.
-- **SC-2** Manual pass in `npm run dev`: all four routes render navbar + sub navbar, the correct item is highlighted, navigation works by mouse and keyboard; no drawer or rail anywhere; content is not overlapped by the bars at desktop width.
-- **SC-3** Mobile-width pass: burger opens/closes (route change, overlay, Escape), every route, social link, language and theme control is reachable; layout looks right.
-- **SC-4** All four locales show translated labels and the theme toggle flips the new bars correctly; no vue-i18n console warnings.
-- **SC-5** Grepping `src/` for `mini-drawer` and `drawer` returns no matches; `drawer.vue` is gone and `App.vue` has no leftovers.
-- **SC-6** Rebuilt `dist/` contains the new navigation; after the subtree push the live site serves it (spot check with a cache-buster).
+- **SC-2** Desktop pass (dev/preview, mouse + keyboard): rail visible with icons on all four routes and the correct route highlighted; pressing an icon extends the sidebar and the icons stay visible; clicking a label navigates and collapses; Escape, overlay click and pressing the icon again collapse it.
+- **SC-3** Mobile-width pass: burger visible, rail off-canvas; burger opens the panel with icons + labels; every route, social link, language and theme control is reachable; no overlap of content with the floating chrome.
+- **SC-4** All four locales show translated labels; dark and light themes render the sidebar correctly; no vue-i18n console warnings.
+- **SC-5** Grepping `src/` for `navbar`, `subNavbar`, `navLinks`, `navbar-height` and `mini-drawer` returns no matches; no dead components remain.
+- **SC-6** Rebuilt `dist/` contains the sidebar; after the subtree push the live site serves it (cache-busted spot check).
 
-## 7. Decisions log (interview)
+## 7. Decisions log (interview + revision)
 
 | Topic | Decision |
 |---|---|
-| Structure | Top navbar + sub navbar, replacing the left rail/drawer |
-| Top bar content | Site name (brand), socials, language switcher, theme toggle |
-| Sub navbar content | The four routes again, active one highlighted — no new pages or anchors yet |
-| Drawer | Removed completely; no icon rail |
-| Mobile | Burger menu below ~768px |
-| Mobile menu content | Routes, socials, language and theme live in the panel |
+| Structure (R1) | Left sidebar only; no top bars; language + theme float top-right as before |
+| Icons (R1) | Route icons + social icons always visible in the rail |
+| Extend (R1) | Pressing an icon extends the sidebar in place; icons never hidden; overlay extends over content without reflow |
+| Press behaviour (R1) | Press = extend/close toggle; label = navigate (route) or open (social) |
+| Collapse (R1) | Outside click, Escape, second press, route change |
+| Mobile (R1) | Burger top-left opens the same icon + label panel as an overlay |
+| First design | Top navbar + route sub bar — implemented, then rejected and removed (kept in git history) |
+| Sub navbar term | Realised as the sidebar's expanding label panel, not a separate top bar |
 | Deploy | Unchanged: manual subtree push of `dist/` to `gh-pages` |
 
 ## 8. Constraints and notes
 
-- Global element styles in `src/assets/base.css` (`li` is inline/floated with chip borders, `a` has a background) affect nav markup; the new components must override them in scoped styles, as the drawer does today.
-- Active-state detection must keep working with hash routing (`/#/skills` etc.).
-- Current z-index map: `scrollToTop` 2, old top controls 3, drawer container 4, gallery modal 3 (later in DOM). Pick navbar z-indices deliberately so the modal still covers the navigation.
-- `.body-size` in `App.vue` has `min-height: calc(100vh - 93px)` tuned to old spacing; revisit it together with FR-6.
+- Global element styles in `src/assets/base.css` (`li` inline/floated with borders, `a` with background) affect the sidebar markup; override them in scoped styles, as the old rail/drawer did.
+- Active state uses `$route.path === item.path`; works with hash routing.
+- Stacking kept as the original: sidebar group `z-index: 4` (above the gallery modal at 3, like the old rail), `.top-controls` 3, `scrollToTop` 2.
+- `--sidebar-width`/`--sidebar-expanded-width` are the single source for rail dimensions and content offsets.
+- The spec folder keeps its original name (`002-sub-navbar`) although the design changed; this document supersedes the title.
 - No new dependencies.
 
 ## 9. Risks and mitigations
 
 | Risk | Mitigation |
 |---|---|
-| Fixed bars overlap route content (every view has ad-hoc margins) | One shared top offset (FR-6) + manual check of all four routes at desktop and mobile widths |
-| Global `li`/`a` styles fight the new markup | Override in scoped styles, mirroring the drawer's approach |
-| Navbar vs gallery modal z-index conflict | Keep navbar below the modal's stacking level; verify with an open project |
-| Mobile menu usability/a11y regressions | FR-7 close paths + `aria-*`; manual phone-width check |
-| Stale deployed site if `dist/` is not rebuilt/pushed | FR-10 is the last done criterion; deploy stays manual by design |
-| Scope creep into restyling views | Non-goals; only rail-related offsets change |
+| Collapsed labels still clickable/focusable | `visibility: hidden` + `pointer-events` while collapsed; keyboard check in SC-2 |
+| Mobile burger overlapping content or panel rows | Panel top padding on mobile; `.body-size` top padding; visual pass at 390px (SC-3) |
+| Rail offsets missed in one view after the rework | Grep for `--sidebar-width` usages + screenshots of projects/gallery on desktop and mobile |
+| Global `li`/`a` styles bleeding into the sidebar | Scoped overrides, same approach as the original rail |
+| Content jump when extending (reflow) | Extending overlays content (fixed sidebar); no layout change |
+| Top-bar leftovers (CSS vars, components) | Removal grep in SC-5 |
 
-## 10. Suggested sequencing (detailed in `plan.md` after approval)
+## 10. Suggested sequencing (detail in `plan.md`)
 
-1. Add `src/service/nav.js`, `navbar.vue`, `subNavbar.vue`; compose them in `App.vue`.
-2. Delete the drawer; remove rail variable and all rail offsets; layout adjustments.
-3. Add the burger label key to all four locales.
-4. Build + manual verification (SC-1…SC-5).
-5. Rebuild `dist/`, commit, deploy via the manual subtree push (SC-6).
+1. Write `sidebar.vue` (rail, extend, labels, collapse, mobile burger).
+2. Update `nav.js` (icons), `base.css` (vars), `App.vue` (top controls + sidebar).
+3. Restore rail offsets (projects, gallery); drop the old mobile compensations.
+4. Delete the first-implementation components; leftover greps.
+5. Build + headless interaction pass (desktop + mobile); owner visual pass.
+6. Rebuild `dist/`, commit; deploy via the manual subtree push.

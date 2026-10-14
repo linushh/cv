@@ -1,73 +1,87 @@
-# Plan: 002 — Replace the drawer with a navbar and sub navbar
+# Plan: 002 — Extending left sidebar (sub navbar)
 
-Implements `specs/002-sub-navbar/spec.md` (FR-1…FR-10, SC-1…SC-6). Written before implementation changes; execution follows `tasks.md` in this folder.
+Implements `specs/002-sub-navbar/spec.md` (FR-1…FR-10, SC-1…SC-6). Revised 2026-10-14 after the first implementation (top navbar + route sub bar) was rejected in review; this plan covers the corrected design.
 
 ## Approach overview
 
-Three building blocks:
+Four building blocks:
 
-1. **New navigation components** — `src/service/nav.js` (data), `src/components/navLinks.vue` (generic route list, horizontal or vertical), `src/components/navbar.vue` (top bar + mobile burger menu), `src/components/subNavbar.vue` (second bar). `App.vue` composes them and passes service data as props (presentational components, data in services).
-2. **Removal of the drawer/rail** — delete `drawer.vue`; remove rail offsets (`--mini-drawer-width` and its 5 usages); give `.body-size` a top padding for the fixed bars.
-3. **Rebuild + verify** — `npm run build`, commit the refreshed `dist/`; deploy stays the manual `gh-pages` subtree push and waits until the manual visual pass passes.
+1. **`sidebar.vue`** — one component for the whole navigation:
+   - fixed left rail (`--sidebar-width: 40px`) with icons: four routes (from `service/nav.js`, active highlighted) + three socials;
+   - `isExpanded` state: pressing any icon toggles it; width animates to `--sidebar-expanded-width: 220px`; labels fade in beside the fixed icon column;
+   - labels are the targets: `RouterLink` for routes (navigate + collapse), `<a target="_blank">` for socials;
+   - collapse paths: transparent full-screen overlay click, Escape, second press, `$route` watcher;
+   - mobile (< 768px): burger fixed top-left toggles the same panel as an off-canvas overlay; burger stays above the panel as the close toggle.
+2. **Restore the original chrome** — `App.vue` gets `.top-controls` (language + theme) back; `.body-size` gains a mobile top padding so content clears the burger/controls.
+3. **Restore rail-based layout** — `--sidebar-width` replaces the navbar height vars; projects grid and gallery margins return to rail offsets (desktop) with compact mobile variants; `skillsView`'s mobile `padding-top` (old floating-control compensation) is removed since the global padding covers it.
+4. **Remove the first implementation** — delete `navbar.vue`, `subNavbar.vue`, `navLinks.vue`; `drawer.vue` stays deleted; `nav.menu` locale key stays (burger label).
 
-No router changes: the four routes and hash history stay as they are. No new dependencies.
+## Revision R1 (what changed vs the first implementation)
+
+| First implementation | Revision |
+|---|---|
+| Fixed top navbar (brand, socials, controls) | Removed; socials back in the left rail; controls back top-right |
+| Horizontal route sub bar below the navbar | Removed; routes are rail icons + labels revealed by extending |
+| `navLinks.vue` shared route list | Removed; sidebar renders its own rows (icon + label) |
+| `nav.menu` burger on mobile only | Kept; burger is now also the rail's mobile form |
+| `--navbar-height`/`--sub-navbar-height` | Replaced by `--sidebar-width`/`--sidebar-expanded-width` |
 
 ## Key decisions and gotchas
 
 | Topic | Detail |
 |---|---|
-| Component split | `navLinks.vue` renders the route list once, reused horizontally (sub navbar, desktop) and vertically (burger panel, mobile) — avoids duplicated markup across two components. |
-| Active state | `$route.path === item.path` (same rule as the old drawer's `isActive`). Works with `createWebHashHistory`; do not rely on `router-link-active` (the home route `/` would match every route). |
-| Global element styles | `base.css` styles `li` inline/floated with chip borders and `a` with a background. Nav components override these in scoped styles, as the drawer did. |
-| Fixed bars + content | `.body-size` gets `padding-top: calc(var(--navbar-height) + var(--sub-navbar-height))` (mobile: navbar height only). `box-sizing: border-box` is global, so `min-height: 100vh` still includes the padding. |
-| Dimensions | New roots in `base.css`: `--navbar-height: 56px`, `--sub-navbar-height: 44px`, replacing the `--mini-drawer-width` block. |
-| Z-index map | Navbar/sub navbar `z-index: 2` (content is unpositioned), below the gallery modal (`z-index: 3`) so the modal still covers the navigation; `scrollToTop` stays at 2 (bottom-right, no overlap). The burger sits at `z-index: 2` inside the navbar so the transparent overlay (z 1) cannot block it. |
-| Breakpoint | 768px, as used across the repo. Below it: burger visible, desktop tools and sub navbar hidden. |
-| Mobile menu close paths | Route change, overlay click, Escape. `aria-label` + `aria-expanded` from the new `nav.menu` key. |
-| Rail offsets | `projectsView.vue` (grid margin) and `gallery.vue` (3 margins) lose their `--mini-drawer-width` math and revert to plain `2rem` padding. Top margin `5rem` on the projects grid drops to `2rem` because the fixed bars now provide the clearance. |
-| i18n | Reuse `nav.home|skills|projects|experience` and `header.switchTheme`; add `nav.menu` to all four locales. |
-| Verification | Build + greps (no `mini-drawer`, no `drawer.vue`), locale-key parity script, production preview; visual pass in dev by the owner (desktop + mobile widths, 4 locales, light/dark). |
-| Deploy | Manual `git subtree push --prefix dist origin gh-pages` only after the visual pass passes. |
+| Extend semantics | Press = toggle. When expanded, labels are visible; pressing any icon (including the same one) collapses. Navigation happens only through labels. |
+| No hover | The old `pointerenter`/`mouseleave` timers are gone; opening is click/press only. |
+| Overlay | Transparent full-screen click-catcher rendered when expanded (desktop and mobile); clicking outside collapses. |
+| Icon column | Icons keep a fixed 40px column inside the growing sidebar so they never shift; labels occupy the remaining width and clip via `overflow: hidden` during the width animation. |
+| Labels collapsed | `visibility: hidden` so they are neither clickable nor tabbable while collapsed. |
+| Mobile | `left`-based off-canvas slide (width fixed at expanded size), panel top padding so the burger (z above panel) stays visible as the close toggle. |
+| Top padding | `.body-size` gets `padding-top: 3.5rem` only ≤768px; desktop keeps the original `min-height: calc(100vh - 93px)`. |
+| `skillsView` | Remove its mobile `padding-top: 3.5rem` (was for the pre-revision floating controls; now double padding). |
+| Gallery | Rail offsets restored on desktop; new mobile override sets left/right margins to `1rem` because the rail no longer exists there. |
+| z-index | Sidebar root `4` (as the old drawer root), overlay/panel/burger inside it; `.top-controls` `3`; gallery modal `3`; `scrollToTop` `2`. |
+| i18n | No new keys; `nav.menu` (added earlier) is the burger label. |
 
 ## File changes
 
 | File | Change |
 |---|---|
-| `src/service/nav.js` | new: ordered `[{ path, labelKey }]` items + `getNavItems()` |
-| `src/components/navLinks.vue` | new: generic route list with active highlight, `vertical` prop |
-| `src/components/navbar.vue` | new: brand, socials, `languageSwitcher`, `themeToggle`, burger + mobile menu |
-| `src/components/subNavbar.vue` | new: horizontal bar wrapping `navLinks`, hidden < 768px |
-| `src/components/drawer.vue` | delete |
-| `src/App.vue` | compose `navbar` + `subNavbar`; remove drawer and `.top-controls`; `body-size` padding |
-| `src/assets/base.css` | `--mini-drawer-width` → navbar/sub-navbar height variables |
-| `src/views/projectsView.vue` | rail margins → plain grid margins |
-| `src/components/gallery.vue` | 3 rail margins → `2rem` |
-| `src/locales/{en,sv,fr,de}.js` | add `nav.menu` |
+| `src/components/sidebar.vue` | new: rail, extend behaviour, labels, collapse, mobile burger/overlay |
+| `src/components/navbar.vue`, `subNavbar.vue`, `navLinks.vue` | delete |
+| `src/service/nav.js` | items gain `icon` classes |
+| `src/App.vue` | restore `.top-controls`; compose `sidebar`; mobile `.body-size` padding |
+| `src/assets/base.css` | navbar height vars → sidebar width vars |
+| `src/views/projectsView.vue` | rail offsets restored (desktop) + compact mobile margins |
+| `src/components/gallery.vue` | rail offsets restored + mobile override |
+| `src/views/skillsView.vue` | remove mobile `padding-top` |
+| `src/locales/*` | unchanged (`nav.menu` already present) |
 | `dist/**` | rebuilt and committed (unchanged policy) |
 
 ## Commit strategy
 
-1. `docs: add plan and tasks for navbar/sub-navbar rework` (spec status → approved, plan, tasks)
-2. `feat: replace drawer with top navbar and sub navbar` (sources + locales)
+1. `docs: revise spec and plan for extending left sidebar` (spec/plan/tasks revision)
+2. `feat: rework navigation into extending left sidebar` (sources)
 3. `chore: rebuild dist`
-4. `docs: mark spec and tasks complete` (checkboxes, status)
+4. `docs: mark revision complete` (status/checklists)
 
 ## Verification strategy (SC mapping)
 
 | SC | Check |
 |---|---|
 | SC-1 | `npm run build` succeeds |
-| SC-2/3/4 | Production preview at desktop and phone widths, all four routes, burger open/close paths, 4 locales, theme toggle; owner does the visual pass in `npm run dev` |
-| SC-5 | `grep -rn "mini-drawer\|drawer" src/` → no matches; `drawer.vue` gone; `App.vue` has no leftovers |
-| SC-6 | `dist/` grep contains the new nav chunks and no drawer references; after deploy, cache-busted spot check of the live bundle |
+| SC-2 | Headless Chromium over CDP: rail + active icon per route; icon press expands (labels visible, icons unchanged); label click navigates + collapses; Escape/overlay/second press collapse; screenshots reviewed |
+| SC-3 | Same at 390px width: burger visible, panel opens with icons + labels, close paths work, content not overlapped |
+| SC-4 | Locale key parity script; light + dark screenshots; console warning grep |
+| SC-5 | `grep -rn "navbar\|subNavbar\|navLinks\|navbar-height\|mini-drawer" src/` → no matches |
+| SC-6 | `dist/` grep + cache-busted live check after the manual subtree push |
 
 ## Rollback
 
-- Everything is local to the branch until the deploy step: `git reset --hard master` (or delete the branch) discards the change.
-- After deploy: redeploy the previous `dist/` (the prior commit's subtree) via the same manual push.
+- Revert the revision commits (`git revert` or `git reset`) — everything is local to the branch until deploy.
+- After deploy: push the previous `dist/` subtree again.
 
 ## Execution prerequisites checklist
 
-- [x] Spec approved; branch `feature/sub-navbar` created
-- [x] Plan/tasks written
-- [x] Working tree clean before implementation
+- [x] Corrected design confirmed in review (left sidebar, press-to-extend, label navigation, burger on mobile)
+- [x] Branch `feature/sub-navbar` present with the first implementation as history
+- [x] Headless Chromium + CDP tooling working (`/tmp/opencode/cdp-test.mjs` pattern)
