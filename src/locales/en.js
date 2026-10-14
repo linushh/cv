@@ -14,12 +14,6 @@ export default {
     experience: 'Experience'
   },
 
-  footer: {
-    author: 'Author',
-    contact: 'Contact',
-    socials: 'Socials'
-  },
-
   home: {
     about: `Hi!
 My name is Linus Håkansson and I am a passionate developer with a love for creating and exploring.

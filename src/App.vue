@@ -11,18 +11,11 @@
   </div>
 
   <scrollToTop />
-
-  <Footer
-    :author="socials.name"
-    :email="socials.email"
-    :phone-number="socials.phoneNumber">
-  </Footer>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 
-import Footer from '@/components/footer.vue'
 import Drawer from '@/components/drawer.vue'
 import languageSwitcher from '@/components/languageSwitcher.vue'
 import themeToggle from '@/components/themeToggle.vue'
@@ -32,7 +25,6 @@ import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
-    Footer,
     Drawer,
     languageSwitcher,
     themeToggle,

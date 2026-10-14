@@ -14,12 +14,6 @@ export default {
     experience: 'Expérience'
   },
 
-  footer: {
-    author: 'Auteur',
-    contact: 'Contact',
-    socials: 'Réseaux sociaux'
-  },
-
   home: {
     about: `Bonjour !
 Je m'appelle Linus Håkansson et je suis un développeur passionné, animé par l'envie de créer et d'explorer.

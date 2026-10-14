@@ -14,12 +14,6 @@ export default {
     experience: 'Erfarenhet'
   },
 
-  footer: {
-    author: 'Skapare',
-    contact: 'Kontakt',
-    socials: 'Sociala medier'
-  },
-
   home: {
     about: `Hej!
 Mitt namn är Linus Håkansson och jag är en passionerad utvecklare med en kärlek till att skapa och utforska.

@@ -31,7 +31,7 @@ pdfmake.setLocalAccessPolicy((file) => { throw new Error(`Local file access not 
 const content = []
 content.push({ image: `data:image/jpeg;base64,${selfie}`, width: 120, alignment: 'center' })
 content.push({ text: socials.name, style: 'name' })
-content.push({ text: `${socials.email} · ${socials.phoneNumber}`, style: 'contact' })
+content.push({ text: socials.email, style: 'contact' })
 content.push({ text: 'About me', style: 'heading' })
 for (const para of en.home.about.split('\n')) {
   if (para.trim()) content.push({ text: para, margin: [0, 2, 0, 2] })
