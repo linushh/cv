@@ -1,8 +1,12 @@
 <template>
-  <navbar :socials="socials" :items="navItems" />
-  <subNavbar :items="navItems" />
+  <header class="top-controls">
+    <languageSwitcher />
+    <themeToggle />
+  </header>
 
   <div class="body-size">
+    <sidebar :socials="socials" :items="navItems" />
+
     <RouterView />
   </div>
 
@@ -12,8 +16,9 @@
 <script>
 import { RouterView } from 'vue-router'
 
-import navbar from '@/components/navbar.vue'
-import subNavbar from '@/components/subNavbar.vue'
+import sidebar from '@/components/sidebar.vue'
+import languageSwitcher from '@/components/languageSwitcher.vue'
+import themeToggle from '@/components/themeToggle.vue'
 import scrollToTop from '@/components/scrollToTop.vue'
 import socials from '@/service/socials'
 import nav from '@/service/nav'
@@ -21,8 +26,9 @@ import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
-    navbar,
-    subNavbar,
+    sidebar,
+    languageSwitcher,
+    themeToggle,
     scrollToTop
   },
 
@@ -40,14 +46,23 @@ export default {
 </script>
 
 <style>
+.top-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .body-size {
-  min-height: 100vh;
-  padding-top: calc(var(--navbar-height) + var(--sub-navbar-height));
+  min-height: calc(100vh - 93px);
 }
 
 @media (max-width: 768px) {
   .body-size {
-    padding-top: var(--navbar-height);
+    padding-top: 3.5rem;
   }
 }
 </style>

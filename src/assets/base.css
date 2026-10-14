@@ -72,8 +72,8 @@ body.light-mode {
 }
 
 :root {
-  --navbar-height: 56px;
-  --sub-navbar-height: 44px;
+  --sidebar-width: 40px;
+  --sidebar-expanded-width: 220px;
 }
 
 *,

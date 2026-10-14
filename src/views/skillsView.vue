@@ -137,10 +137,6 @@ body.light-mode .centering p {
 }
 
 @media (max-width: 768px) {
-  .background-color {
-    padding-top: 3.5rem;
-  }
-
   .centering .img {
     width: 100%;
     height: 140px;
