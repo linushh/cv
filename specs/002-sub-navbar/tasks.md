@@ -74,7 +74,7 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 - [x] **R05** Restore rail offsets: `projectsView.vue` (desktop margins + compact mobile), `gallery.vue` (3 margins + mobile override); remove `skillsView.vue`'s redundant mobile `padding-top`. (*FR-7*)
 - [x] **R06** Delete `navbar.vue`, `subNavbar.vue`, `navLinks.vue`; greps for top-bar leftovers. (*FR-9, SC-5*)
 - [x] **R07** Build + headless pass: desktop collapsed/expanded, icon toggles, label navigation + collapse, Escape/overlay, active states on all four routes; mobile burger open/close; screenshots reviewed. (*SC-1…SC-4*)
-- [ ] **R08** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2…SC-4*)
-- [ ] **R09** Rebuild `dist/`, commit; deploy via `git subtree push --prefix dist origin gh-pages` after sign-off. (*FR-10, SC-6*)
+- [x] **R08** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2…SC-4*) — sign-off given 2026-10-14 ("looks good"), no fixes requested.
+- [x] **R09** Rebuild `dist/`, commit; deploy via `git subtree push --prefix dist origin gh-pages` after sign-off. (*FR-10, SC-6*) — deployed 2026-10-14: split `688def2` pushed to `gh-pages` (fast-forward `dd63d85..688def2`); live check passed (bundle `index-Bl4C7vn0.js` contains `sidebar`, no `sub-navbar`; CSS has `--sidebar-width`; resume PDF HTTP 200).
 
 **Checkpoint R:** left sidebar behaves as specified; top bars removed; owner sign-off and deploy pending.

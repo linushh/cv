@@ -6,7 +6,7 @@
 | **Created** | 2026-10-14 |
 | **Owner** | Linus Håkansson |
 | **Input** | Structured interview, 2026-10-14; design revision after implementation review |
-| **Follow-ups** | Execution recorded in `plan.md` / `tasks.md` (Phase R); owner visual pass and `gh-pages` deploy remain |
+| **Follow-ups** | Execution recorded in `plan.md` / `tasks.md` (Phase R); deployed to `gh-pages` 2026-10-14 (split `688def2`, live verified) |
 
 > **Revision (2026-10-14):** The first implementation moved navigation to a top navbar with a route sub bar. Review rejected it: navigation must stay a **left sidebar with icons**, where **pressing an icon extends the sidebar to reveal the menu labels without hiding the icons**. The spec below records the corrected design and supersedes the first one (kept in git history / Phase A–D of `tasks.md`).
 
