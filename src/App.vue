@@ -1,12 +1,8 @@
 <template>
-  <header class="top-controls">
-    <languageSwitcher />
-    <themeToggle />
-  </header>
+  <navbar :socials="socials" :items="navItems" />
+  <subNavbar :items="navItems" />
 
   <div class="body-size">
-    <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
-
     <RouterView />
   </div>
 
@@ -14,20 +10,19 @@
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 
-import Drawer from '@/components/drawer.vue'
-import languageSwitcher from '@/components/languageSwitcher.vue'
-import themeToggle from '@/components/themeToggle.vue'
+import navbar from '@/components/navbar.vue'
+import subNavbar from '@/components/subNavbar.vue'
 import scrollToTop from '@/components/scrollToTop.vue'
 import socials from '@/service/socials'
+import nav from '@/service/nav'
 import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
-    Drawer,
-    languageSwitcher,
-    themeToggle,
+    navbar,
+    subNavbar,
     scrollToTop
   },
 
@@ -37,24 +32,22 @@ export default {
 
   data() {
     return {
-      socials: socials.getSocials()
+      socials: socials.getSocials(),
+      navItems: nav.getNavItems()
     }
   }
 }
 </script>
 
 <style>
-.top-controls {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+.body-size {
+  min-height: 100vh;
+  padding-top: calc(var(--navbar-height) + var(--sub-navbar-height));
 }
 
-.body-size {
-  min-height: calc(100vh - 93px);
+@media (max-width: 768px) {
+  .body-size {
+    padding-top: var(--navbar-height);
+  }
 }
 </style>

@@ -72,7 +72,8 @@ body.light-mode {
 }
 
 :root {
-  --mini-drawer-width: 40px;
+  --navbar-height: 56px;
+  --sub-navbar-height: 44px;
 }
 
 *,
