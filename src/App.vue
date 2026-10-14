@@ -5,7 +5,7 @@
   </header>
 
   <div class="body-size">
-    <Drawer :links="[socials.github, socials.linkedIn, socials.facebook]" />
+    <sidebar :socials="socials" :items="navItems" />
 
     <RouterView />
   </div>
@@ -14,18 +14,19 @@
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 
-import Drawer from '@/components/drawer.vue'
+import sidebar from '@/components/sidebar.vue'
 import languageSwitcher from '@/components/languageSwitcher.vue'
 import themeToggle from '@/components/themeToggle.vue'
 import scrollToTop from '@/components/scrollToTop.vue'
 import socials from '@/service/socials'
+import nav from '@/service/nav'
 import { useThemeStore } from '@/stores/theme'
 
 export default {
   components: {
-    Drawer,
+    sidebar,
     languageSwitcher,
     themeToggle,
     scrollToTop
@@ -37,7 +38,8 @@ export default {
 
   data() {
     return {
-      socials: socials.getSocials()
+      socials: socials.getSocials(),
+      navItems: nav.getNavItems()
     }
   }
 }
@@ -56,5 +58,11 @@ export default {
 
 .body-size {
   min-height: calc(100vh - 93px);
+}
+
+@media (max-width: 768px) {
+  .body-size {
+    padding-top: 3.5rem;
+  }
 }
 </style>

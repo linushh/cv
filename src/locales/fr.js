@@ -11,7 +11,8 @@ export default {
     home: 'Accueil',
     skills: 'Mes compétences',
     projects: 'Projets',
-    experience: 'Expérience'
+    experience: 'Expérience',
+    menu: 'Menu'
   },
 
   home: {

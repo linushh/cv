@@ -46,13 +46,13 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin: 5rem 2rem 2rem;
-  margin-left: calc(var(--mini-drawer-width) + 2rem);
+  margin-left: calc(var(--sidebar-width) + 2rem);
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
-    margin-left: var(--mini-drawer-width);
+    margin: 2rem;
   }
 }
 </style>

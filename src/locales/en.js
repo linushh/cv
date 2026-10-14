@@ -11,7 +11,8 @@ export default {
     home: 'Home',
     skills: 'My Skills',
     projects: 'Projects',
-    experience: 'Experience'
+    experience: 'Experience',
+    menu: 'Menu'
   },
 
   home: {

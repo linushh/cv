@@ -110,7 +110,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 2rem 2rem 1rem calc(var(--mini-drawer-width) + 2rem);
+  margin: 2rem 2rem 1rem calc(var(--sidebar-width) + 2rem);
 }
 
 .back-button {
@@ -134,7 +134,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  margin: 0 2rem 2rem calc(var(--mini-drawer-width) + 2rem);
+  margin: 0 2rem 2rem calc(var(--sidebar-width) + 2rem);
 }
 
 .image-grid img {
@@ -153,7 +153,7 @@ export default {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 0 2rem 2rem calc(var(--mini-drawer-width) + 2rem);
+  margin: 0 2rem 2rem calc(var(--sidebar-width) + 2rem);
 }
 
 .modal {
@@ -203,6 +203,13 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .gallery-header,
+  .image-grid,
+  .gallery-links {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   .image-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }

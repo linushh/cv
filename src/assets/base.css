@@ -72,7 +72,8 @@ body.light-mode {
 }
 
 :root {
-  --mini-drawer-width: 40px;
+  --sidebar-width: 40px;
+  --sidebar-expanded-width: 220px;
 }
 
 *,
