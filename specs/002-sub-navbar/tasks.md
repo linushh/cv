@@ -48,7 +48,7 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 - [x] **D03** Preview pass: production build at desktop and phone widths — all four routes navigable, active highlight correct, burger open/close (click, overlay, Escape, route change), socials/language/theme reachable, no overlap of content by the bars. (*SC-2, SC-3, SC-4*)
 
   Agent-pass result (2026-10-14, headless Chromium over CDP against `vite preview`): all four routes highlight correctly on load and after clicks; burger visible only < 768px; menu lists the four routes (active), socials, language and theme; Escape, overlay and route click all close it; `aria-expanded` tracks state; light and dark modes render correctly. The screenshots reviewed were light-mode desktop, dark-mode mobile menu and mobile skills/projects.
-- [ ] **D04** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2, SC-3, SC-4*)
+- [ ] **D04** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2, SC-3, SC-4*) — superseded by R08
 
 **Checkpoint D:** build + automated checks pass; owner visual pass signed off.
 
@@ -59,7 +59,7 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 - [x] **E01** Commit sources: `feat: replace drawer with top navbar and sub navbar`. (*FR-10*)
 - [x] **E02** Rebuild `dist/` and commit: `chore: rebuild dist`. (*FR-10, SC-6*)
 - [x] **E03** Update spec status + this checklist; commit: `docs: mark spec and tasks complete`.
-- [ ] **E04** Deploy after sign-off: `git subtree push --prefix dist origin gh-pages`; cache-busted spot check of the live site. (*SC-6*)
+- [ ] **E04** Deploy after sign-off: `git subtree push --prefix dist origin gh-pages`; cache-busted spot check of the live site. (*SC-6*) — superseded by R09
 
 **Checkpoint E:** branch committed; live site serves the new navigation.
 
@@ -67,13 +67,13 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 
 ## Phase R — Revision (supersedes the navigation tasks of Phases A–D)
 
-- [ ] **R01** Create `src/components/sidebar.vue`: fixed left rail (route icons + social icons, active route highlighted); pressing an icon toggles the extension; labels fade in beside the fixed icon column; route labels navigate + collapse; overlay click / Escape / second press / route change collapse; mobile burger + off-canvas panel. (*FR-1…FR-4, FR-6*)
-- [ ] **R02** `src/service/nav.js`: add `icon` classes to the four route items. (*FR-1*)
-- [ ] **R03** `src/assets/base.css`: replace `--navbar-height` / `--sub-navbar-height` with `--sidebar-width` (40px) and `--sidebar-expanded-width` (220px). (*FR-7*)
-- [ ] **R04** `src/App.vue`: restore floating `.top-controls` (language + theme); compose `sidebar` with the service data; mobile `.body-size` top padding for the floating chrome. (*FR-5, FR-7*)
-- [ ] **R05** Restore rail offsets: `projectsView.vue` (desktop margins + compact mobile), `gallery.vue` (3 margins + mobile override); remove `skillsView.vue`'s redundant mobile `padding-top`. (*FR-7*)
-- [ ] **R06** Delete `navbar.vue`, `subNavbar.vue`, `navLinks.vue`; greps for top-bar leftovers. (*FR-9, SC-5*)
-- [ ] **R07** Build + headless pass: desktop collapsed/expanded, icon toggles, label navigation + collapse, Escape/overlay, active states on all four routes; mobile burger open/close; screenshots reviewed. (*SC-1…SC-4*)
+- [x] **R01** Create `src/components/sidebar.vue`: fixed left rail (route icons + social icons, active route highlighted); pressing an icon toggles the extension; labels fade in beside the fixed icon column; route labels navigate + collapse; overlay click / Escape / second press / route change collapse; mobile burger + off-canvas panel. (*FR-1…FR-4, FR-6*)
+- [x] **R02** `src/service/nav.js`: add `icon` classes to the four route items. (*FR-1*)
+- [x] **R03** `src/assets/base.css`: replace `--navbar-height` / `--sub-navbar-height` with `--sidebar-width` (40px) and `--sidebar-expanded-width` (220px). (*FR-7*)
+- [x] **R04** `src/App.vue`: restore floating `.top-controls` (language + theme); compose `sidebar` with the service data; mobile `.body-size` top padding for the floating chrome. (*FR-5, FR-7*)
+- [x] **R05** Restore rail offsets: `projectsView.vue` (desktop margins + compact mobile), `gallery.vue` (3 margins + mobile override); remove `skillsView.vue`'s redundant mobile `padding-top`. (*FR-7*)
+- [x] **R06** Delete `navbar.vue`, `subNavbar.vue`, `navLinks.vue`; greps for top-bar leftovers. (*FR-9, SC-5*)
+- [x] **R07** Build + headless pass: desktop collapsed/expanded, icon toggles, label navigation + collapse, Escape/overlay, active states on all four routes; mobile burger open/close; screenshots reviewed. (*SC-1…SC-4*)
 - [ ] **R08** Owner visual pass in `npm run dev` (desktop + mobile widths, four locales, dark/light); fix anything reported. (*SC-2…SC-4*)
 - [ ] **R09** Rebuild `dist/`, commit; deploy via `git subtree push --prefix dist origin gh-pages` after sign-off. (*FR-10, SC-6*)
 
