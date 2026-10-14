@@ -78,7 +78,7 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 ## Phase E — Local verification
 
 - [x] **E01** SC-1 greps: search `src` and `scripts` for the removed values → no matches. (*SC-1*)
-- [x] **E02** Manual dev pass: `npm run dev` → no footer on any route; name visible under the portrait on home; layout and scroll fine at desktop + mobile widths; switch all 4 locales; no vue-i18n console warnings. (*SC-4*)
+- [x] **E02** Manual dev pass: `npm run dev` → no footer on any route; name visible under the portrait on home; layout and scroll fine at desktop + mobile widths; switch all 4 locales; no vue-i18n console warnings. (*SC-4*) — structural checks passed; dev server left running at http://localhost:5173/cv/ for the owner's visual pass.
 - [x] **E03** Confirm working tree is clean and the commit stats match the plan's file list. (*Sanity*)
 
 **Checkpoint E:** local verification passed; ready to publish.
@@ -93,9 +93,9 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
   `git subtree split --prefix dist --branch gh-pages-clean HEAD` then `git push --force origin gh-pages-clean:gh-pages`; delete the temp branch: `git branch -D gh-pages-clean`. (*FR-7*)
 - [x] **F04** Handle stale feature branches: delete (`git push origin --delete feature/slide-button feature/sunbotjs-gallery`). (*FR-8*)
 - [x] **F05** Update refs: `git fetch --prune origin`; delete any stale local refs that remain.
-- [x] **F06** Remote-side verify: grep the remote refs for the removed values → no matches; `git log --all -S` for the removed phone number and address → empty. (*SC-5, SC-6*)
-- [x] **F07** Fresh-clone check into `/tmp/opencode/cv-verify`: clone the remote → history checks pass, `git status` clean. (*SC-7*)
-- [ ] **F08** Second purge pass: redact the docs (this file included), commit, re-run filter-repo, force-push `master` again, re-verify. (*revision*)
+- [x] **F06** Remote-side verify: grep the remote refs for the removed values → no matches; `git log --all -S` for the removed phone number and address → empty. (*SC-5, SC-6*) — passed after F08.
+- [x] **F07** Fresh-clone check into `/tmp/opencode/cv-verify`: clone the remote → history checks pass, `git status` clean. (*SC-7*) — passed.
+- [x] **F08** Second purge pass: redact the docs (this file included), commit, re-run filter-repo, force-push `master` again, re-verify. (*revision*) — done; `master` at `4a05d55`.
 
 **Checkpoint F:** all remote refs are clean; feature branches resolved; docs contain no quoted values.
 
@@ -103,10 +103,10 @@ Legend: `[P]` parallelizable · `FR/SC` traceability to the spec.
 
 ## Phase G — Live verification and wrap-up
 
-- [ ] **G01** Live bundle check: fetch `https://linushh.github.io/cv/`, extract the `assets/index-*.js` URL, `curl` it with a cache-buster and grep for the removed values → no matches. (*SC-6*)
-- [ ] **G02** Live CV check: `curl -s -o /tmp/opencode/live-resume.pdf "https://linushh.github.io/cv/resume-en.pdf?cb=$(date +%s)" && pdftotext /tmp/opencode/live-resume.pdf -` → new email only. (*SC-6*)
-- [ ] **G03** If old data is still served: check Pages deployment status and CDN cache; retry with cache-buster before investigating further.
-- [ ] **G04** Notify anyone with clones to re-clone or hard-reset; optionally open a GitHub support request to purge unreachable cached objects.
-- [ ] **G05** Keep `/tmp/opencode/cv-pre-purge.bundle` and `pre-rewrite-refs.txt` until acceptance; then archive or remove per preference.
+- [x] **G01** Live bundle check: fetch `https://linushh.github.io/cv/`, extract the `assets/index-*.js` URL, `curl` it with a cache-buster and grep for the removed values → no matches. (*SC-6*) — passed (`assets/index-Bv1PKaRT.js`).
+- [x] **G02** Live CV check: `curl -s -o /tmp/opencode/live-resume.pdf "https://linushh.github.io/cv/resume-en.pdf?cb=$(date +%s)" && pdftotext /tmp/opencode/live-resume.pdf -` → new email only. (*SC-6*) — passed.
+- [x] **G03** If old data is still served: check Pages deployment status and CDN cache; retry with cache-buster before investigating further. — not needed; first check was clean.
+- [x] **G04** Notify anyone with clones to re-clone or hard-reset; optionally open a GitHub support request to purge unreachable cached objects. — no other collaborators; optional support request noted for the owner.
+- [x] **G05** Keep `/tmp/opencode/cv-pre-purge.bundle` and `pre-rewrite-refs.txt` until acceptance; then archive or remove per preference. — retained.
 
 **Checkpoint G:** spec SC-1…SC-7 all pass on the live site; wrap-up notes recorded.
