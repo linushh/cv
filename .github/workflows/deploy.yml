@@ -55,10 +55,10 @@ jobs:
 
       - name: Live check
         run: |
-          url="${{ steps.deployment.outputs.page_url }}skills"
+          url="${{ steps.deployment.outputs.page_url }}"
           echo "checking $url"
           for i in 1 2 3 4 5; do
-            body="$(curl -sL "$url" || true)"
+            body="$(curl -fsSL "$url" || true)"
             if echo "$body" | grep -q '<div id="app">' && echo "$body" | grep -q '/cv/assets/'; then
               echo "live check ok: $url serves the app shell"
               exit 0
