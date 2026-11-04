@@ -8,11 +8,11 @@
     </header>
 
     <div class="image-grid">
-      <img
+      <lazyImage
         v-for="(image, index) in images"
         :key="index"
-        v-lazy="{ src: image.src, loading: load }"
-        @click="openPreview(index)">
+        :src="image.src"
+        @click="openPreview(index)" />
     </div>
 
     <footer class="gallery-links">
@@ -36,9 +36,11 @@
 </template>
 
 <script>
-import load from '@/assets/progress.jpg'
+import lazyImage from '@/components/lazyImage.vue'
 
 export default {
+  components: { lazyImage },
+
   props: {
     title: String,
     images: Array,
@@ -52,8 +54,7 @@ export default {
 
   data() {
     return {
-      currentIndex: null,
-      load
+      currentIndex: null
     }
   },
 

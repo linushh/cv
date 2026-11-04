@@ -1,1 +1,0 @@
-import{_ as c,c as o,r,m as t,o as a}from"./index-DfUkxzDO.js";const n={props:{columns:{type:Number,default:1}}};function d(e,l,s,m,p,u){return a(),o("div",{class:"card-grid",style:t({"--columns":s.columns})},[r(e.$slots,"default",{},void 0)],4)}const i=c(n,[["render",d],["__scopeId","data-v-be5c131e"]]);export{i as c};

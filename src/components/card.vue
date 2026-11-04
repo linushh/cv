@@ -1,12 +1,15 @@
 <template>
   <div class="card">
-    <img
+    <lazyImage
       v-if="image"
-      v-lazy="{ src: image, loading: load}"
+      :src="image"
+      :width="width"
+      :height="height"
+      :style="height ? { '--img-h': height + 'px' } : null"
       class="img margin"
       :class="imageVariant"
       :alt="title"
-      @click="showPreview">
+      @click="showPreview" />
 
     <div class="container">
       <h4>
@@ -24,9 +27,11 @@
 </template>
 
 <script>
-import load from '@/assets/progress.jpg'
+import lazyImage from '@/components/lazyImage.vue'
 
 export default {
+  components: { lazyImage },
+
   props: {
     text: String,
     title: String,
@@ -35,12 +40,13 @@ export default {
       type: String,
       default: 'photo',
       validator: (value) => ['photo', 'round', 'logo'].includes(value)
-    }
+    },
+    width: [Number, String],
+    height: [Number, String]
   },
 
   data() {
     return {
-      load,
       isPreviewOpen: false
     }
   },
@@ -105,8 +111,10 @@ export default {
 
 .img {
   border-radius: 5px 5px 5px 5px;
-  max-height: 350px;
-  max-width: auto;
+  height: min(var(--img-h, 350px), 350px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   cursor: pointer;
 }
 
