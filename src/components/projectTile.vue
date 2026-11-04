@@ -1,6 +1,6 @@
 <template>
   <div class="project-tile" @click="$emit('open')">
-    <img v-lazy="{ src: cover, loading: load }" class="cover">
+    <lazyImage v-if="cover" :src="cover" class="cover" />
 
     <div class="overlay">
       <h3 class="title">{{ title }}</h3>
@@ -10,22 +10,18 @@
 </template>
 
 <script>
-import load from '@/assets/progress.jpg'
+import lazyImage from '@/components/lazyImage.vue'
 
 export default {
+  components: { lazyImage },
+
   props: {
     title: String,
     imageCount: String,
     cover: String
   },
 
-  emits: ['open'],
-
-  data() {
-    return {
-      load
-    }
-  }
+  emits: ['open']
 }
 </script>
 

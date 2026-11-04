@@ -1,11 +1,13 @@
 <template>
   <div class="card">
-    <img
+    <lazyImage
       v-if="image"
-      v-lazy="{ src: image, loading: load}"
+      :src="image"
+      :width="width"
+      :height="height"
       class="img margin"
       :class="{ round: round }"
-      @click="showPreview">
+      @click="showPreview" />
 
     <div class="container">
       <h4>
@@ -23,19 +25,22 @@
 </template>
 
 <script>
-import load from '@/assets/progress.jpg'
+import lazyImage from '@/components/lazyImage.vue'
 
 export default {
+  components: { lazyImage },
+
   props: {
     name: String,
     title: String,
     image: String,
-    round: Boolean
+    round: Boolean,
+    width: [Number, String],
+    height: [Number, String]
   },
 
   data() {
     return {
-      load,
       isPreviewOpen: false
     }
   },
