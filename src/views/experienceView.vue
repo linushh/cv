@@ -3,6 +3,8 @@
     <div class="container spacing-around">
       <card
         :image="imgHyrma"
+        :width="1200"
+        :height="770"
         :title="$t('experience.infobricTitle')"
         :name="$t('experience.infobric')"
         class="pre-formatted">
@@ -12,6 +14,8 @@
     <div class="container spacing-around">
       <card
         :image="imgSkolon"
+        :width="797"
+        :height="502"
         :title="$t('experience.skolonTitle')"
         :name="$t('experience.skolon')"
         class="pre-formatted">
@@ -21,6 +25,8 @@
   <div class="container spacing-around">
     <card
       :image="imgSaab"
+      :width="798"
+      :height="504"
       :title="$t('experience.saabTitle')"
       :name="$t('experience.saab')"
       class="pre-formatted">
@@ -30,6 +36,8 @@
   <div class="container spacing-around">
     <card
       :image="imgBredakra"
+      :width="1200"
+      :height="900"
       :title="$t('experience.bredakraTitle')"
       :name="$t('experience.bredakra')"
       class="pre-formatted">

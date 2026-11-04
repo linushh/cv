@@ -3,6 +3,8 @@
     <div class="centering">
       <card
         :image="dotNet"
+        :width="1024"
+        :height="384"
         title=".NET"
         :name="$t('skills.dotNet')"
         class="preformatted margin-between">
@@ -10,6 +12,8 @@
 
       <card
         :image="mariaDb"
+        :width="790"
+        :height="197"
         title="MariaDB"
         :name="$t('skills.mariaDb')"
         class="preformatted margin-between">
@@ -19,6 +23,8 @@
     <div class="centering">
       <card
         :image="java"
+        :width="240"
+        :height="240"
         title="Java"
         :name="$t('skills.java')"
         class="preformatted margin-between">
@@ -26,6 +32,8 @@
 
       <card
         :image="springBoot"
+        :width="240"
+        :height="240"
         title="Spring Boot"
         :name="$t('skills.springBoot')"
         class="preformatted margin-between">
@@ -35,6 +43,8 @@
     <div class="centering">
       <card
         :image="vue"
+        :width="256"
+        :height="221"
         title="Vue.js"
         :name="$t('skills.vue')"
         class="preformatted margin-between">
@@ -42,6 +52,8 @@
 
       <card
         :image="javascript"
+        :width="240"
+        :height="240"
         title="JavaScript"
         :name="$t('skills.javascript')"
         class="preformatted margin-between">
@@ -51,6 +63,8 @@
     <div class="centering">
       <card
         :image="mysql"
+        :width="391"
+        :height="202"
         title="MySQL"
         :name="$t('skills.mysql')"
         class="preformatted margin-between">
@@ -58,6 +72,8 @@
 
       <card
         :image="git"
+        :width="256"
+        :height="256"
         title="Git"
         :name="$t('skills.git')"
         class="preformatted margin-between">

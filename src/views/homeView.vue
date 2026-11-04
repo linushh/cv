@@ -1,7 +1,7 @@
 <template>
   <div class="background-color">
     <div class="container margin">
-      <card :image="image" :name="$t('home.about')" :title="socials.name" round class="pre-formatted" />
+      <card :image="image" :width="675" :height="900" :name="$t('home.about')" :title="socials.name" round class="pre-formatted" />
       <download-button :href="resumePath">{{ $t('home.downloadCv') }}</download-button>
     </div>
   </div>
