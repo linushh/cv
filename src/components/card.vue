@@ -5,6 +5,7 @@
       :src="image"
       :width="width"
       :height="height"
+      :style="height ? { '--img-h': height + 'px' } : null"
       class="img margin"
       :class="{ round: round }"
       @click="showPreview" />
@@ -71,7 +72,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .margin-ten {
   margin: 10px;
 }
@@ -103,8 +104,10 @@ export default {
 
 .img {
   border-radius: 5px 5px 5px 5px;
-  max-height: 350px;
-  max-width: auto;
+  height: min(var(--img-h, 350px), 350px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   cursor: pointer;
 }
 

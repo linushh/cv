@@ -13,11 +13,8 @@ export default {
 </script>
 
 <style scoped>
-img {
-  background-color: var(--color-surface-alt);
-}
-
 img[lazy='loading'] {
+  background-color: var(--color-surface-alt);
   background-image: linear-gradient(
     90deg,
     transparent 0%,

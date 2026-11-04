@@ -22,7 +22,7 @@
             :title="$t(item.labelKey)"
             :aria-label="$t(item.labelKey)"
             :aria-expanded="isExpanded"
-            @click="toggle">
+            @click="onNavIconClick(item.path)">
               <i :class="item.icon"></i>
           </button>
 
@@ -39,7 +39,7 @@
             :title="social.title"
             :aria-label="social.title"
             :aria-expanded="isExpanded"
-            @click="toggle">
+            @click="onSocialIconClick(social.href)">
               <i :class="social.icon"></i>
           </button>
 
@@ -103,6 +103,22 @@ export default {
 
     toggle() {
       this.isExpanded = !this.isExpanded
+    },
+
+    onNavIconClick(path) {
+      if (this.isExpanded) {
+        this.$router.push(path)
+      } else {
+        this.toggle()
+      }
+    },
+
+    onSocialIconClick(href) {
+      if (this.isExpanded) {
+        window.open(href, '_blank')
+      } else {
+        this.toggle()
+      }
     },
 
     collapse() {

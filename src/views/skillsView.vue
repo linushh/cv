@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .background-color {
   background-color: var(--color-background);
 }
@@ -123,17 +123,17 @@ export default {
   white-space: pre-wrap;
 }
 
-.centering .img {
+.centering :deep(.img) {
   width: 350px;
   height: 220px;
   object-fit: contain;
 }
 
-.centering p {
+.centering :deep(p) {
   color: #f0f0f0;
 }
 
-body.light-mode .centering p {
+body.light-mode .centering :deep(p) {
   color: var(--color-text);
 }
 .centering {
@@ -144,8 +144,6 @@ body.light-mode .centering p {
 
   max-width: 768px;
   max-height: fit-content;
-  margin-left: 50%;
-  margin-right: 50%;
 }
 
 .margin-between {
@@ -153,7 +151,7 @@ body.light-mode .centering p {
 }
 
 @media (max-width: 768px) {
-  .centering .img {
+  .centering :deep(.img) {
     width: 100%;
     height: 140px;
     object-fit: contain;
