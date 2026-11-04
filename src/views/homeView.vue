@@ -1,6 +1,6 @@
 <template>
   <div class="background-color">
-    <div class="container margin">
+    <div class="home-layout margin">
       <card :image="image" :name="$t('home.about')" :title="socials.name" round class="pre-formatted" />
       <download-button :href="resumePath">{{ $t('home.downloadCv') }}</download-button>
     </div>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import selfie from '@/assets/selfie.jpg'
+import profile from '@/assets/profile.jpg'
 import socials from '@/service/socials.js'
 import resume from '@/service/resume.js'
 import card from '@/components/card.vue'
@@ -22,7 +22,7 @@ export default {
 
   data() {
     return {
-      image: selfie,
+      image: profile,
       socials: socials.getSocials()
     }
   },
@@ -40,8 +40,12 @@ export default {
   background-color: var(--color-background);
 }
 
-.container {
+.home-layout {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: 2px 16px;
+  width: auto;
 }
 
 .margin {
