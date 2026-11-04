@@ -37,6 +37,7 @@
   --color-surface-alt: #444444;
   --color-surface-hover: #555555;
   --color-card: #282828;
+  --color-card-text: #f0f0f0;
   --color-on-surface: #ffffff;
   --color-anchor-bg: #212121;
   --color-paragraph: #8ecccc;
@@ -63,6 +64,7 @@ body.light-mode {
   --color-surface-alt: #e2e2e2;
   --color-surface-hover: #cfcfcf;
   --color-card: #ffffff;
+  --color-card-text: var(--color-text);
   --color-on-surface: #212427;
   --color-anchor-bg: #e8e8e8;
   --color-paragraph: #212427;

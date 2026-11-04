@@ -4,15 +4,15 @@
       <card
         :image="dotNet"
         title=".NET"
-        :name="$t('skills.dotNet')"
-        class="preformatted margin-between">
+        :text="$t('skills.dotNet')"
+        image-variant="logo" class="margin-between">
       </card>
 
       <card
         :image="mariaDb"
         title="MariaDB"
-        :name="$t('skills.mariaDb')"
-        class="preformatted margin-between">
+        :text="$t('skills.mariaDb')"
+        image-variant="logo" class="margin-between">
       </card>
     </div>
 
@@ -20,15 +20,15 @@
       <card
         :image="java"
         title="Java"
-        :name="$t('skills.java')"
-        class="preformatted margin-between">
+        :text="$t('skills.java')"
+        image-variant="logo" class="margin-between">
       </card>
 
       <card
         :image="springBoot"
         title="Spring Boot"
-        :name="$t('skills.springBoot')"
-        class="preformatted margin-between">
+        :text="$t('skills.springBoot')"
+        image-variant="logo" class="margin-between">
       </card>
     </div>
 
@@ -36,15 +36,15 @@
       <card
         :image="vue"
         title="Vue.js"
-        :name="$t('skills.vue')"
-        class="preformatted margin-between">
+        :text="$t('skills.vue')"
+        image-variant="logo" class="margin-between">
       </card>
 
       <card
         :image="javascript"
         title="JavaScript"
-        :name="$t('skills.javascript')"
-        class="preformatted margin-between">
+        :text="$t('skills.javascript')"
+        image-variant="logo" class="margin-between">
       </card>
     </div>
 
@@ -52,15 +52,15 @@
       <card
         :image="mysql"
         title="MySQL"
-        :name="$t('skills.mysql')"
-        class="preformatted margin-between">
+        :text="$t('skills.mysql')"
+        image-variant="logo" class="margin-between">
       </card>
 
       <card
         :image="git"
         title="Git"
-        :name="$t('skills.git')"
-        class="preformatted margin-between">
+        :text="$t('skills.git')"
+        image-variant="logo" class="margin-between">
       </card>
     </div>
   </div>
@@ -103,23 +103,12 @@ export default {
   background-color: var(--color-background);
 }
 
-.preformatted {
-  white-space: pre-wrap;
-}
-
 .centering .img {
   width: 350px;
   height: 220px;
   object-fit: contain;
 }
 
-.centering p {
-  color: #f0f0f0;
-}
-
-body.light-mode .centering p {
-  color: var(--color-text);
-}
 .centering {
   display: flex;
   justify-content: center;

@@ -4,8 +4,8 @@
       <card
         :image="imgHyrma"
         :title="$t('experience.infobricTitle')"
-        :name="$t('experience.infobric')"
-        class="pre-formatted">
+        :text="$t('experience.infobric')"
+       >
       </card>
     </div>
 
@@ -13,8 +13,8 @@
       <card
         :image="imgSkolon"
         :title="$t('experience.skolonTitle')"
-        :name="$t('experience.skolon')"
-        class="pre-formatted">
+        :text="$t('experience.skolon')"
+       >
       </card>
     </div>
 
@@ -22,8 +22,8 @@
     <card
       :image="imgSaab"
       :title="$t('experience.saabTitle')"
-      :name="$t('experience.saab')"
-      class="pre-formatted">
+      :text="$t('experience.saab')"
+     >
     </card>
   </div>
 
@@ -31,8 +31,8 @@
     <card
       :image="imgBredakra"
       :title="$t('experience.bredakraTitle')"
-      :name="$t('experience.bredakra')"
-      class="pre-formatted">
+      :text="$t('experience.bredakra')"
+     >
     </card>
   </div>
 </div>
@@ -67,18 +67,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.pre-formatted {
-  white-space: pre-wrap;
-}
-
-.pre-formatted p {
-  color: #f0f0f0;
-}
-
-body.light-mode .pre-formatted p {
-  color: var(--color-text);
 }
 
 .spacing-around {

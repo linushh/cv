@@ -1,7 +1,7 @@
 <template>
   <div class="background-color">
     <div class="home-layout margin">
-      <card :image="image" :name="$t('home.about')" :title="socials.name" round class="pre-formatted" />
+      <card :image="image" :text="$t('home.about')" :title="socials.name" image-variant="round" />
       <download-button :href="resumePath">{{ $t('home.downloadCv') }}</download-button>
     </div>
   </div>
@@ -52,20 +52,8 @@ export default {
   margin: 1rem;
 }
 
-.pre-formatted {
-  white-space: pre-wrap;
-}
-
 .margin :deep(.download-button) {
   margin-top: 3rem;
-}
-
-.pre-formatted :deep(p) {
-  color: #f0f0f0;
-}
-
-body.light-mode .pre-formatted :deep(p) {
-  color: var(--color-text);
 }
 
 @media (max-width: 768px) {

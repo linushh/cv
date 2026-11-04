@@ -4,7 +4,8 @@
       v-if="image"
       v-lazy="{ src: image, loading: load}"
       class="img margin"
-      :class="{ round: round }"
+      :class="imageVariant"
+      :alt="title"
       @click="showPreview">
 
     <div class="container">
@@ -13,11 +14,11 @@
           {{ title }}
         </b>
       </h4>
-      <p class="margin-ten">{{ name }}</p>
+      <p class="margin-ten">{{ text }}</p>
     </div>
 
     <div v-if="isPreviewOpen" class="modal" @click="closePreview">
-      <img :src="image" alt="Preview" :class="{ round: round }">
+      <img :src="image" :alt="title" :class="imageVariant">
     </div>
   </div>
 </template>
@@ -27,10 +28,14 @@ import load from '@/assets/progress.jpg'
 
 export default {
   props: {
-    name: String,
+    text: String,
     title: String,
     image: String,
-    round: Boolean
+    imageVariant: {
+      type: String,
+      default: 'photo',
+      validator: (value) => ['photo', 'round', 'logo'].includes(value)
+    }
   },
 
   data() {
@@ -66,9 +71,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .margin-ten {
   margin: 10px;
+  white-space: pre-wrap;
+  color: var(--color-card-text);
 }
 
 .card {
@@ -109,6 +116,12 @@ export default {
   border-radius: 50%;
 }
 
+.img.logo {
+  width: 350px;
+  height: 220px;
+  object-fit: contain;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -139,6 +152,11 @@ export default {
     margin: 2px;
     width: 250px;
     height: auto;
+  }
+
+  .img.logo {
+    width: 100%;
+    height: 140px;
   }
 }
 </style>
