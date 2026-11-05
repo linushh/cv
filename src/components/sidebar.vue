@@ -82,18 +82,18 @@ export default {
     }
   },
 
+  watch: {
+    $route() {
+      this.collapse()
+    }
+  },
+
   mounted() {
     window.addEventListener('keydown', this.onKeydown)
   },
 
   beforeUnmount() {
     window.removeEventListener('keydown', this.onKeydown)
-  },
-
-  watch: {
-    $route() {
-      this.collapse()
-    }
   },
 
   methods: {

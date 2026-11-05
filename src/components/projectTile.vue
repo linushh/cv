@@ -16,9 +16,9 @@ export default {
   components: { lazyImage },
 
   props: {
-    title: String,
-    imageCount: String,
-    cover: String
+    title: { type: String, default: '' },
+    imageCount: { type: String, default: '' },
+    cover: { type: String, default: '' }
   },
 
   emits: ['open']

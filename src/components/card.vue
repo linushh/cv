@@ -33,16 +33,16 @@ export default {
   components: { lazyImage },
 
   props: {
-    text: String,
-    title: String,
-    image: String,
+    text: { type: String, default: '' },
+    title: { type: String, default: '' },
+    image: { type: String, default: '' },
     imageVariant: {
       type: String,
       default: 'photo',
       validator: (value) => ['photo', 'round', 'logo'].includes(value)
     },
-    width: [Number, String],
-    height: [Number, String]
+    width: { type: [Number, String], default: null },
+    height: { type: [Number, String], default: null }
   },
 
   data() {

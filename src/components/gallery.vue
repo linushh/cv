@@ -20,7 +20,7 @@
       <a v-if="backend" :href="backend" target="_blank">{{ backendName }}</a>
     </footer>
 
-    <div class="modal" v-if="currentIndex !== null" @click.self="closePreview">
+    <div v-if="currentIndex !== null" class="modal" @click.self="closePreview">
       <img :src="images[currentIndex].src" alt="Preview" class="preview">
 
       <div class="filmstrip">
@@ -42,12 +42,12 @@ export default {
   components: { lazyImage },
 
   props: {
-    title: String,
-    images: Array,
-    frontend: String,
-    backend: String,
-    frontendName: String,
-    backendName: String
+    title: { type: String, default: '' },
+    images: { type: Array, default: () => [] },
+    frontend: { type: String, default: '' },
+    backend: { type: String, default: '' },
+    frontendName: { type: String, default: '' },
+    backendName: { type: String, default: '' }
   },
 
   emits: ['close'],

@@ -5,9 +5,9 @@
 <script>
 export default {
   props: {
-    src: String,
-    width: [Number, String],
-    height: [Number, String]
+    src: { type: String, default: '' },
+    width: { type: [Number, String], default: null },
+    height: { type: [Number, String], default: null }
   }
 }
 </script>

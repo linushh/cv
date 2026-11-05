@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import { RouterView } from 'vue-router'
-
 import sidebar from '@/components/sidebar.vue'
 import languageSwitcher from '@/components/languageSwitcher.vue'
 import themeToggle from '@/components/themeToggle.vue'
@@ -32,15 +30,15 @@ export default {
     scrollToTop
   },
 
-  created() {
-    useThemeStore().init()
-  },
-
   data() {
     return {
       socials: socials.getSocials(),
       navItems: nav.getNavItems()
     }
+  },
+
+  created() {
+    useThemeStore().init()
   }
 }
 </script>
