@@ -7,7 +7,7 @@ Personal CV website. Fun side project, not a product — keep changes simple and
 - `npm run dev` — start dev server (http://localhost:5173/cv/)
 - `npm run build` — production build to `dist/`; a `postbuild` check fails the build if `dist/` is missing `index.html`/`404.html` or serves assets outside `/cv/`
 - `npm run preview` — serve the production build
-- `npm run lint` — ESLint over `src/` and root config files (fails on warnings too)
+- `npm run lint` — ESLint over the whole repo except `dist/`, `specs/`, `coverage/` (fails on warnings too)
 - `npm run lint:fix` — same, with `--fix`
 - `npm run format` — format the codebase with Prettier
 - `npm run format:check` — check formatting without writing
@@ -15,9 +15,9 @@ Personal CV website. Fun side project, not a product — keep changes simple and
 
 ## Deploy
 
-Deploy by pushing to `master` — the `deploy.yml` GitHub Actions workflow runs lint and tests, builds and publishes to GitHub Pages (no local steps, no `gh-pages` subtree). `dist/` is not committed. The workflow can also be re-run by hand from the Actions tab.
+Deploy by pushing to `master` — the `deploy.yml` GitHub Actions workflow runs lint, format check and tests, builds and publishes to GitHub Pages (no local steps, no `gh-pages` subtree). `dist/` is not committed. The workflow can also be re-run by hand from the Actions tab.
 
-Verify changes with `npm run lint`, `npm run build`, `npm test`, and a manual check in `npm run dev`.
+Verify changes with `npm run lint`, `npm run format:check`, `npm run build`, `npm test`, and a manual check in `npm run dev`.
 
 ## Stack
 
