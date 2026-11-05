@@ -7,7 +7,7 @@ function stubSystemTheme(lightPreferred) {
   vi.stubGlobal('matchMedia', window.matchMedia ?? vi.fn())
   window.matchMedia = vi.fn((query) => ({
     matches: query === '(prefers-color-scheme: light)' ? lightPreferred : false,
-    media: query
+    media: query,
   }))
 }
 

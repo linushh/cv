@@ -12,7 +12,8 @@
         v-for="(image, index) in images"
         :key="index"
         :src="image.src"
-        @click="openPreview(index)" />
+        @click="openPreview(index)"
+      />
     </div>
 
     <footer class="gallery-links">
@@ -21,7 +22,7 @@
     </footer>
 
     <div v-if="currentIndex !== null" class="modal" @click.self="closePreview">
-      <img :src="images[currentIndex].src" alt="Preview" class="preview">
+      <img :src="images[currentIndex].src" alt="Preview" class="preview" />
 
       <div class="filmstrip">
         <img
@@ -29,7 +30,8 @@
           :key="index"
           :src="image.src"
           :class="{ active: index === currentIndex }"
-          @click="openPreview(index)">
+          @click="openPreview(index)"
+        />
       </div>
     </div>
   </div>
@@ -47,14 +49,14 @@ export default {
     frontend: { type: String, default: '' },
     backend: { type: String, default: '' },
     frontendName: { type: String, default: '' },
-    backendName: { type: String, default: '' }
+    backendName: { type: String, default: '' },
   },
 
   emits: ['close'],
 
   data() {
     return {
-      currentIndex: null
+      currentIndex: null,
     }
   },
 
@@ -101,8 +103,8 @@ export default {
 
     closePreview() {
       this.currentIndex = null
-    }
-  }
+    },
+  },
 }
 </script>
 

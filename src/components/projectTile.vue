@@ -18,10 +18,10 @@ export default {
   props: {
     title: { type: String, default: '' },
     imageCount: { type: String, default: '' },
-    cover: { type: String, default: '' }
+    cover: { type: String, default: '' },
   },
 
-  emits: ['open']
+  emits: ['open'],
 }
 </script>
 

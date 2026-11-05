@@ -17,21 +17,21 @@ import downloadButton from '@/components/downloadButton.vue'
 export default {
   components: {
     card,
-    downloadButton
+    downloadButton,
   },
 
   data() {
     return {
       image: profile,
-      socials: socials.getSocials()
+      socials: socials.getSocials(),
     }
   },
 
   computed: {
     resumePath() {
       return resume.getResume(this.$i18n.locale)
-    }
-  }
+    },
+  },
 }
 </script>
 

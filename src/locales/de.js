@@ -1,10 +1,10 @@
 export default {
   header: {
-    switchTheme: 'Design wechseln'
+    switchTheme: 'Design wechseln',
   },
 
   common: {
-    backToTop: 'Nach oben'
+    backToTop: 'Nach oben',
   },
 
   nav: {
@@ -12,7 +12,7 @@ export default {
     skills: 'Meine Fähigkeiten',
     projects: 'Projekte',
     experience: 'Erfahrung',
-    menu: 'Menü'
+    menu: 'Menü',
   },
 
   home: {
@@ -29,7 +29,7 @@ Neben Computern, Technik und Sport bin ich auch ein großer Naturfreund. Ich ver
 
 Ich habe diese Website erstellt, um meine Projekte und meine Gedanken zu teilen und um dir ein besseres Bild davon zu geben, wer ich als Person bin.
 Ich hoffe, du findest hier etwas Interessantes, und zögere nicht, mich zu kontaktieren, wenn du mehr wissen möchtest oder einfach Hallo sagen willst!`,
-    downloadCv: 'Lebenslauf herunterladen'
+    downloadCv: 'Lebenslauf herunterladen',
   },
 
   skills: {
@@ -48,7 +48,7 @@ Neben Git habe ich hauptsächlich Bitbucket, GitHub und Wrike genutzt.`,
     dotNet: `In meinem aktuellen Job verwende ich täglich C# und .NET, um die Software zu entwickeln, die in der Hyrma-Plattform verwendet wird.
 Heute ist es mein wichtigster Technologie-Stack.`,
     mariaDb: `In meinem aktuellen Job verwenden wir MariaDB, eine relationale Datenbank und einen Fork von MySQL.
-Die Arbeit damit fühlt sich sehr ähnlich an wie die Arbeit mit MySQL.`
+Die Arbeit damit fühlt sich sehr ähnlich an wie die Arbeit mit MySQL.`,
   },
 
   experience: {
@@ -88,7 +88,7 @@ Aufgrund der Sicherheitsklassifizierung kann ich nicht viele Details nennen.`,
 
     bredakraTitle: 'Bredåkra - Saisonarbeit, Grünanlagen. Bredåkra Kallinge, Schweden',
     bredakra: `Ich habe in der Parkverwaltung gearbeitet und mich sowohl um die Parkpflege (Grünanlagen) als auch um Bestattungsdienste gekümmert, wie das Abdecken von Erdgräbern mit Särgen und die Platzierung von Urnen.
-Der Einsatz verschiedener Maschinen war üblich, wie Walker-Rasenmäher und Avant.`
+Der Einsatz verschiedener Maschinen war üblich, wie Walker-Rasenmäher und Avant.`,
   },
 
   projects: {
@@ -97,6 +97,6 @@ Der Einsatz verschiedener Maschinen war üblich, wie Walker-Rasenmäher und Avan
     todoFrontendName: 'Todo-Anwendung: Frontend, Vue, Java',
     todoBackendName: 'Todo-Anwendung: Backend, Spring Boot, MySQL',
     sunbotTitle: 'SunbotJs. Ein Discord-Musikbot mit einer Discord-API. (In Arbeit)',
-    sunbotBackendName: 'SunbotJs: in JavaScript!'
-  }
+    sunbotBackendName: 'SunbotJs: in JavaScript!',
+  },
 }

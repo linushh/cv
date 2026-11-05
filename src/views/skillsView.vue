@@ -7,7 +7,8 @@
         :image="skill.image"
         :title="skill.title"
         :text="$t(skill.textKey)"
-        image-variant="logo" />
+        image-variant="logo"
+      />
     </cardGrid>
   </div>
 </template>
@@ -20,14 +21,14 @@ import skills from '@/service/skills.js'
 export default {
   components: {
     card,
-    cardGrid
+    cardGrid,
   },
 
   data() {
     return {
-      skills: skills.getSkills()
+      skills: skills.getSkills(),
     }
-  }
+  },
 }
 </script>
 

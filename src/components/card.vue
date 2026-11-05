@@ -9,7 +9,8 @@
       class="img margin"
       :class="imageVariant"
       :alt="title"
-      @click="showPreview" />
+      @click="showPreview"
+    />
 
     <div class="container">
       <h4>
@@ -21,7 +22,7 @@
     </div>
 
     <div v-if="isPreviewOpen" class="modal" @click="closePreview">
-      <img :src="image" :alt="title" :class="imageVariant">
+      <img :src="image" :alt="title" :class="imageVariant" />
     </div>
   </div>
 </template>
@@ -39,15 +40,15 @@ export default {
     imageVariant: {
       type: String,
       default: 'photo',
-      validator: (value) => ['photo', 'round', 'logo'].includes(value)
+      validator: (value) => ['photo', 'round', 'logo'].includes(value),
     },
     width: { type: [Number, String], default: null },
-    height: { type: [Number, String], default: null }
+    height: { type: [Number, String], default: null },
   },
 
   data() {
     return {
-      isPreviewOpen: false
+      isPreviewOpen: false,
     }
   },
 
@@ -72,8 +73,8 @@ export default {
 
     closePreview() {
       this.isPreviewOpen = false
-    }
-  }
+    },
+  },
 }
 </script>
 

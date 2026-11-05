@@ -7,11 +7,11 @@ import calendar from '@/assets/imgTodo/Calendar.png'
 import hashedPasswords from '@/assets/imgTodo/HaschedPasswords.png'
 
 export default [
-  {src: login},
-  {src: loginSwedish},
-  {src: register},
-  {src: todo},
-  {src: calendar},
-  {src: hoverEffect},
-  {src: hashedPasswords}
+  { src: login },
+  { src: loginSwedish },
+  { src: register },
+  { src: todo },
+  { src: calendar },
+  { src: hoverEffect },
+  { src: hashedPasswords },
 ]

@@ -1,10 +1,10 @@
 const sunbotJs = 'https://github.com/BinaryBuddiesHQ/SunBotJs'
 function getProject() {
   return {
-    sunbotJs
+    sunbotJs,
   }
 }
 
 export default {
-  getProject
+  getProject,
 }

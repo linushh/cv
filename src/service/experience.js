@@ -8,26 +8,26 @@ const experience = [
     id: 'infobric',
     titleKey: 'experience.infobricTitle',
     textKey: 'experience.infobric',
-    image: imgHyrma
+    image: imgHyrma,
   },
   {
     id: 'skolon',
     titleKey: 'experience.skolonTitle',
     textKey: 'experience.skolon',
-    image: imgSkolon
+    image: imgSkolon,
   },
   {
     id: 'saab',
     titleKey: 'experience.saabTitle',
     textKey: 'experience.saab',
-    image: imgSaab
+    image: imgSaab,
   },
   {
     id: 'bredakra',
     titleKey: 'experience.bredakraTitle',
     textKey: 'experience.bredakra',
-    image: imgBredakra
-  }
+    image: imgBredakra,
+  },
 ]
 
 function getExperience() {
@@ -35,5 +35,5 @@ function getExperience() {
 }
 
 export default {
-  getExperience
+  getExperience,
 }

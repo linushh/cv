@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useThemeStore = defineStore('theme', {
   state: () => ({
-    theme: 'dark'
+    theme: 'dark',
   }),
 
   actions: {
@@ -26,6 +26,6 @@ export const useThemeStore = defineStore('theme', {
 
     apply() {
       document.body.classList.toggle('light-mode', this.theme === 'light')
-    }
-  }
+    },
+  },
 })

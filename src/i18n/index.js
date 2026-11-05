@@ -9,7 +9,7 @@ export const languages = [
   { code: 'en', label: 'English' },
   { code: 'sv', label: 'Svenska' },
   { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' }
+  { code: 'de', label: 'Deutsch' },
 ]
 
 const messages = { en, sv, fr, de }
@@ -34,7 +34,7 @@ const i18n = createI18n({
   legacy: true,
   locale: getLocale(),
   fallbackLocale: 'en',
-  messages
+  messages,
 })
 
 setLocale(i18n.global.locale)

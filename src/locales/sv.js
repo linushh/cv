@@ -1,10 +1,10 @@
 export default {
   header: {
-    switchTheme: 'Byt tema'
+    switchTheme: 'Byt tema',
   },
 
   common: {
-    backToTop: 'Till toppen'
+    backToTop: 'Till toppen',
   },
 
   nav: {
@@ -12,7 +12,7 @@ export default {
     skills: 'Mina kunskaper',
     projects: 'Projekt',
     experience: 'Erfarenhet',
-    menu: 'Meny'
+    menu: 'Meny',
   },
 
   home: {
@@ -29,7 +29,7 @@ Förutom datorer, teknik och idrott är jag också en stor naturälskare. Jag ty
 
 Jag skapade den här webbplatsen för att dela med mig av mina projekt, mina tankar och för att ge dig en bättre bild av vem jag är som person.
 Jag hoppas att du hittar något intressant här, och tveka inte att kontakta mig om du vill veta mer eller bara säga hej!`,
-    downloadCv: 'Ladda ner CV'
+    downloadCv: 'Ladda ner CV',
   },
 
   skills: {
@@ -48,7 +48,7 @@ Tillsammans med Git har jag främst använt Bitbucket, GitHub och Wrike.`,
     dotNet: `På mitt nuvarande jobb använder jag C# och .NET dagligen för att utveckla mjukvaran som används i Hyrma-plattformen.
 Numera är det min huvudsakliga teknikstack.`,
     mariaDb: `På mitt nuvarande jobb använder vi MariaDB, en relationsdatabas som är en fork av MySQL.
-Att arbeta med den känns väldigt likt att arbeta med MySQL.`
+Att arbeta med den känns väldigt likt att arbeta med MySQL.`,
   },
 
   experience: {
@@ -88,7 +88,7 @@ På grund av säkerhetsklassificeringen kan jag inte gå in på så många detal
 
     bredakraTitle: 'Bredåkra - Säsongsarbete, Grönytor. Bredåkra Kallinge, Sverige',
     bredakra: `Jag arbetade med parkförvaltning och skötte både parkarbete (grönytor) och begravningsjänster, som att täcka både jordgravar med kistor och urnplaceringar.
-Användning av olika maskiner var vanligt, som Walker-klippare och Avant.`
+Användning av olika maskiner var vanligt, som Walker-klippare och Avant.`,
   },
 
   projects: {
@@ -97,6 +97,6 @@ Användning av olika maskiner var vanligt, som Walker-klippare och Avant.`
     todoFrontendName: 'Todo-applikation: frontend, vue, java',
     todoBackendName: 'Todo-applikation: backend, spring boot, mysql',
     sunbotTitle: 'SunbotJs. En discord-musikbot med discord-api. (Pågående)',
-    sunbotBackendName: 'SunbotJs: i JavaScript!'
-  }
+    sunbotBackendName: 'SunbotJs: i JavaScript!',
+  },
 }

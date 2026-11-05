@@ -7,8 +7,8 @@ import LanguageSwitcher from '@/components/languageSwitcher.vue'
 function mountSwitcher() {
   return mount(LanguageSwitcher, {
     global: {
-      plugins: [i18n]
-    }
+      plugins: [i18n],
+    },
   })
 }
 
@@ -24,7 +24,7 @@ describe('languageSwitcher', () => {
     const buttons = wrapper.findAll('button.language-button')
     expect(buttons).toHaveLength(languages.length)
     expect(buttons.map((button) => button.attributes('aria-label'))).toEqual(
-      languages.map((language) => language.label)
+      languages.map((language) => language.label),
     )
   })
 
@@ -43,6 +43,8 @@ describe('languageSwitcher', () => {
     await wrapper.find('button[aria-label="Deutsch"]').trigger('click')
 
     expect(i18n.global.locale).toBe('de')
-    expect(wrapper.findAll('button.language-button.active')[0].attributes('aria-label')).toBe('Deutsch')
+    expect(wrapper.findAll('button.language-button.active')[0].attributes('aria-label')).toBe(
+      'Deutsch',
+    )
   })
 })

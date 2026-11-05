@@ -9,9 +9,9 @@ export default {
   props: {
     columns: {
       type: Number,
-      default: 1
-    }
-  }
+      default: 1,
+    },
+  },
 }
 </script>
 

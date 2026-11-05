@@ -6,7 +6,8 @@
       :title="$t(project.titleKey)"
       :image-count="$t('projects.images', [project.images.length])"
       :cover="project.cover"
-      @open="activeProject = project" />
+      @open="activeProject = project"
+    />
   </div>
 
   <gallery
@@ -17,7 +18,8 @@
     :frontend-name="activeProject.frontend ? $t(activeProject.frontendNameKey) : ''"
     :backend="activeProject.backend"
     :backend-name="activeProject.backend ? $t(activeProject.backendNameKey) : ''"
-    @close="activeProject = null" />
+    @close="activeProject = null"
+  />
 </template>
 
 <script>
@@ -28,15 +30,15 @@ import projects from '@/service/photoService/projects.js'
 export default {
   components: {
     projectTile,
-    gallery
+    gallery,
   },
 
   data() {
     return {
       projects: projects.getProjects(),
-      activeProject: null
+      activeProject: null,
     }
-  }
+  },
 }
 </script>
 

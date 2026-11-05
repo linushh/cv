@@ -4,8 +4,9 @@
     class="scroll-to-top"
     :title="$t('common.backToTop')"
     :aria-label="$t('common.backToTop')"
-    @click="scrollToTop">
-      <i class="fa-solid fa-angles-up"></i>
+    @click="scrollToTop"
+  >
+    <i class="fa-solid fa-angles-up"></i>
   </button>
 </template>
 
@@ -13,7 +14,7 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
     }
   },
 
@@ -32,8 +33,8 @@ export default {
 
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
+    },
+  },
 }
 </script>
 

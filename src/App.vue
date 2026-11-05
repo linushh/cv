@@ -27,19 +27,19 @@ export default {
     sidebar,
     languageSwitcher,
     themeToggle,
-    scrollToTop
+    scrollToTop,
   },
 
   data() {
     return {
       socials: socials.getSocials(),
-      navItems: nav.getNavItems()
+      navItems: nav.getNavItems(),
     }
   },
 
   created() {
     useThemeStore().init()
-  }
+  },
 }
 </script>
 

@@ -8,9 +8,7 @@ import de from '@/locales/de'
 function flattenKeys(obj, prefix = '') {
   return Object.entries(obj).flatMap(([key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key
-    return value !== null && typeof value === 'object'
-      ? flattenKeys(value, path)
-      : [path]
+    return value !== null && typeof value === 'object' ? flattenKeys(value, path) : [path]
   })
 }
 
@@ -19,7 +17,7 @@ const reference = flattenKeys(en).sort()
 describe.each([
   ['sv', sv],
   ['fr', fr],
-  ['de', de]
+  ['de', de],
 ])('locale parity: %s', (locale, messages) => {
   const keys = flattenKeys(messages).sort()
 

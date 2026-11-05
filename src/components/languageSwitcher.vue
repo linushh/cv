@@ -7,8 +7,9 @@
       :class="{ active: language.code === currentLocale }"
       :title="language.label"
       :aria-label="language.label"
-      @click="setLocale(language.code)">
-        <img class="flag" :src="flags[language.code]" :alt="language.label">
+      @click="setLocale(language.code)"
+    >
+      <img class="flag" :src="flags[language.code]" :alt="language.label" />
     </button>
   </div>
 </template>
@@ -25,26 +26,26 @@ const flags = {
   en: britishFlag,
   sv: swedishFlag,
   fr: frenchFlag,
-  de: germanFlag
+  de: germanFlag,
 }
 
 export default {
   data() {
     return {
       languages,
-      flags
+      flags,
     }
   },
 
   computed: {
     currentLocale() {
       return this.$i18n.locale
-    }
+    },
   },
 
   methods: {
-    setLocale
-  }
+    setLocale,
+  },
 }
 </script>
 

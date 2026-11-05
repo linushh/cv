@@ -3,8 +3,9 @@
     class="theme-toggle"
     :title="$t('header.switchTheme')"
     :aria-label="$t('header.switchTheme')"
-    @click="themeStore.toggle()">
-      <i class="fa-solid" :class="themeStore.theme === 'dark' ? 'fa-sun' : 'fa-moon'" />
+    @click="themeStore.toggle()"
+  >
+    <i class="fa-solid" :class="themeStore.theme === 'dark' ? 'fa-sun' : 'fa-moon'" />
   </button>
 </template>
 
@@ -14,9 +15,9 @@ import { useThemeStore } from '@/stores/theme'
 export default {
   data() {
     return {
-      themeStore: useThemeStore()
+      themeStore: useThemeStore(),
     }
-  }
+  },
 }
 </script>
 

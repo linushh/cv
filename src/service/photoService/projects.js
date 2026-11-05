@@ -18,7 +18,7 @@ const projects = [
     frontend: todoLinks.todoFrontend,
     backend: todoLinks.todoBackend,
     frontendNameKey: 'projects.todoFrontendName',
-    backendNameKey: 'projects.todoBackendName'
+    backendNameKey: 'projects.todoBackendName',
   },
   {
     id: 'sunbot',
@@ -28,8 +28,8 @@ const projects = [
     frontend: null,
     backend: sunbotLink.sunbotJs,
     frontendNameKey: null,
-    backendNameKey: 'projects.sunbotBackendName'
-  }
+    backendNameKey: 'projects.sunbotBackendName',
+  },
 ]
 
 function getProjects() {
@@ -37,5 +37,5 @@ function getProjects() {
 }
 
 export default {
-  getProjects
+  getProjects,
 }

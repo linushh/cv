@@ -5,7 +5,8 @@
       :key="entry.id"
       :image="entry.image"
       :title="$t(entry.titleKey)"
-      :text="$t(entry.textKey)" />
+      :text="$t(entry.textKey)"
+    />
   </cardGrid>
 </template>
 
@@ -17,14 +18,14 @@ import experience from '@/service/experience.js'
 export default {
   components: {
     card,
-    cardGrid
+    cardGrid,
   },
 
   data() {
     return {
-      experience: experience.getExperience()
+      experience: experience.getExperience(),
     }
-  }
+  },
 }
 </script>
 

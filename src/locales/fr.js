@@ -1,10 +1,10 @@
 export default {
   header: {
-    switchTheme: 'Changer de thème'
+    switchTheme: 'Changer de thème',
   },
 
   common: {
-    backToTop: 'Retour en haut'
+    backToTop: 'Retour en haut',
   },
 
   nav: {
@@ -12,7 +12,7 @@ export default {
     skills: 'Mes compétences',
     projects: 'Projets',
     experience: 'Expérience',
-    menu: 'Menu'
+    menu: 'Menu',
   },
 
   home: {
@@ -29,7 +29,7 @@ En plus des ordinateurs, de la technologie et du sport, je suis aussi un grand a
 
 J'ai créé ce site web pour partager mes projets, mes réflexions et pour vous donner une meilleure image de qui je suis en tant que personne.
 J'espère que vous y trouverez quelque chose d'intéressant et n'hésitez pas à me contacter si vous voulez en savoir plus ou juste dire bonjour !`,
-    downloadCv: 'Télécharger le CV'
+    downloadCv: 'Télécharger le CV',
   },
 
   skills: {
@@ -48,7 +48,7 @@ Avec Git, j'ai principalement utilisé Bitbucket, GitHub et Wrike.`,
     dotNet: `Dans mon emploi actuel, j'utilise C# et .NET quotidiennement pour développer le logiciel utilisé dans la plateforme Hyrma.
 C'est aujourd'hui ma principale stack technique.`,
     mariaDb: `Dans mon emploi actuel, nous utilisons MariaDB, une base de données relationnelle dérivée de MySQL.
-Travailler avec est très similaire à travailler avec MySQL.`
+Travailler avec est très similaire à travailler avec MySQL.`,
   },
 
   experience: {
@@ -88,7 +88,7 @@ En raison de la classification de sécurité, je ne peux pas donner beaucoup de 
 
     bredakraTitle: 'Bredåkra - Emploi saisonnier, Espaces verts. Bredåkra Kallinge, Suède',
     bredakra: `Je travaillais dans la gestion des parcs et m'occupais à la fois de l'entretien des parcs (espaces verts) et des services funéraires, comme le recouvrement des tombes en terre avec des cercueils et la pose d'urnes.
-L'utilisation de diverses machines était courante, comme des tondeuses Walker et un Avant.`
+L'utilisation de diverses machines était courante, comme des tondeuses Walker et un Avant.`,
   },
 
   projects: {
@@ -97,6 +97,6 @@ L'utilisation de diverses machines était courante, comme des tondeuses Walker e
     todoFrontendName: 'Application Todo : frontend, vue, java',
     todoBackendName: 'Application Todo : backend, spring boot, mysql',
     sunbotTitle: 'SunbotJs. Un bot musical Discord avec une API Discord. (En cours)',
-    sunbotBackendName: 'SunbotJs : en JavaScript !'
-  }
+    sunbotBackendName: 'SunbotJs : en JavaScript !',
+  },
 }

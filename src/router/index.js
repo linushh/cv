@@ -7,27 +7,27 @@ const router = createRouter({
     {
       path: '/',
       name: 'homeView',
-      component: () => import('../views/homeView.vue')
+      component: () => import('../views/homeView.vue'),
     },
 
     {
       path: '/skills',
       name: 'contactView',
-      component: () => import('../views/skillsView.vue')
+      component: () => import('../views/skillsView.vue'),
     },
 
     {
       path: '/projects',
       name: 'projectsView',
-      component: () => import('../views/projectsView.vue')
+      component: () => import('../views/projectsView.vue'),
     },
 
     {
       path: '/experience',
       name: 'experienceView',
-      component: () => import('../views/experienceView.vue')
-    }
-  ]
+      component: () => import('../views/experienceView.vue'),
+    },
+  ],
 })
 
 export default router

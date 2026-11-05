@@ -16,17 +16,20 @@ const selfie = fs.readFileSync(path.join(root, 'src/assets/selfie.jpg'), 'base64
 const pdfmake = (await import('pdfmake')).default
 const vfs = (await import('pdfmake/build/vfs_fonts.js')).default
 
-for (const [name, content] of Object.entries(vfs)) pdfmake.virtualfs.writeFileSync(name, Buffer.from(content, 'base64'))
+for (const [name, content] of Object.entries(vfs))
+  pdfmake.virtualfs.writeFileSync(name, Buffer.from(content, 'base64'))
 pdfmake.setFonts({
   Roboto: {
     normal: 'Roboto-Regular.ttf',
     bold: 'Roboto-Medium.ttf',
     italics: 'Roboto-Italic.ttf',
-    bolditalics: 'Roboto-MediumItalic.ttf'
-  }
+    bolditalics: 'Roboto-MediumItalic.ttf',
+  },
 })
 pdfmake.setUrlAccessPolicy(() => false)
-pdfmake.setLocalAccessPolicy((file) => { throw new Error(`Local file access not allowed: ${file}`) })
+pdfmake.setLocalAccessPolicy((file) => {
+  throw new Error(`Local file access not allowed: ${file}`)
+})
 
 const content = []
 content.push({ image: `data:image/jpeg;base64,${selfie}`, width: 120, alignment: 'center' })
@@ -42,7 +45,11 @@ for (const key of ['infobric', 'skolon', 'saab', 'bredakra']) {
   for (const line of en.experience[key].split('\n')) {
     if (!line.trim()) continue
     if (line.trim().startsWith('*')) {
-      content.push({ text: line.trim().replace(/^\*\s*/, ''), style: 'bullet', margin: [0, 1, 0, 1] })
+      content.push({
+        text: line.trim().replace(/^\*\s*/, ''),
+        style: 'bullet',
+        margin: [0, 1, 0, 1],
+      })
     } else {
       content.push({ text: line, margin: [0, 2, 0, 2] })
     }
@@ -57,8 +64,8 @@ const docDefinition = {
     contact: { fontSize: 10, alignment: 'center', color: '#555555', margin: [0, 0, 0, 10] },
     heading: { fontSize: 14, bold: true, margin: [0, 18, 0, 8], decoration: 'underline' },
     entryTitle: { fontSize: 11.5, bold: true },
-    bullet: { marginLeft: 14 }
-  }
+    bullet: { marginLeft: 14 },
+  },
 }
 
 const output = pdfmake.createPdf(docDefinition)

@@ -12,50 +12,50 @@ const skills = [
     id: 'dotNet',
     title: '.NET',
     textKey: 'skills.dotNet',
-    image: dotNet
+    image: dotNet,
   },
   {
     id: 'mariaDb',
     title: 'MariaDB',
     textKey: 'skills.mariaDb',
-    image: mariaDb
+    image: mariaDb,
   },
   {
     id: 'java',
     title: 'Java',
     textKey: 'skills.java',
-    image: java
+    image: java,
   },
   {
     id: 'springBoot',
     title: 'Spring Boot',
     textKey: 'skills.springBoot',
-    image: springBoot
+    image: springBoot,
   },
   {
     id: 'vue',
     title: 'Vue.js',
     textKey: 'skills.vue',
-    image: vue
+    image: vue,
   },
   {
     id: 'javascript',
     title: 'JavaScript',
     textKey: 'skills.javascript',
-    image: javascript
+    image: javascript,
   },
   {
     id: 'mysql',
     title: 'MySQL',
     textKey: 'skills.mysql',
-    image: mysql
+    image: mysql,
   },
   {
     id: 'git',
     title: 'Git',
     textKey: 'skills.git',
-    image: git
-  }
+    image: git,
+  },
 ]
 
 function getSkills() {
@@ -63,5 +63,5 @@ function getSkills() {
 }
 
 export default {
-  getSkills
+  getSkills,
 }

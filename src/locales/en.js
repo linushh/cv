@@ -1,10 +1,10 @@
 export default {
   header: {
-    switchTheme: 'Switch theme'
+    switchTheme: 'Switch theme',
   },
 
   common: {
-    backToTop: 'Back to top'
+    backToTop: 'Back to top',
   },
 
   nav: {
@@ -12,7 +12,7 @@ export default {
     skills: 'My Skills',
     projects: 'Projects',
     experience: 'Experience',
-    menu: 'Menu'
+    menu: 'Menu',
   },
 
   home: {
@@ -29,7 +29,7 @@ Besides computers, technology, and sports, I am also a big nature lover. I enjoy
 
 I created this website to share my projects, my thoughts, and to give you a better picture of who I am as a person.
 I hope you find something interesting here and do not hesitate to contact me if you want to know more or just say hi!`,
-    downloadCv: 'Download CV'
+    downloadCv: 'Download CV',
   },
 
   skills: {
@@ -48,7 +48,7 @@ Along with Git, I have mainly used Bitbucket, GitHub and Wrike.`,
     dotNet: `In my current job, I use C# and .NET daily to develop the software used in the Hyrma platform.
 Today it is my main technology stack.`,
     mariaDb: `At my current job, we use MariaDB, a relational database and a fork of MySQL.
-Working with it feels very similar to working with MySQL.`
+Working with it feels very similar to working with MySQL.`,
   },
 
   experience: {
@@ -88,7 +88,7 @@ Due to the security classification, I cannot go into much detail.`,
 
     bredakraTitle: 'Bredåkra - Seasonal Employment, Green Spaces. Bredåkra Kallinge, Sweden',
     bredakra: `I worked in park management and took care of both park work (green spaces) and burial services, such as covering both earth graves with coffins and urn placements.
-The use of various machines was common, such as Walker mowers and Avant.`
+The use of various machines was common, such as Walker mowers and Avant.`,
   },
 
   projects: {
@@ -97,6 +97,6 @@ The use of various machines was common, such as Walker mowers and Avant.`
     todoFrontendName: 'Todo Application: frontend, vue, java',
     todoBackendName: 'Todo Application: backend, spring boot, mysql',
     sunbotTitle: 'SunbotJs. A discord music bot with a discord api. (In progress)',
-    sunbotBackendName: 'SunbotJs: in JavaScript!'
-  }
+    sunbotBackendName: 'SunbotJs: in JavaScript!',
+  },
 }

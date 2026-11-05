@@ -5,25 +5,24 @@
       :title="$t('nav.menu')"
       :aria-label="$t('nav.menu')"
       :aria-expanded="isExpanded"
-      @click="toggle">
-        <i class="fa-solid" :class="isExpanded ? 'fa-xmark' : 'fa-bars'"></i>
+      @click="toggle"
+    >
+      <i class="fa-solid" :class="isExpanded ? 'fa-xmark' : 'fa-bars'"></i>
     </button>
 
     <div v-if="isExpanded" class="overlay" @click="collapse"></div>
 
     <nav class="sidebar" :class="{ expanded: isExpanded }">
       <ul>
-        <li
-          v-for="item in items"
-          :key="item.path"
-          :class="{ active: isActive(item.path) }">
+        <li v-for="item in items" :key="item.path" :class="{ active: isActive(item.path) }">
           <button
             class="icon"
             :title="$t(item.labelKey)"
             :aria-label="$t(item.labelKey)"
             :aria-expanded="isExpanded"
-            @click="onNavIconClick(item.path)">
-              <i :class="item.icon"></i>
+            @click="onNavIconClick(item.path)"
+          >
+            <i :class="item.icon"></i>
           </button>
 
           <RouterLink class="label" :to="item.path">
@@ -39,8 +38,9 @@
             :title="social.title"
             :aria-label="social.title"
             :aria-expanded="isExpanded"
-            @click="onSocialIconClick(social.href)">
-              <i :class="social.icon"></i>
+            @click="onSocialIconClick(social.href)"
+          >
+            <i :class="social.icon"></i>
           </button>
 
           <a class="label" :href="social.href" target="_blank">
@@ -57,18 +57,18 @@ export default {
   props: {
     socials: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
 
     items: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
     return {
-      isExpanded: false
+      isExpanded: false,
     }
   },
 
@@ -77,15 +77,15 @@ export default {
       return [
         { title: 'Github', href: this.socials.github, icon: 'fa-brands fa-github' },
         { title: 'LinkedIn', href: this.socials.linkedIn, icon: 'fa-brands fa-linkedin' },
-        { title: 'Facebook', href: this.socials.facebook, icon: 'fa-brands fa-facebook' }
+        { title: 'Facebook', href: this.socials.facebook, icon: 'fa-brands fa-facebook' },
       ]
-    }
+    },
   },
 
   watch: {
     $route() {
       this.collapse()
-    }
+    },
   },
 
   mounted() {
@@ -129,8 +129,8 @@ export default {
       if (event.key === 'Escape') {
         this.collapse()
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

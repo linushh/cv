@@ -10,10 +10,10 @@ function getSocials() {
     linkedIn,
     facebook,
     name,
-    email
+    email,
   }
 }
 
 export default {
-  getSocials
+  getSocials,
 }

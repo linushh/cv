@@ -1,5 +1,5 @@
 <template>
-  <img v-lazy="src" :width="width" :height="height">
+  <img v-lazy="src" :width="width" :height="height" />
 </template>
 
 <script>
@@ -7,8 +7,8 @@ export default {
   props: {
     src: { type: String, default: '' },
     width: { type: [Number, String], default: null },
-    height: { type: [Number, String], default: null }
-  }
+    height: { type: [Number, String], default: null },
+  },
 }
 </script>
 
