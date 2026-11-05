@@ -11,12 +11,13 @@ Personal CV website. Fun side project, not a product — keep changes simple and
 - `npm run lint:fix` — same, with `--fix`
 - `npm run format` — format the codebase with Prettier
 - `npm run format:check` — check formatting without writing
+- `npm test` — run the unit tests once (Vitest + jsdom); `npm run test:watch` for watch mode. Tests live beside the code as `*.test.js` and also run in the deploy workflow before the build
 
 ## Deploy
 
-Deploy by pushing to `master` — the `deploy.yml` GitHub Actions workflow runs lint, builds and publishes to GitHub Pages (no local steps, no `gh-pages` subtree). `dist/` is not committed. The workflow can also be re-run by hand from the Actions tab.
+Deploy by pushing to `master` — the `deploy.yml` GitHub Actions workflow runs lint and tests, builds and publishes to GitHub Pages (no local steps, no `gh-pages` subtree). `dist/` is not committed. The workflow can also be re-run by hand from the Actions tab.
 
-Verify changes with `npm run lint` and `npm run build`, plus a manual check in `npm run dev`.
+Verify changes with `npm run lint`, `npm run build`, `npm test`, and a manual check in `npm run dev`.
 
 ## Stack
 
