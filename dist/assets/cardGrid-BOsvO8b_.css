@@ -1,1 +1,0 @@
-.card-grid[data-v-be5c131e]{display:grid;grid-template-columns:repeat(var(--columns, 1),1fr);gap:2rem;margin:5rem auto;max-width:960px;padding:0 1rem}@media(max-width:768px){.card-grid[data-v-be5c131e]{grid-template-columns:1fr;margin:1rem auto}}

@@ -1,1 +1,0 @@
-import{_ as i,l as c,c as r,m as s,o as a}from"./index-dQAmZE0a.js";const n={props:{src:String,width:[Number,String],height:[Number,String]}},o=["width","height"];function h(_,d,e,l,g,m){const t=s("lazy");return c((a(),r("img",{width:e.width,height:e.height},null,8,o)),[[t,e.src]])}const u=i(n,[["render",h],["__scopeId","data-v-bd0efe84"]]);export{u as l};
