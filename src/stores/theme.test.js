@@ -4,10 +4,13 @@ import { createPinia, setActivePinia } from 'pinia'
 import { useThemeStore } from '@/stores/theme'
 
 function stubSystemTheme(lightPreferred) {
-  vi.stubGlobal('matchMedia', vi.fn((query) => ({
-    matches: query === '(prefers-color-scheme: light)' ? lightPreferred : false,
-    media: query
-  })))
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn((query) => ({
+      matches: query === '(prefers-color-scheme: light)' ? lightPreferred : false,
+      media: query,
+    })),
+  )
 }
 
 beforeEach(() => {
