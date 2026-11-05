@@ -7,12 +7,13 @@ Personal CV website. Fun side project, not a product — keep changes simple and
 - `npm run dev` — start dev server (http://localhost:5173/cv/)
 - `npm run build` — production build to `dist/` (also the main verification: agent should run this after changes to confirm nothing broke); a `postbuild` check fails the build if `dist/` is missing `index.html`/`404.html` or serves assets outside `/cv/`
 - `npm run preview` — serve the production build
+- `npm test` — run the unit tests once (Vitest + jsdom); `npm run test:watch` for watch mode. Tests live beside the code as `*.test.js` and also run in the deploy workflow before the build
 
 ## Deploy
 
 Deploy by pushing to `master` — the `deploy.yml` GitHub Actions workflow builds and publishes to GitHub Pages (no local steps, no `gh-pages` subtree). `dist/` is not committed. The workflow can also be re-run by hand from the Actions tab.
 
-No linter or test framework is set up yet. Verify changes with `npm run build` and manual check in `npm run dev`.
+No linter is set up yet. Verify changes with `npm run build`, `npm test`, and a manual check in `npm run dev`.
 
 ## Stack
 
